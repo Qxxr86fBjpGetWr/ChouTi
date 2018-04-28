@@ -1,0 +1,20 @@
+//
+//  BDFMobileCollect.pch
+//  BDFMobileCollect
+//
+//  Created by 张声扬 on 2017/1/9.
+//  Copyright © 2017年 zhangshengyang. All rights reserved.
+//
+
+#ifndef BDFMobileCollect_pch
+#define BDFMobileCollect_pch
+
+#import "BDFCommonConstant.h"
+#import "BDFDefentHeader.h"
+#import "Masonry.h"
+#import "UIButton+Addition.h"
+#import "BDFCommentAPIConstant.h"
+#import "NSDictionary+Property.h"
+#import "UIView+Layer.h"
+
+#endif /* BDFMobileCollect_pch */
