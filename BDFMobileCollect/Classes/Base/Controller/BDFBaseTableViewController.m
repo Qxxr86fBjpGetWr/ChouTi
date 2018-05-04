@@ -60,6 +60,10 @@ const char BDFBaseTableVcNavLeftItemHandleKey;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.extendedLayoutIncludesOpaqueBars = YES;
+    self.automaticallyAdjustsScrollViewInsets = NO;  
 }
 
 #pragma mark - loading & alert

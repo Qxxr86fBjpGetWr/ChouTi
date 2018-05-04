@@ -44,6 +44,12 @@
 
 #define kRGBColor(r,g,b) kRGBAColor(r,g,b,1.0f)
 #define kRGBAColor(r,g,b,a) [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a]
+#define kColorFromRGB(rgbValue) kColorFromRGBA(rgbValue, 1.0)
+#define kColorFromRGBA(rgbValue, alphaValue) [UIColor \
+colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+green:((float)((rgbValue & 0x00FF00) >> 8))/255.0 \
+blue:((float)(rgbValue & 0x0000FF))/255.0 \
+alpha:alphaValue]
 
 /***  普通字体 */
 #define kFont(size) [UIFont systemFontOfSize:size]

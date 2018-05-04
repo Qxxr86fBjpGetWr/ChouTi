@@ -8,9 +8,38 @@
 
 #import "BDFBaseTableViewCell.h"
 #import "BDFHomeHotNewsFrame.h"
+#import "BDFBaseImageView.h"
+
+typedef NS_ENUM(NSUInteger, BDFHomeTableViewCellItemType) {
+    /** 点赞*/
+    BDFHomeTableViewCellItemTypeLike = 1,
+    /** 喜欢*/
+    BDFHomeTableViewCellItemTypeCollection,
+    /** 评论*/
+    BDFHomeTableViewCellItemTypeComment,
+    /** 分享*/
+    BDFHomeTableViewCellItemTypeShare
+};
+
+@class BDFHomeHotNewsCell;
+
+@protocol BDFHomeHotNewsCellButtonDelegate <NSObject>
+
+/** Cell底部Item */
+- (void)homeTableViewCell:(BDFHomeHotNewsCell *)cell didClickItemWithType:(BDFHomeTableViewCellItemType)itemType;
+
+/** 查看大图 */
+- (void)homeTableViewCell:(BDFHomeHotNewsCell *)cell didClickImageView:(BDFBaseImageView *)image currentIndex:(NSInteger)currentIndex urls:(NSArray <NSURL *>*)urls;
+
+@end
 
 @interface BDFHomeHotNewsCell : BDFBaseTableViewCell
 
 @property (nonatomic, strong) BDFHomeHotNewsFrame *newsFrame;
+@property (nonatomic,weak) id<BDFHomeHotNewsCellButtonDelegate> buttonDelegate;
+
+- (void)ups;
+
+- (void)collection;
 
 @end

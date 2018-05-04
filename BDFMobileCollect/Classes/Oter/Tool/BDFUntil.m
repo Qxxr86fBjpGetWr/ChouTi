@@ -32,7 +32,6 @@
             [weakScrollView.mj_footer resetNoMoreData];
         }
     }];
-    header.backgroundColor = [UIColor grayColor];
     [header setTitle:@"释放更新" forState:MJRefreshStatePulling];
     [header setTitle:@"正在更新" forState:MJRefreshStateRefreshing];
     [header setTitle:@"下拉刷新" forState:MJRefreshStateIdle];

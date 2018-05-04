@@ -12,4 +12,6 @@
 
 @property (nonatomic, copy) NSString *brush;
 
+//@property (nonatomic, assign) NSInteger after_time;
+
 @end

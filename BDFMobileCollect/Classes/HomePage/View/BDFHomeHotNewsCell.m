@@ -11,6 +11,9 @@
 #import "BDFBaseImageView.h"
 #import "UIView+Layer.h"
 #import "BDFUntil.h"
+#import "UIView+Tap.h"
+#import <ADTickerLabel.h>
+#import "UIView+Frame.h"
 
 @interface BDFHomeHotNewsCell()
 
@@ -23,16 +26,20 @@
 @property (nonatomic, weak) UILabel *userNameLabel;
 
 @property (nonatomic, weak) UILabel *timeLabel;
-
+/** 顶 */
 @property (nonatomic, weak) UIButton *upsButton;
-
+/** 评论 */
 @property (nonatomic, weak) UIButton *commentButton;
-
+/** 收藏 */
 @property (nonatomic, weak) UIButton *likeButton;
-
+/** 分享 */
 @property (nonatomic, weak) UIButton *shareButton;
 
 @property (nonatomic, strong) BDFHomeHotNewsModelLink *hotNewsModel;
+
+@property (nonatomic,weak) ADTickerLabel *upsTickerLabel;
+
+@property (nonatomic,weak) ADTickerLabel *commentTickerLabel;
 
 @end
 
@@ -42,6 +49,7 @@
     if (!newsFrame) {
         return;
     }
+    _newsFrame = newsFrame;
     self.hotNewsModel = newsFrame.hotNewsModel;
     
     self.titleLabel.frame = newsFrame.contentF;
@@ -52,12 +60,14 @@
     [self.mainImageView setImageWithString:self.hotNewsModel.img_url];
     
     self.upsButton.frame = newsFrame.upsButtonF;
-    self.upsButton.titleLabel.text = [NSString stringWithFormat:@"%ld",_hotNewsModel.ups];
+    [self.upsTickerLabel sizeToFit];
+    self.upsButton.selected = self.hotNewsModel.has_uped;
     
     self.commentButton.frame = newsFrame.commentButtonF;
-    self.commentButton.titleLabel.text = [NSString stringWithFormat:@"%ld",_hotNewsModel.comments_count];
+    [self.commentTickerLabel sizeToFit];
     
     self.likeButton.frame = newsFrame.likeButtonF;
+    self.likeButton.selected = self.hotNewsModel.has_saved;
     
     self.shareButton.frame = newsFrame.shareButtomF;
     
@@ -72,6 +82,32 @@
     self.timeLabel.frame = newsFrame.timeAndModuleF;
     NSString *stringTime = [BDFUntil cStringFromTimestamp:[NSString stringWithFormat:@"%ld",_hotNewsModel.created_time / 1000000]];
     self.timeLabel.text = [BDFUntil compareCurrentTime:stringTime];
+}
+
+- (void)setFrame:(CGRect)frame{
+    frame.origin.x += 0;
+    frame.origin.y += 0;
+    frame.size.height -= 5;
+    frame.size.width -= 0;
+    [super setFrame:frame];
+}
+
+- (void)allKindOfButtonAction:(id)sender {
+    BDFHomeTableViewCellItemType itemType;
+    if (sender == _upsButton) {
+        itemType = BDFHomeTableViewCellItemTypeLike;
+    }else if (sender == _commentButton) {
+        itemType = BDFHomeTableViewCellItemTypeComment;
+    }else if (sender == _likeButton) {
+        itemType = BDFHomeTableViewCellItemTypeCollection;
+    }else if (sender == _shareButton) {
+        itemType = BDFHomeTableViewCellItemTypeShare;
+    }else {
+        return;
+    }
+    if ([self.buttonDelegate respondsToSelector:@selector(homeTableViewCell:didClickItemWithType:)]) {
+        [self.buttonDelegate homeTableViewCell:self didClickItemWithType:itemType];
+    }
 }
 
 - (void)awakeFromNib {
@@ -99,6 +135,12 @@
     
     if (!_mainImageView) {
         BDFBaseImageView *imageView = [[BDFBaseImageView alloc] init];
+        WeakSelf(weakSelf);
+        [imageView setTapActionWithBlock:^{
+            if ([weakSelf.buttonDelegate respondsToSelector:@selector(homeTableViewCell:didClickImageView:currentIndex:urls:)]) {
+                [weakSelf.buttonDelegate homeTableViewCell:weakSelf didClickImageView:_mainImageView currentIndex:0 urls:@[_hotNewsModel.img_url]];
+            }
+        }];
         [self.contentView addSubview:imageView];
         _mainImageView = imageView;
     }
@@ -109,6 +151,11 @@
     if (!_upsButton) {
         UIButton *button = [[UIButton alloc] init];
         [button setImage:[UIImage imageNamed:@"btn_good"] forState:UIControlStateNormal];
+        [button setImage:[UIImage imageNamed:@"btn_good_pre"] forState:UIControlStateSelected];
+        button.titleLabel.font = [UIFont systemFontOfSize:14.];
+        [button setImageEdgeInsets:UIEdgeInsetsMake(0, -20, 0, 0)];
+        [button setTitleColor:kGrayColor forState:UIControlStateNormal];
+        [button addTarget:self action:@selector(allKindOfButtonAction:) forControlEvents:UIControlEventTouchUpInside];
         [self.contentView addSubview:button];
         _upsButton = button;
     }
@@ -119,6 +166,10 @@
     if (!_commentButton) {
         UIButton *button = [[UIButton alloc] init];
         [button setImage:[UIImage imageNamed:@"btn_comment"] forState:UIControlStateNormal];
+        button.titleLabel.font = [UIFont systemFontOfSize:14.];
+        [button setImageEdgeInsets:UIEdgeInsetsMake(0, -20, 0, 0)];
+        [button setTitleColor:kGrayColor forState:UIControlStateNormal];
+        [button addTarget:self action:@selector(allKindOfButtonAction:) forControlEvents:UIControlEventTouchUpInside];
         [self.contentView addSubview:button];
         _commentButton = button;
     }
@@ -129,6 +180,8 @@
     if (!_likeButton) {
         UIButton *button = [[UIButton alloc] init];
         [button setImage:[UIImage imageNamed:@"btn_collection"] forState:UIControlStateNormal];
+        [button setImage:[UIImage imageNamed:@"btn_collection_pre"] forState:UIControlStateSelected];
+        [button addTarget:self action:@selector(allKindOfButtonAction:) forControlEvents:UIControlEventTouchUpInside];
         [self.contentView addSubview:button];
         _likeButton = button;
     }
@@ -139,6 +192,7 @@
     if (!_shareButton) {
         UIButton *button = [[UIButton alloc] init];
         [button setImage:[UIImage imageNamed:@"btn_reply"] forState:UIControlStateNormal];
+        [button addTarget:self action:@selector(allKindOfButtonAction:) forControlEvents:UIControlEventTouchUpInside];
         [self.contentView addSubview:button];
         _shareButton = button;
     }
@@ -174,6 +228,56 @@
         [self.contentView addSubview:label];
     }
     return _timeLabel;
+}
+
+- (ADTickerLabel *)upsTickerLabel {
+    if (!_upsTickerLabel) {
+        ADTickerLabel *label = [[ADTickerLabel alloc] initWithFrame:CGRectMake(_newsFrame.upsButtonF.size.width - 30, (_newsFrame.upsButtonF.size.height - 16)/2., 30, 16)];
+        label.font = [UIFont boldSystemFontOfSize:14.];
+        label.textColor = kGrayColor;
+        label.text = [NSString stringWithFormat:@"%ld",_hotNewsModel.ups];
+        [self.upsButton addSubview:label];
+        [self.upsButton bringSubviewToFront:label];
+        _upsTickerLabel = label;
+    }
+    return _upsTickerLabel;
+}
+
+-(ADTickerLabel *)commentTickerLabel {
+    if (!_commentTickerLabel) {
+        ADTickerLabel *label = [[ADTickerLabel alloc] initWithFrame:CGRectMake(_newsFrame.commentButtonF.size.width - 30, (_newsFrame.commentButtonF.size.height - 16)/2., 30, 16)];
+        label.font = [UIFont boldSystemFontOfSize:14.];
+        label.textColor = kGrayColor;
+        label.text = [NSString stringWithFormat:@"%ld",_hotNewsModel.comments_count];
+        [self.commentButton addSubview:label];
+        [self.commentButton bringSubviewToFront:label];
+        _commentTickerLabel = label;
+    }
+    return _commentTickerLabel;
+}
+
+-(void)ups {
+    self.upsButton.selected = !self.upsButton.selected;
+    self.upsTickerLabel.text = [NSString stringWithFormat:@"%ld",self.hotNewsModel.ups];
+    [self buttonAnimation:self.upsButton];
+}
+
+- (void)collection {
+    self.likeButton.selected = !self.likeButton.selected;
+    [self buttonAnimation:self.likeButton];
+}
+
+- (void)buttonAnimation:(UIButton *)button {
+    
+    [UIView animateKeyframesWithDuration:0.5 delay:0 options:UIViewKeyframeAnimationOptionLayoutSubviews animations:^{
+        
+        [UIView addKeyframeWithRelativeStartTime:0 relativeDuration:1/2.0 animations:^{
+             button.imageView.transform = CGAffineTransformMakeScale(1.6, 1.6);
+        }];
+        [UIView addKeyframeWithRelativeStartTime:1/2.0 relativeDuration:1/2.0 animations:^{
+            button.imageView.transform = CGAffineTransformIdentity;
+        }];
+    } completion:nil];
 }
 
 @end

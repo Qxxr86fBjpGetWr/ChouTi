@@ -50,7 +50,7 @@
                 [self handleResponse:responseObject completion:comple];
                 
             } failure:^(NSError *error) {
-                
+                BDFLog(@"%@",error);
             }];
         }
     }else{
