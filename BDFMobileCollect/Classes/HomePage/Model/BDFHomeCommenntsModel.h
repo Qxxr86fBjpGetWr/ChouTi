@@ -8,7 +8,7 @@
 
 #import "BDFBaseModel.h"
 
-@class BDFHomeCommenntModel;
+@class BDFHomeCommenntModel, BDFHomeCommenntUserModel;
 
 @interface BDFHomeCommenntsModel : BDFBaseModel
 
@@ -26,7 +26,7 @@
 
 @property (nonatomic, assign) NSInteger ups;
 
-@property (nonatomic, strong) NSDictionary *user;
+@property (nonatomic, strong) BDFHomeCommenntUserModel *user;
 
 @property (nonatomic, strong) NSString *jid;
 
@@ -41,5 +41,23 @@
 @property (nonatomic, assign) NSInteger score;
 
 @property (nonatomic, strong) NSString *content;
+
+@end
+
+@interface BDFHomeCommenntUserModel : BDFBaseModel
+
+@property (nonatomic, strong) NSString *nick;
+
+@property (nonatomic, assign) BOOL isBindPhone;
+
+@property (nonatomic, assign) BOOL isBan;
+
+@property (nonatomic, assign) NSInteger attentState;
+
+@property (nonatomic, strong) NSString *img_url;
+
+@property (nonatomic, strong) NSString *jid;
+
+@property (nonatomic, assign) BOOL sex;
 
 @end

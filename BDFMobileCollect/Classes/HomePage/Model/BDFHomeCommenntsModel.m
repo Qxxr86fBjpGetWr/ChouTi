@@ -15,3 +15,8 @@
 @implementation BDFHomeCommenntModel
 
 @end
+
+@implementation BDFHomeCommenntUserModel
+
+@end
+

@@ -37,9 +37,9 @@
 
 @property (nonatomic, strong) BDFHomeHotNewsModelLink *hotNewsModel;
 
-@property (nonatomic,weak) ADTickerLabel *upsTickerLabel;
+@property (nonatomic, weak) ADTickerLabel *upsTickerLabel;
 
-@property (nonatomic,weak) ADTickerLabel *commentTickerLabel;
+@property (nonatomic, weak) ADTickerLabel *commentTickerLabel;
 
 @end
 

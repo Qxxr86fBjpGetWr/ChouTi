@@ -16,6 +16,8 @@ int const BDFHomeNewsTextFont = 16;
 int const BDFHomeNewsUserNameFont = 13;
 /** 首页时间大小*/
 int const BDFHomeNewsTimeFont = 10;
+/** 评论正文字体大小 */
+int const BDFHomeNewsCommentFont = 14;
 
 /** 当前纬度*/
 NSString *const BDFUserCurrentLatitude = @"BDFUserCurrentLatitude";

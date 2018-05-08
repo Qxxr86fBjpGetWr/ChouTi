@@ -7,7 +7,10 @@
 //
 
 #import "BDFBaseTableViewCell.h"
+#import "BDFCommentFrameModel.h"
 
 @interface BDFHomeCommentsCell : BDFBaseTableViewCell
+
+@property (nonatomic,strong) BDFCommentFrameModel *commentFrameModel;
 
 @end

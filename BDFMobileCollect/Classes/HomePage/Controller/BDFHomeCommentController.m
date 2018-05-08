@@ -13,10 +13,11 @@
 #import "BDFHomeCommentIndexModel.h"
 #import "BDFHomeHotNewsAddRequest.h"
 #import "BDFHomeCommenntsModel.h"
+#import "BDFCommentFrameModel.h"
 
 @interface BDFHomeCommentController ()<BDFHomeHotNewsCellButtonDelegate>
 
-@property (nonatomic,strong) NSArray <BDFHomeCommenntModel *>*commentsArray;
+@property (nonatomic,strong) NSMutableArray <BDFCommentFrameModel *>*commentsArray;
 
 @end
 
@@ -35,7 +36,7 @@
     BDFHomeHotNewsUpsRequest *indexRequest = [BDFHomeHotNewsUpsRequest bdf_requestWithUrl:BDFHOMEPAGEHOTNNEWSCOMMENTINDEX isPost:YES];
     indexRequest.link_id = _cellFrame.hotNewsModel.id;
     [indexRequest bdf_sendRequestWithComple:^(id response, BOOL success, NSString *message) {
-
+        
         BDFHomeCommentIndexModel *model =
         [BDFHomeCommentIndexModel modelWithDictionary:response];
 
@@ -44,8 +45,14 @@
         [commentsRequest bdf_sendRequestWithComple:^(id response, BOOL success, NSString *message) {
             BDFHomeCommenntsModel *commentModel = [[BDFHomeCommenntsModel alloc] init];
             commentModel.commentsArray = [BDFHomeCommenntModel modelArrayWithDictArray:response];
-            BDFLog(@"%@",commentModel.commentsArray);
-            self.commentsArray = [commentModel.commentsArray copy];
+            
+            for (BDFHomeCommenntModel *obj in commentModel.commentsArray) {
+                BDFCommentFrameModel *commentFraModel = [[BDFCommentFrameModel alloc] init];
+                NSString *deep = model.comments.childrenMap[[NSString stringWithFormat:@"%ld",obj.id]];
+                commentFraModel.deep = [deep integerValue];
+                commentFraModel.commentModel = obj;
+                [self.commentsArray addObject:commentFraModel];
+            }
             [self bdf_reloadData];
         }];
     }];
@@ -69,25 +76,31 @@
 
 -(BDFBaseTableViewCell *)bdf_cellAtIndexPath:(NSIndexPath *)indexPath {
     
-    BDFHomeHotNewsCell *cell = nil;
     if (indexPath.section == 0) {
-        cell = [BDFHomeHotNewsCell cellWithTableView:self.tableView];
-        cell.newsFrame = self.cellFrame;
+         BDFBaseTableViewCell *cell = [BDFHomeHotNewsCell cellWithTableView:self.tableView];
+        [cell setValue:_cellFrame forKey:@"newsFrame"];
+        return cell;
     }else {
-        cell = [BDFHomeHotNewsCell cellWithTableView:self.tableView];
-        BDFHomeCommenntModel *model = self.commentsArray[indexPath.row];
-        if (model) {
-            cell.textLabel.text = model.content;
-        }
+        BDFHomeCommentsCell *cell = [BDFHomeCommentsCell cellWithTableView:self.tableView];
+        cell.commentFrameModel = self.commentsArray[indexPath.row];
+        return cell;
     }
-    return cell;
 }
 
 - (CGFloat)bdf_cellheightAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
         return CGRectGetMaxY(self.cellFrame.shareButtomF);
+    }else {
+         BDFCommentFrameModel *commentFrameModel = self.commentsArray[indexPath.row];
+        return CGRectGetMaxY(commentFrameModel.contentF);
     }
-    return 50;
+}
+
+-(NSMutableArray<BDFCommentFrameModel *> *)commentsArray {
+    if (!_commentsArray) {
+        _commentsArray = [NSMutableArray array];
+    }
+    return _commentsArray;
 }
 
 @end

@@ -17,6 +17,8 @@ UIKIT_EXTERN int const BDFHomeNewsTextFont;
 UIKIT_EXTERN int const BDFHomeNewsUserNameFont;
 /** 首页时间字体大小*/
 UIKIT_EXTERN int const BDFHomeNewsTimeFont;
+/** 首页评论正文字体大小*/
+UIKIT_EXTERN int const BDFHomeNewsCommentFont;
 
 /** 当前纬度*/
 UIKIT_EXTERN NSString *const BDFUserCurrentLatitude;

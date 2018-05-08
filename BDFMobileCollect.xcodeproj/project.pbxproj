@@ -35,6 +35,7 @@
 		AB2803261E1F87C10006A13E /* BDFLogAndRegViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2803251E1F87C10006A13E /* BDFLogAndRegViewController.m */; };
 		AB5F1838209B0A2F006466EF /* BDFHomeCommentIndexModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5F1837209B0A2F006466EF /* BDFHomeCommentIndexModel.m */; };
 		AB5F183B209B16BA006466EF /* BDFHomeCommenntsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5F183A209B16BA006466EF /* BDFHomeCommenntsModel.m */; };
+		AB5F183E209C4864006466EF /* BDFCommentFrameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5F183D209C4864006466EF /* BDFCommentFrameModel.m */; };
 		AB6FFE381E247CE000837AB6 /* BDFRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6FFE371E247CE000837AB6 /* BDFRequestManager.m */; };
 		AB6FFE3B1E24AABF00837AB6 /* BDFBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6FFE3A1E24AABF00837AB6 /* BDFBaseRequest.m */; };
 		AB8DFB1B209434EE00B30A63 /* BDFHomeNewsMoreRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8DFB1A209434EE00B30A63 /* BDFHomeNewsMoreRequest.m */; };
@@ -139,6 +140,8 @@
 		AB5F1837209B0A2F006466EF /* BDFHomeCommentIndexModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFHomeCommentIndexModel.m; sourceTree = "<group>"; };
 		AB5F1839209B16BA006466EF /* BDFHomeCommenntsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFHomeCommenntsModel.h; sourceTree = "<group>"; };
 		AB5F183A209B16BA006466EF /* BDFHomeCommenntsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFHomeCommenntsModel.m; sourceTree = "<group>"; };
+		AB5F183C209C4864006466EF /* BDFCommentFrameModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFCommentFrameModel.h; sourceTree = "<group>"; };
+		AB5F183D209C4864006466EF /* BDFCommentFrameModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFCommentFrameModel.m; sourceTree = "<group>"; };
 		AB6FFE361E247CE000837AB6 /* BDFRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFRequestManager.h; sourceTree = "<group>"; };
 		AB6FFE371E247CE000837AB6 /* BDFRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFRequestManager.m; sourceTree = "<group>"; };
 		AB6FFE391E24AABF00837AB6 /* BDFBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFBaseRequest.h; sourceTree = "<group>"; };
@@ -524,6 +527,8 @@
 				AB1E5DD220888171002E48B5 /* BDFHomeHotNewsFrame.m */,
 				AB5F1836209B0A2F006466EF /* BDFHomeCommentIndexModel.h */,
 				AB5F1837209B0A2F006466EF /* BDFHomeCommentIndexModel.m */,
+				AB5F183C209C4864006466EF /* BDFCommentFrameModel.h */,
+				AB5F183D209C4864006466EF /* BDFCommentFrameModel.m */,
 				AB5F1839209B16BA006466EF /* BDFHomeCommenntsModel.h */,
 				AB5F183A209B16BA006466EF /* BDFHomeCommenntsModel.m */,
 			);
@@ -910,6 +915,7 @@
 				ABCD18431ED6D0CF005AA34E /* UIView+Tap.m in Sources */,
 				AB8DFB1B209434EE00B30A63 /* BDFHomeNewsMoreRequest.m in Sources */,
 				ABCD18401ED6D0CF005AA34E /* NSNotificationCenter+Addition.m in Sources */,
+				AB5F183E209C4864006466EF /* BDFCommentFrameModel.m in Sources */,
 				ABCD18461ED6D0CF005AA34E /* BDFFileCacheManager.m in Sources */,
 				AB8DFB2D20946F4C00B30A63 /* BDFHomeCommentsCell.m in Sources */,
 				AB1E5DC420886249002E48B5 /* BDFHomePageHotNewsRequest.m in Sources */,
