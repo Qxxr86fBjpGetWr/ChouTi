@@ -26,9 +26,9 @@
     _commentModel = commentModel;
     
     CGFloat tap = 0;
-//    if (self.deep != 0) {
-//        tap = 30 * self.deep;
-//    }
+    if (self.deep != 0) {
+        tap = 30 * self.deep;
+    }
     self.userImageF = CGRectMake(20 + tap, 10, 30, 30);
     self.userNameF = CGRectMake(CGRectGetMaxX(self.userImageF) + 10, CGRectGetMinY(self.userImageF), 80, 20);
     self.timeAndModuleF = CGRectMake(CGRectGetMaxX(self.userNameF), CGRectGetMinY(self.userNameF), 150, 20);

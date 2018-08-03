@@ -38,7 +38,7 @@
     BDFHomeCommenntUserModel *user = commentFrameModel.commentModel.user;
     
     self.userImageView.frame = commentFrameModel.userImageF;
-    [self.userImageView setImageWithString:user.img_url];
+    [self.userImageView setImageWithString:user.img_url placeHolder:[UIImage imageNamed:@"tou_25"]];
     
     self.userNameLabel.frame = commentFrameModel.userNameF;
     self.userNameLabel.text = user.nick;
@@ -57,7 +57,6 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -77,6 +76,7 @@
     }
     return _userImageView;
 }
+
 - (UILabel *)userNameLabel {
     if (!_userNameLabel) {
         UILabel *label = [[UILabel alloc] init];

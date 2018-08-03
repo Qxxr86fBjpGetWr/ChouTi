@@ -16,5 +16,6 @@
 #import "BDFCommentAPIConstant.h"
 #import "NSDictionary+Property.h"
 #import "UIView+Layer.h"
+#import "UIView+Frame.h"
 
 #endif /* BDFMobileCollect_pch */

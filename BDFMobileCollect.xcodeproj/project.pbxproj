@@ -38,12 +38,16 @@
 		AB5F183E209C4864006466EF /* BDFCommentFrameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5F183D209C4864006466EF /* BDFCommentFrameModel.m */; };
 		AB6FFE381E247CE000837AB6 /* BDFRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6FFE371E247CE000837AB6 /* BDFRequestManager.m */; };
 		AB6FFE3B1E24AABF00837AB6 /* BDFBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6FFE3A1E24AABF00837AB6 /* BDFBaseRequest.m */; };
+		AB778F542113E3C000A81791 /* BDFHomeDetailWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB778F532113E3C000A81791 /* BDFHomeDetailWebView.m */; };
 		AB8DFB1B209434EE00B30A63 /* BDFHomeNewsMoreRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8DFB1A209434EE00B30A63 /* BDFHomeNewsMoreRequest.m */; };
 		AB8DFB1E2094436C00B30A63 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8DFB1C2094436C00B30A63 /* UIView+Frame.m */; };
 		AB8DFB2420945A7600B30A63 /* BDFHomeHotNewsUpsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8DFB2320945A7600B30A63 /* BDFHomeHotNewsUpsRequest.m */; };
 		AB8DFB272094637300B30A63 /* BDFHomeHotNewsAddRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8DFB262094637300B30A63 /* BDFHomeHotNewsAddRequest.m */; };
 		AB8DFB2A209465EB00B30A63 /* BDFHomeCommentController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8DFB29209465EB00B30A63 /* BDFHomeCommentController.m */; };
 		AB8DFB2D20946F4C00B30A63 /* BDFHomeCommentsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8DFB2C20946F4C00B30A63 /* BDFHomeCommentsCell.m */; };
+		ABB3FF5F20F34D78000472D3 /* BDFDetailWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB3FF5E20F34D78000472D3 /* BDFDetailWebViewController.m */; };
+		ABB3FFDE20F490F3000472D3 /* BDFKeyBoardToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB3FFDD20F490F3000472D3 /* BDFKeyBoardToolView.m */; };
+		ABB3FFE420F4B238000472D3 /* UIVisualEffectView+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB3FFE320F4B238000472D3 /* UIVisualEffectView+Addition.m */; };
 		ABCD181E1ED6C4F7005AA34E /* BDFBaseImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCD181D1ED6C4F7005AA34E /* BDFBaseImageView.m */; };
 		ABCD18261ED6D0AD005AA34E /* BDFHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCD18221ED6D0AD005AA34E /* BDFHomePageViewController.m */; };
 		ABCD183F1ED6D0CF005AA34E /* NSFileManager+Paths.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCD182B1ED6D0CF005AA34E /* NSFileManager+Paths.m */; };
@@ -62,6 +66,7 @@
 		ABCD18631ED7C323005AA34E /* NSDictionary+Property.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCD18621ED7C323005AA34E /* NSDictionary+Property.m */; };
 		ABCD18691ED7C898005AA34E /* BDFBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCD18681ED7C898005AA34E /* BDFBaseModel.m */; };
 		ABCD186C1ED7D61B005AA34E /* BDFMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCD186B1ED7D61B005AA34E /* BDFMessageModel.m */; };
+		ABDB407920A43D4A00B690F6 /* BDFHomeCommPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDB407820A43D4A00B690F6 /* BDFHomeCommPoint.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -146,6 +151,8 @@
 		AB6FFE371E247CE000837AB6 /* BDFRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFRequestManager.m; sourceTree = "<group>"; };
 		AB6FFE391E24AABF00837AB6 /* BDFBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFBaseRequest.h; sourceTree = "<group>"; };
 		AB6FFE3A1E24AABF00837AB6 /* BDFBaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFBaseRequest.m; sourceTree = "<group>"; };
+		AB778F522113E3C000A81791 /* BDFHomeDetailWebView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFHomeDetailWebView.h; sourceTree = "<group>"; };
+		AB778F532113E3C000A81791 /* BDFHomeDetailWebView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFHomeDetailWebView.m; sourceTree = "<group>"; };
 		AB8DFB19209434EE00B30A63 /* BDFHomeNewsMoreRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFHomeNewsMoreRequest.h; sourceTree = "<group>"; };
 		AB8DFB1A209434EE00B30A63 /* BDFHomeNewsMoreRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFHomeNewsMoreRequest.m; sourceTree = "<group>"; };
 		AB8DFB1C2094436C00B30A63 /* UIView+Frame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
@@ -158,6 +165,12 @@
 		AB8DFB29209465EB00B30A63 /* BDFHomeCommentController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFHomeCommentController.m; sourceTree = "<group>"; };
 		AB8DFB2B20946F4C00B30A63 /* BDFHomeCommentsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFHomeCommentsCell.h; sourceTree = "<group>"; };
 		AB8DFB2C20946F4C00B30A63 /* BDFHomeCommentsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFHomeCommentsCell.m; sourceTree = "<group>"; };
+		ABB3FF5D20F34D78000472D3 /* BDFDetailWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFDetailWebViewController.h; sourceTree = "<group>"; };
+		ABB3FF5E20F34D78000472D3 /* BDFDetailWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFDetailWebViewController.m; sourceTree = "<group>"; };
+		ABB3FFDC20F490F3000472D3 /* BDFKeyBoardToolView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFKeyBoardToolView.h; sourceTree = "<group>"; };
+		ABB3FFDD20F490F3000472D3 /* BDFKeyBoardToolView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFKeyBoardToolView.m; sourceTree = "<group>"; };
+		ABB3FFE220F4B238000472D3 /* UIVisualEffectView+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIVisualEffectView+Addition.h"; sourceTree = "<group>"; };
+		ABB3FFE320F4B238000472D3 /* UIVisualEffectView+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIVisualEffectView+Addition.m"; sourceTree = "<group>"; };
 		ABCD181C1ED6C4F7005AA34E /* BDFBaseImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFBaseImageView.h; sourceTree = "<group>"; };
 		ABCD181D1ED6C4F7005AA34E /* BDFBaseImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFBaseImageView.m; sourceTree = "<group>"; };
 		ABCD18211ED6D0AD005AA34E /* BDFHomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFHomePageViewController.h; sourceTree = "<group>"; };
@@ -194,6 +207,8 @@
 		ABCD18681ED7C898005AA34E /* BDFBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFBaseModel.m; sourceTree = "<group>"; };
 		ABCD186A1ED7D61B005AA34E /* BDFMessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFMessageModel.h; sourceTree = "<group>"; };
 		ABCD186B1ED7D61B005AA34E /* BDFMessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFMessageModel.m; sourceTree = "<group>"; };
+		ABDB407720A43D4A00B690F6 /* BDFHomeCommPoint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFHomeCommPoint.h; sourceTree = "<group>"; };
+		ABDB407820A43D4A00B690F6 /* BDFHomeCommPoint.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFHomeCommPoint.m; sourceTree = "<group>"; };
 		DC14892B4664F90CCBCB7B63 /* libPods-BDFMobileCollect.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BDFMobileCollect.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FACCC4627B427A4C6348F8D6 /* Pods-BDFMobileCollect.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BDFMobileCollect.release.xcconfig"; path = "Pods/Target Support Files/Pods-BDFMobileCollect/Pods-BDFMobileCollect.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -514,6 +529,8 @@
 				ABCD18221ED6D0AD005AA34E /* BDFHomePageViewController.m */,
 				AB8DFB28209465EB00B30A63 /* BDFHomeCommentController.h */,
 				AB8DFB29209465EB00B30A63 /* BDFHomeCommentController.m */,
+				ABB3FF5D20F34D78000472D3 /* BDFDetailWebViewController.h */,
+				ABB3FF5E20F34D78000472D3 /* BDFDetailWebViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -531,6 +548,8 @@
 				AB5F183D209C4864006466EF /* BDFCommentFrameModel.m */,
 				AB5F1839209B16BA006466EF /* BDFHomeCommenntsModel.h */,
 				AB5F183A209B16BA006466EF /* BDFHomeCommenntsModel.m */,
+				ABDB407720A43D4A00B690F6 /* BDFHomeCommPoint.h */,
+				ABDB407820A43D4A00B690F6 /* BDFHomeCommPoint.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -559,6 +578,10 @@
 				AB1E5DCF208874C8002E48B5 /* BDFHomeHotNewsCell.m */,
 				AB8DFB2B20946F4C00B30A63 /* BDFHomeCommentsCell.h */,
 				AB8DFB2C20946F4C00B30A63 /* BDFHomeCommentsCell.m */,
+				ABB3FFDC20F490F3000472D3 /* BDFKeyBoardToolView.h */,
+				ABB3FFDD20F490F3000472D3 /* BDFKeyBoardToolView.m */,
+				AB778F522113E3C000A81791 /* BDFHomeDetailWebView.h */,
+				AB778F532113E3C000A81791 /* BDFHomeDetailWebView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -608,6 +631,8 @@
 				ABCD18321ED6D0CF005AA34E /* UIView+Layer.m */,
 				ABCD18331ED6D0CF005AA34E /* UIView+Tap.h */,
 				ABCD18341ED6D0CF005AA34E /* UIView+Tap.m */,
+				ABB3FFE220F4B238000472D3 /* UIVisualEffectView+Addition.h */,
+				ABB3FFE320F4B238000472D3 /* UIVisualEffectView+Addition.m */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -885,7 +910,9 @@
 				AB8DFB2A209465EB00B30A63 /* BDFHomeCommentController.m in Sources */,
 				AB1E5DBE20883BBD002E48B5 /* BDFTestRequest.m in Sources */,
 				AB2803231E1F87620006A13E /* BDFBaseViewController.m in Sources */,
+				AB778F542113E3C000A81791 /* BDFHomeDetailWebView.m in Sources */,
 				ABCD18601ED7BAD2005AA34E /* BDFCommentAPIConstant.m in Sources */,
+				ABB3FFDE20F490F3000472D3 /* BDFKeyBoardToolView.m in Sources */,
 				ABCD18451ED6D0CF005AA34E /* BDFCommonConstant.m in Sources */,
 				AB2803261E1F87C10006A13E /* BDFLogAndRegViewController.m in Sources */,
 				AB25D2491E237C620093BE75 /* BDFTableViewHeaderFooterView.m in Sources */,
@@ -904,10 +931,13 @@
 				AB25D2371E2331980093BE75 /* BDFLogAndRegView.m in Sources */,
 				AB25D2331E2327BF0093BE75 /* BDFBaseNavigationController.m in Sources */,
 				AB8DFB272094637300B30A63 /* BDFHomeHotNewsAddRequest.m in Sources */,
+				ABB3FF5F20F34D78000472D3 /* BDFDetailWebViewController.m in Sources */,
+				ABB3FFE420F4B238000472D3 /* UIVisualEffectView+Addition.m in Sources */,
 				AB5F1838209B0A2F006466EF /* BDFHomeCommentIndexModel.m in Sources */,
 				AB1E5DC720886507002E48B5 /* BDFLoginSucModel.m in Sources */,
 				ABCD18411ED6D0CF005AA34E /* UIButton+Addition.m in Sources */,
 				AB2802D41E1F81E00006A13E /* main.m in Sources */,
+				ABDB407920A43D4A00B690F6 /* BDFHomeCommPoint.m in Sources */,
 				AB2803161E1F84930006A13E /* BDFMainTabBarController.m in Sources */,
 				ABCD181E1ED6C4F7005AA34E /* BDFBaseImageView.m in Sources */,
 				AB1E5DD620888639002E48B5 /* NSString+Size.m in Sources */,
@@ -1079,7 +1109,7 @@
 				INFOPLIST_FILE = BDFMobileCollect/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.founder.FounderNews;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chouti.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "378af6ef-2c2c-4da8-b9ee-99a3e35fa6bd";
 				PROVISIONING_PROFILE_SPECIFIER = 20181031;
@@ -1100,7 +1130,7 @@
 				INFOPLIST_FILE = BDFMobileCollect/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.founder.FounderNews;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chouti.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "be72de79-3820-4a0c-a184-8a5f049d16f0";
 				PROVISIONING_PROFILE_SPECIFIER = MobileCollectDistributePP;

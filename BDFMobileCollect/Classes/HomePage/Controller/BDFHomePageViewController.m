@@ -17,6 +17,7 @@
 #import "BDFHomeHotNewsUpsRequest.h"
 #import "BDFHomeHotNewsAddRequest.h"
 #import "BDFHomeCommentController.h"
+#import "BDFDetailWebViewController.h"
 
 @interface BDFHomePageViewController ()<BDFHomeHotNewsCellButtonDelegate>
 
@@ -113,6 +114,12 @@
     cell.buttonDelegate = self;
     cell.newsFrame = self.hotNewsFrameArray[indexPath.row];
     return cell;
+}
+
+-(void)bdf_didSelectCellAtIndexPath:(NSIndexPath *)indexPath cell:(BDFBaseTableViewCell *)cell {
+    BDFHomeHotNewsFrame *frame = self.hotNewsFrameArray[indexPath.row];
+    BDFDetailWebViewController *vc = [[BDFDetailWebViewController alloc] initWithUrl:frame.hotNewsModel.url];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (CGFloat)bdf_cellheightAtIndexPath:(NSIndexPath *)indexPath {

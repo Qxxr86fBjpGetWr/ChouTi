@@ -11,4 +11,5 @@ pod 'YYText'
 pod 'YYWebImage'
 pod 'MBProgressHUD'
 pod 'ADTickerLabel'
+pod 'FXBlurView'
 end

@@ -15,6 +15,7 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - FXBlurView (1.6.4)
   - Masonry (1.0.2)
   - MBProgressHUD (1.0.0)
   - MJExtension (3.0.13)
@@ -34,6 +35,7 @@ PODS:
 DEPENDENCIES:
   - ADTickerLabel
   - AFNetworking
+  - FXBlurView
   - Masonry
   - MBProgressHUD
   - MJExtension
@@ -43,9 +45,10 @@ DEPENDENCIES:
   - YYWebImage
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - ADTickerLabel
     - AFNetworking
+    - FXBlurView
     - Masonry
     - MBProgressHUD
     - MJExtension
@@ -59,6 +62,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   ADTickerLabel: 6cd8a9a537dd114cbd66fd438232e8888665b3e2
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  FXBlurView: db786c2561cb49a09ae98407f52460096ab8a44f
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
@@ -69,6 +73,6 @@ SPEC CHECKSUMS:
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: daa3545e87e0eaa7c0bf6843a58bfe8ecf07f2a1
+PODFILE CHECKSUM: 9bd6d4fadfc644e9e8fc171b50feb44a3da1e28d
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.3

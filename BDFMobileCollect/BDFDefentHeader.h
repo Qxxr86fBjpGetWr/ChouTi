@@ -21,9 +21,12 @@
 #define BDFLog(...)
 #endif
 
-//屏幕尺寸
+/** 屏幕尺寸 */
 #define SCREEN_WIDTH    ([[UIScreen mainScreen] bounds].size.width)
 #define SCREEN_HEIGHT   ([[UIScreen mainScreen] bounds].size.height)
+/** 导航栏的高度 */
+#define SCREEN_iPhoneX (SCREEN_WIDTH == 375.f && SCREEN_HEIGHT == 812.f ? YES : NO)
+#define SCREEN_StatusBarAndNavBarHeight  (SCREEN_iPhoneX ? 88.f : 64.f)
 
 #pragma mark - 颜色
 #define kWhiteColor [UIColor whiteColor]

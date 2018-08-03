@@ -22,6 +22,20 @@
     [super didReceiveMemoryWarning];
 }
 
+-(void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    
+    if (self.viewControllers.count > 0) {
+        
+        if ([viewController isKindOfClass:[UIViewController class]] == NO) return ;
+        if (viewController.hidesBottomBarWhenPushed == NO) {
+            viewController.hidesBottomBarWhenPushed = YES;
+        }
+    } else {
+        
+    }
+    [super pushViewController:viewController animated:animated];
+}
+
 -(void)dealloc {
     NSLog(@"%s 已经被销毁！",__func__);
 }
