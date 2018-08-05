@@ -10,7 +10,7 @@
 #import "UIVisualEffectView+Addition.h"
 #import "UIView+Tap.h"
 
-@interface BDFKeyBoardToolView()
+@interface BDFKeyBoardToolView()<YYTextViewDelegate>
 
 @property (nonatomic, weak) UIButton *likeButton;
 @property (nonatomic, weak) UIButton *copButton;
@@ -80,6 +80,18 @@
     return _shareButton;
 }
 
+#pragma mark - YYTextViewDelegate
+- (BOOL)textView:(YYTextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    if ([text isEqualToString:@"\n"]) {
+        
+        if ([self.commentDelegate respondsToSelector:@selector(sendCommentWithText:)]) {
+            [self.commentDelegate sendCommentWithText:textView.text];
+        }
+        return NO;
+    }
+    return YES;
+}
+
 - (YYTextView *)textView {
     
     if (!_textView) {
@@ -89,6 +101,8 @@
         textView.placeholderFont = kFont(16);
         textView.placeholderAttributedText = [[NSAttributedString alloc] initWithString:@"回复XXXX" attributes:@{NSForegroundColorAttributeName : kLightGrayColor}];
         textView.font = kFont(16);
+        textView.returnKeyType = UIReturnKeySend;
+        textView.delegate = self;
         _textView = textView;
         [self.commentButView addSubview:_textView];
     }
@@ -118,5 +132,7 @@
 //    }
 //    return _effectView;
 //}
+
+
 
 @end

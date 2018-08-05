@@ -25,7 +25,7 @@ typedef NS_ENUM(NSUInteger, BDFHomeTableViewCellItemType) {
 
 @protocol BDFHomeHotNewsCellButtonDelegate <NSObject>
 
-/** Cell底部Item */
+/** 底部Item */
 - (void)homeTableViewCell:(BDFHomeHotNewsCell *)cell didClickItemWithType:(BDFHomeTableViewCellItemType)itemType;
 
 /** 查看大图 */
@@ -35,8 +35,9 @@ typedef NS_ENUM(NSUInteger, BDFHomeTableViewCellItemType) {
 
 @interface BDFHomeHotNewsCell : BDFBaseTableViewCell
 
-@property (nonatomic, strong) BDFHomeHotNewsFrame *newsFrame;
 @property (nonatomic,weak) id<BDFHomeHotNewsCellButtonDelegate> buttonDelegate;
+
+@property (nonatomic, strong) BDFHomeHotNewsFrame *newsFrame;
 
 - (void)ups;
 

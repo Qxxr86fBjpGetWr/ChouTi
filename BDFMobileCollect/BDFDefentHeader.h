@@ -21,6 +21,13 @@
 #define BDFLog(...)
 #endif
 
+//判断数组是否为空
+#define NULLArray(array) ((array == nil)||[array isKindOfClass:[NSNull class]]||array.count ==0)
+//判断数组是否为空
+#define NULLDic(dic) ((dic == nil)||[dic isKindOfClass:[NSNull class]]||dic == 0)
+//判断字符串是否为空
+#define NULLString(string) ((string == nil)||[string isKindOfClass:[NSNull class]]||string.length ==0 || [string isEqualToString:@"<null>"] || [string isEqualToString:@"(null)"] || string == NULL || [string isEqual:[NSNull null]] || [string isEqual:NULL])
+
 /** 屏幕尺寸 */
 #define SCREEN_WIDTH    ([[UIScreen mainScreen] bounds].size.width)
 #define SCREEN_HEIGHT   ([[UIScreen mainScreen] bounds].size.height)

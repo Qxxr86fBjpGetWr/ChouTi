@@ -11,5 +11,6 @@ pod 'YYText'
 pod 'YYWebImage'
 pod 'MBProgressHUD'
 pod 'ADTickerLabel'
-pod 'FXBlurView'
+pod 'MWPhotoBrowser'
+pod 'MotionBlur'
 end

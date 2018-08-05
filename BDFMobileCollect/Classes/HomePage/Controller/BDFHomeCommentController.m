@@ -19,8 +19,9 @@
 #import "UIView+Frame.h"
 #import "UIVisualEffectView+Addition.h"
 #import "UIView+Tap.h"
+#import "BDFCommentSendRequest.h"
 
-@interface BDFHomeCommentController ()<BDFHomeHotNewsCellButtonDelegate>
+@interface BDFHomeCommentController ()<BDFHomeHotNewsCellButtonDelegate, BDFCommentTextDelegate>
 
 @property (nonatomic,strong) NSMutableArray <BDFCommentFrameModel *>*commentsArray;
 
@@ -41,6 +42,8 @@
     self.needCellSepLine = NO;
     
     self.blurView.alpha = 0.7;
+    self.view.backgroundColor = kWhiteColor;
+    
     _points = [NSMutableArray array];
     _allPoints = [NSMutableArray array];
     
@@ -133,6 +136,17 @@
     }
 }
 
+#pragma mark - BDFCommentTextDelegate
+- (void)sendCommentWithText:(NSString *)text {
+    
+    /** 怕图钉封号，所以评论暂不实现 */
+    
+    //BDFCommentSendRequest *request = [BDFCommentSendRequest bdf_request];
+    //[request bdf_sendRequestWithComple:^(id response, BOOL success, NSString *message) {
+        
+    //}];
+}
+
 #pragma mark - endEdit
 - (void)endEdit {
     self.toolView.transform = CGAffineTransformIdentity;
@@ -194,6 +208,7 @@
 - (BDFKeyBoardToolView *)toolView {
     if (!_toolView) {
         BDFKeyBoardToolView *view = [[BDFKeyBoardToolView alloc] initWithFrame:CGRectMake(0, SCREEN_HEIGHT, SCREEN_WIDTH, 100)];
+        view.commentDelegate = self;
         [self.view addSubview:view];
         _toolView = view;
     }

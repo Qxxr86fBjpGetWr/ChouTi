@@ -48,8 +48,10 @@
     self.timeLabel.text = [BDFUntil compareCurrentTime:stringTime];
     
     self.upsButton.frame = commentFrameModel.upsButtonF;
+    self.upsButton.x = SCREEN_WIDTH - 100;
     
     self.dowsButton.frame = commentFrameModel.downButtonF;
+    self.dowsButton.x = self.upsButton.right + 30;
     
     self.contentLabel.frame = commentFrameModel.contentF;
     self.contentLabel.text = commentFrameModel.commentModel.content;

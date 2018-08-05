@@ -18,10 +18,17 @@
 #import "BDFHomeHotNewsAddRequest.h"
 #import "BDFHomeCommentController.h"
 #import "BDFDetailWebViewController.h"
+#import <MWPhotoBrowser.h>
+#import "UIVisualEffectView+Addition.h"
+#import "UIView+Tap.h"
+#import "BDFHomeImagePreview.h"
+#import <objc/runtime.h>
+#import "BDFAvatarBrowser.h"
+#import "BDFHomeSearchController.h"
+
+static char const PREVIEWIMAGE;
 
 @interface BDFHomePageViewController ()<BDFHomeHotNewsCellButtonDelegate>
-
-//@property (nonatomic, strong)BDFHomeHotNewsModel *hotNewsModel;
 
 @property (nonatomic, strong) NSMutableArray *hotNewsFrameArray;
 
@@ -41,14 +48,25 @@
 
 - (void)setNav {
     UIButton *leftButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
+    [leftButton addTarget:self action:@selector(searchItemAction) forControlEvents:UIControlEventTouchUpInside];
     [leftButton setImage:[UIImage imageNamed:@"nav_search"] forState:UIControlStateNormal];
     UIBarButtonItem *leftBarItem = [[UIBarButtonItem alloc] initWithCustomView:leftButton];
     [self setNavLeftItem:leftBarItem];
     
     UIButton *rightButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
+    [rightButton addTarget:self action:@selector(publishItemAction) forControlEvents:UIControlEventTouchUpInside];
     [rightButton setImage:[UIImage imageNamed:@"nav_pub"] forState:UIControlStateNormal];
     UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] initWithCustomView:rightButton];
     [self setNavRightItem:rightBarItem];
+}
+
+- (void)searchItemAction {
+    BDFHomeSearchController *vc = [[BDFHomeSearchController alloc] init];
+    [self pushVc:vc];
+}
+
+- (void)publishItemAction {
+    
 }
 
 - (void)loadData {
@@ -195,6 +213,12 @@
 
 -(void)homeTableViewCell:(BDFHomeHotNewsCell *)cell didClickImageView:(BDFBaseImageView *)image currentIndex:(NSInteger)currentIndex urls:(NSArray<NSURL *> *)urls {
     
+    objc_setAssociatedObject(self, &PREVIEWIMAGE, image, OBJC_ASSOCIATION_RETAIN);
+    
+    [UIView animateWithDuration:0.5 animations:^{
+        
+        [BDFAvatarBrowser showImage:image];
+    }];
 }
 
 #pragma mark scrollViewDidScroll

@@ -9,8 +9,14 @@
 #import <UIKit/UIKit.h>
 #import <YYText.h>
 
+@protocol BDFCommentTextDelegate <NSObject>
+
+- (void)sendCommentWithText:(NSString *)text;
+
+@end
+
 @interface BDFKeyBoardToolView : UIView
 
 @property (nonatomic, weak) YYTextView *textView;
-
+@property (nonatomic, weak) id <BDFCommentTextDelegate> commentDelegate;
 @end
