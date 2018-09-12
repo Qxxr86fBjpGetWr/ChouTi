@@ -14,6 +14,7 @@
 #import "UIView+Tap.h"
 #import "UIView+Frame.h"
 #import <ADTickerLabel.h>
+#import "NSString+Html.h"
 
 @interface BDFHomeHotNewsCell()
 
@@ -46,7 +47,7 @@
 
 @implementation BDFHomeHotNewsCell
 
--(void)setNewsFrame:(BDFHomeHotNewsFrame *)newsFrame {
+- (void)setNewsFrame:(BDFHomeHotNewsFrame *)newsFrame {
     if (!newsFrame) {
         return;
     }
@@ -54,6 +55,15 @@
     self.hotNewsModel = newsFrame.hotNewsModel;
     
     self.titleLabel.frame = newsFrame.contentF;
+//    NSMutableAttributedString *attTitle = [NSString attributeStringByHtmlString:self.hotNewsModel.title].mutableCopy;
+//    [attTitle addAttribute:NSFontAttributeName value:kFont(16)
+//                     range:NSMakeRange(0, attTitle.length)];
+//    [attTitle addAttribute:NSKernAttributeName value:@1
+//                     range:NSMakeRange(0, attTitle.length)];
+//    NSMutableParagraphStyle *paragraph = [[NSMutableParagraphStyle alloc] init];
+//    paragraph.lineSpacing = 5;
+//    [attTitle addAttribute:NSParagraphStyleAttributeName value:paragraph
+//                     range:NSMakeRange(0, attTitle.length)];
     self.titleLabel.text = self.hotNewsModel.title;
     
     self.mainImageView.frame = newsFrame.mainImageF;

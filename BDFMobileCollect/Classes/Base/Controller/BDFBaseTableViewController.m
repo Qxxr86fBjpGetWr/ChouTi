@@ -265,7 +265,7 @@ const char BDFBaseTableVcNavLeftItemHandleKey;
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
-    self.tableView.frame = self.view.bounds;
+    //self.tableView.frame = self.view.bounds;
     [self.view sendSubviewToBack:self.tableView];
 }
 

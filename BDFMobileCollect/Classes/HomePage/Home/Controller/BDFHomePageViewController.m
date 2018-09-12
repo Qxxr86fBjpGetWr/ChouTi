@@ -25,13 +25,14 @@
 #import <objc/runtime.h>
 #import "BDFAvatarBrowser.h"
 #import "BDFHomeSearchController.h"
+#import "BDFCustomCommonEmptyView.h"
 
 static char const PREVIEWIMAGE;
 
 @interface BDFHomePageViewController ()<BDFHomeHotNewsCellButtonDelegate>
 
 @property (nonatomic, strong) NSMutableArray *hotNewsFrameArray;
-
+@property (nonatomic, weak) BDFCustomCommonEmptyView *emptyView;
 @end
 
 @implementation BDFHomePageViewController
@@ -41,6 +42,7 @@ static char const PREVIEWIMAGE;
     self.needCellSepLine = NO;
     self.view.backgroundColor = [UIColor whiteColor];
     self.refreshType = BDFBaseTableVcRefreshTypeRefreshAndLoadMore;
+    self.emptyView.hidden = NO;
     
     [self setNav];
     [self loadData];
@@ -76,6 +78,7 @@ static char const PREVIEWIMAGE;
     BDFHomePageHotNewsRequest *request = [BDFHomePageHotNewsRequest bdf_requestWithUrl:BDFHOMEPAGEHOTNNEWS];
     request.brush = @"0";
     [request bdf_sendRequestWithComple:^(id response, BOOL success, NSString *message) {
+        self.emptyView.hidden = !NULLDic(response);
         BDFHomeHotNewsModel *hotNewsModel = [BDFHomeHotNewsModel modelWithDictionary:response];
         for (BDFHomeHotNewsModelLink *obj in hotNewsModel.links) {
             BDFHomeHotNewsFrame *newsFrame = [[BDFHomeHotNewsFrame alloc] init];
@@ -134,7 +137,7 @@ static char const PREVIEWIMAGE;
     return cell;
 }
 
--(void)bdf_didSelectCellAtIndexPath:(NSIndexPath *)indexPath cell:(BDFBaseTableViewCell *)cell {
+- (void)bdf_didSelectCellAtIndexPath:(NSIndexPath *)indexPath cell:(BDFBaseTableViewCell *)cell {
     BDFHomeHotNewsFrame *frame = self.hotNewsFrameArray[indexPath.row];
     BDFDetailWebViewController *vc = [[BDFDetailWebViewController alloc] initWithUrl:frame.hotNewsModel.url];
     [self.navigationController pushViewController:vc animated:YES];
@@ -152,7 +155,6 @@ static char const PREVIEWIMAGE;
 }
 
 #pragma mark - BDFHomeHotNewsCellButtonDelegate
-
 -(void)homeTableViewCell:(BDFHomeHotNewsCell *)cell didClickItemWithType:(BDFHomeTableViewCellItemType)itemType {
     
     /** 需要登录 */
@@ -233,5 +235,15 @@ static char const PREVIEWIMAGE;
     }
     return _hotNewsFrameArray;
 }
+
+- (BDFCustomCommonEmptyView *)emptyView {
+    if (!_emptyView) {
+        BDFCustomCommonEmptyView *empty = [[BDFCustomCommonEmptyView alloc] initWithTitle:@"" secondTitle:@"年轻人等等就出来了" iconname:@"naodai"];
+        [self.view addSubview:empty];
+        _emptyView = empty;
+    }
+    return _emptyView;
+}
+
 
 @end

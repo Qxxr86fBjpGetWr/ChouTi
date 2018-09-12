@@ -12,14 +12,24 @@
 #import "BDFSearchSuggestRequest.h"
 #import "BDFSearchSuggestModel.h"
 #import "UIView+Tap.h"
+#import "BDFCustomSliderViewController.h"
+#import "BDFCustomSliderHeaderView.h"
+#import "BDFSearchPublishViewController.h"
+#import "BDFSearchUsersViewController.h"
 
-@interface BDFHomeSearchController ()<UITextFieldDelegate>
+@interface BDFHomeSearchController ()<UITextFieldDelegate, BDFCustomSlideViewControllerDelegate, BDFCustomSlideViewControllerDataSource>
 
 @property (nonatomic, strong) BDFHomeSearchTextField *searchTextField;
 
 @property (nonatomic, strong) BDFCustomCommonEmptyView *emptyView;
 
 @property (nonatomic, strong) BDFSearchSuggestModel *model;
+
+@property (nonatomic, strong) BDFCustomSliderViewController *sliderVc;
+
+@property (nonatomic, strong) BDFCustomSliderHeaderView *optionalView;
+
+@property (nonatomic, copy) NSString *searchWord;
 
 @end
 
@@ -29,16 +39,16 @@
     [super viewDidLoad];
     
     self.tableView.hidden = YES;
+    
     WeakSelf(weakSelf);
-    [self.view setTapActionWithBlock:^{
-        [weakSelf.searchTextField endEditing:YES];
-    }];
+//    [self.view setTapActionWithBlock:^{
+//        [weakSelf.searchTextField endEditing:YES];
+//    }];
     
     self.navigationItem.leftBarButtonItem =  [[UIBarButtonItem alloc] initWithCustomView: self.searchTextField];
     [self bdf_setUpNavRightItemTitle:@"取消" handle:^(NSString *rightItemTitle) {
         [weakSelf pop];
     }];
-    
     [self.emptyView showInView:self.view];
 }
 
@@ -55,16 +65,31 @@
         }else {
             self.model = nil;
             [self.searchTextField endEditing:YES];
+            [self removeChildVc:self.sliderVc];
+            [self.optionalView removeFromSuperview];
+            self.sliderVc = nil;
+            self.optionalView = nil;
         }
         
         self.emptyView.hidden = _model;
         self.tableView.hidden = !self.emptyView.hidden;
         [self.tableView reloadData];
+        
     }];
 }
 
+#pragma mark - TextFieldDelegate
 - (void)textFieldDidChange:(UITextField *)textField {
     [self suggestLoadDataWithKeyWord:textField.text];
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if (NULLString(textField.text)) {
+        return NO;
+    }
+    self.searchWord = textField.text;
+    
+    return YES;
 }
 
 - (NSInteger)bdf_numberOfSections {
@@ -78,7 +103,7 @@
 - (BDFBaseTableViewCell *)bdf_cellAtIndexPath:(NSIndexPath *)indexPath {
     
     BDFBaseTableViewCell *cell = [BDFBaseTableViewCell cellWithTableView:self.tableView];
-     BDFSearchSuggestModelObjectResult *resultModel = self.model.object.resultList[indexPath.row];
+    BDFSearchSuggestModelObjectResult *resultModel = self.model.object.resultList[indexPath.row];
     cell.textLabel.text = resultModel.text;
     
     return cell;
@@ -86,6 +111,11 @@
 
 - (void)bdf_didSelectCellAtIndexPath:(NSIndexPath *)indexPath cell:(BDFBaseTableViewCell *)cell {
     [self.searchTextField endEditing:YES];
+    
+    [self creatSearchDataViews];
+    
+    BDFSearchSuggestModelObjectResult *resultModel = self.model.object.resultList[indexPath.row];
+    self.searchWord = resultModel.text;
     
     /**
     搜索/发布 全部时间 全部分类 全部热度
@@ -111,6 +141,44 @@
     return 50;
 }
 
+#pragma mark - BDFCustomSlideViewControllerDelegate
+
+#pragma mark - BDFCustomSlideViewControllerDataSource
+- (NSInteger)numberOfChildViewControllersInSlideViewController:(BDFCustomSliderViewController *)slideViewController {
+    return 2;
+}
+
+- (UIViewController *)slideViewController:(BDFCustomSliderViewController *)slideViewController viewControllerAtIndex:(NSInteger)index {
+    
+    BDFBaseTableViewController *vc = [[BDFBaseTableViewController alloc] init];
+    if (index == 0) {
+        vc = [[BDFSearchPublishViewController alloc] initWithSearchWord:self.searchWord];
+    }else if (index == 1) {
+        vc = [[BDFSearchUsersViewController alloc] init];
+    }
+    return vc;
+}
+
+- (void)customSlideViewController:(BDFCustomSliderHeaderView *)slideViewController slideOffset:(CGPoint)slideOffset {
+    self.optionalView.contentOffset = slideOffset;
+}
+
+- (void)customSlideViewController:(BDFCustomSliderViewController *)slideViewController slideIndex:(NSInteger)slideIndex {
+    
+}
+
+- (void)creatSearchDataViews {
+    
+    WeakSelf(weakSelf);
+    self.optionalView.titles = @[@"发布", @"用户"];
+    self.optionalView.homeHeaderOptionalViewItemClickHandle = ^(BDFCustomSliderHeaderView *optialView, NSString *title, NSInteger currentIndex) {
+        weakSelf.sliderVc.selectIndex = currentIndex;
+    };
+    self.sliderVc.scrollEnabled = YES;
+    [self.sliderVc reloadData];
+}
+
+#pragma mark - lazy load
 - (BDFHomeSearchTextField *)searchTextField {
     if (!_searchTextField) {
         _searchTextField = [[BDFHomeSearchTextField alloc] initWithFrame:CGRectMake(0, 0, 300, 40)
@@ -134,6 +202,30 @@
         _emptyView = empty;
     }
     return _emptyView;
+}
+
+- (BDFCustomSliderViewController *)sliderVc {
+    if (!_sliderVc) {
+        BDFCustomSliderViewController *vc = [[BDFCustomSliderViewController alloc] init];
+        [self addChildVc:vc];
+        [self.view addSubview:vc.view];
+        vc.view.frame = CGRectMake(0, 44, SCREEN_WIDTH, SCREEN_HEIGHT - 44);
+        vc.dataSource = self;
+        vc.delgate = self;
+        _sliderVc = vc;
+    }
+    return _sliderVc;
+}
+
+- (BDFCustomSliderHeaderView *)optionalView {
+    if (!_optionalView) {
+        BDFCustomSliderHeaderView *optional = [[BDFCustomSliderHeaderView alloc] init];
+        optional.frame = CGRectMake(0, 0, SCREEN_WIDTH, 44);
+        [self.view addSubview:optional];
+        _optionalView = optional;
+        optional.backgroundColor = kWhiteColor;
+    }
+    return _optionalView;
 }
 
 @end

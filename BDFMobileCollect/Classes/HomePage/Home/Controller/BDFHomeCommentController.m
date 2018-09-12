@@ -83,6 +83,7 @@
                 NSString *deep = model.comments.depthMap[[NSString stringWithFormat:@"%ld",obj.id]];
                 commentFraModel.deep = [deep integerValue];
                 commentFraModel.commentModel = obj;
+                commentFraModel.indexModel = model;
                 [self.commentsArray addObject:commentFraModel];
             }
             [self bdf_reloadData];

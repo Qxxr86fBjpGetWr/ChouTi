@@ -24,19 +24,29 @@
 
 @property (nonatomic, weak) UILabel *contentLabel;
 
+@property (nonatomic, strong) CAShapeLayer *leftLine;//头像左侧的线条
+
+@property (nonatomic, weak) CAShapeLayer *bottomLine;//头像下方的线条
+
+@property (nonatomic, strong) UIBezierPath *movePath;
+
 @end
 
 @implementation BDFHomeCommentsCell
 
--(void)setCommentFrameModel:(BDFCommentFrameModel *)commentFrameModel {
+- (void)setCommentFrameModel:(BDFCommentFrameModel *)commentFrameModel {
     
     if (!commentFrameModel) {
         return;
     }
     _commentFrameModel = commentFrameModel;
-    
     BDFHomeCommenntUserModel *user = commentFrameModel.commentModel.user;
-    
+
+    /*
+    if (self.commentFrameModel.deep > 0) {
+        [self setNeedsDisplayWithCGRect:commentFrameModel.userImageF];
+    }
+    */
     self.userImageView.frame = commentFrameModel.userImageF;
     [self.userImageView setImageWithString:user.img_url placeHolder:[UIImage imageNamed:@"tou_25"]];
     
@@ -49,12 +59,20 @@
     
     self.upsButton.frame = commentFrameModel.upsButtonF;
     self.upsButton.x = SCREEN_WIDTH - 100;
+    NSInteger ups = commentFrameModel.commentModel.ups;
+    if (ups > 0) {
+        [self.upsButton setTitle:[NSString stringWithFormat:@"%ld",ups] forState:UIControlStateNormal];
+    }
     
     self.dowsButton.frame = commentFrameModel.downButtonF;
     self.dowsButton.x = self.upsButton.right + 30;
+    NSInteger downs = commentFrameModel.commentModel.downs;
+    if (ups > 0) {
+        [self.dowsButton setTitle:[NSString stringWithFormat:@"%ld",downs] forState:UIControlStateNormal];
+    }
     
     self.contentLabel.frame = commentFrameModel.contentF;
-    self.contentLabel.text = commentFrameModel.commentModel.content;
+    self.contentLabel.text = [NSString stringWithFormat:@"%@ %ld",commentFrameModel.commentModel.content, commentFrameModel.commentModel.id];
 }
 
 - (void)awakeFromNib {
@@ -68,6 +86,23 @@
 
 - (void)allKindOfButtonAction:(id)sender {
     
+}
+
+- (void)setNeedsDisplayWithCGRect:(CGRect)rect {
+    [self.movePath removeAllPoints];
+    self.movePath = [UIBezierPath bezierPath];
+    [self.movePath moveToPoint:CGPointMake(rect.origin.x - 10, 0)];
+    [self.movePath addLineToPoint:CGPointMake(rect.origin.x - 10, rect.origin.y + rect.size.width / 2)];
+    [self.movePath addLineToPoint:CGPointMake(rect.origin.x, rect.origin.y + rect.size.width / 2)];
+    
+    [self.leftLine removeFromSuperlayer];
+    self.leftLine = [CAShapeLayer layer];
+    self.leftLine.frame = CGRectMake(0, 0, rect.origin.x, self.frame.size.height);
+    self.leftLine.lineWidth = 1.0f;
+    self.leftLine.strokeColor = kBlackColor.CGColor;
+    self.leftLine.path = self.movePath.CGPath;
+    self.leftLine.fillColor  = nil;
+    [self.contentView.layer addSublayer:self.leftLine];
 }
 
 - (BDFBaseImageView *)userImageView {

@@ -32,5 +32,8 @@ NSString *const BDFHOMEPAGEHOTNNEWSCOMMENT = @"https://api.new.chouti.com/commen
 NSString *const BDFHOMEPAGEHOTNNEWSCOMMENTINDEX = @"https://api.new.chouti.com/comments_tree.json";
 /** 首页搜索建议 */
 NSString *const BDFHOMESEARCHSUGGEST = @"https://api.chouti.com/search/suggest.json";
+/** 首页搜索发布结果 */
+NSString *const BDFHOMESEARCHPUBLISH = @"https://api.chouti.com/search/show.json";
+
 
 @end
