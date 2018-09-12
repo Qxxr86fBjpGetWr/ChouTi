@@ -22,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-        self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     
     //设置登录view
     BDFLogAndRegView *loginView = [[BDFLogAndRegView alloc] initWithFrame:self.view.frame];
@@ -46,7 +46,7 @@
     }];
 }
 
--(void)clickLoginButtonComplie {
+- (void)clickLoginButtonComplie {
     [self login];
     [self presentVc:[[BDFMainTabBarController alloc] init]];
 }

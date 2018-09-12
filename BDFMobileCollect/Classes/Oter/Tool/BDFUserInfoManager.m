@@ -46,8 +46,11 @@ static BDFUserInfoManager *_userInfoManager = nil;
     return [[NSUserDefaults standardUserDefaults] boolForKey:BDFHasLoginFlag];
 }
 
--(void)didLoginOut {
-    
+- (void)didLoginOut {
+
+    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:BDFHasLoginFlag];
+    BDFLoginSucModel *sucModel = [BDFUserInfoManager sharedManager].currentUserInfo;
+    [sucModel remove];
 }
 
 @end

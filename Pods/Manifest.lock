@@ -30,6 +30,7 @@ PODS:
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
+  - SVProgressHUD (2.2.5)
   - YYCache (1.0.4)
   - YYImage (1.0.4):
     - YYImage/Core (= 1.0.4)
@@ -49,6 +50,7 @@ DEPENDENCIES:
   - MotionBlur
   - MWPhotoBrowser
   - SDWebImage
+  - SVProgressHUD
   - YYText
   - YYWebImage
 
@@ -65,6 +67,7 @@ SPEC REPOS:
     - MWPhotoBrowser
     - PSTCollectionView
     - SDWebImage
+    - SVProgressHUD
     - YYCache
     - YYImage
     - YYText
@@ -82,11 +85,12 @@ SPEC CHECKSUMS:
   MWPhotoBrowser: 7087b4c828297ef34ff2b0892c8e967034a86842
   PSTCollectionView: 6749df92885353521f55279a7ce2b293762e2be4
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: 3ecba9086fefce2080e5dab42ef8413820fc9bb9
+PODFILE CHECKSUM: dfdc1ae17a92d72b69796b4fd3e526de21dfa5a1
 
 COCOAPODS: 1.5.3

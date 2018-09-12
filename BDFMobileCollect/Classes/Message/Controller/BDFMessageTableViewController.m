@@ -10,51 +10,43 @@
 #import "BDFMessageTableViewCell.h"
 #import "BDFMessageRequest.h"
 #import "BDFMessageModel.h"
+#import "BDFUserInfoManager.h"
+#import "BDFMessageWithOutLoginView.h"
+#import <SVProgressHUD.h>
 
 @interface BDFMessageTableViewController ()
+
+@property (nonatomic, strong) BDFMessageWithOutLoginView *loginView;
 
 @end
 
 @implementation BDFMessageTableViewController
 
--(NSMutableArray *)dataArray {
-    if (!_dataArray) {
-        _dataArray = [NSMutableArray array];
-    }
-    return _dataArray;
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self configUI];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self setController];
-    
-    [self loadData];
 }
 
--(void)setController {
+- (void)setController {
     self.needCellSepLine = NO;
     self.refreshType = BDFBaseTableVcRefreshTypeRefreshAndLoadMore;
 }
 
--(void)loadData {
-    BDFMessageRequest *request = [BDFMessageRequest bdf_request];
-    request.bdf_url = BDFBINGIMAGEAPI;
-    request.p = 1;
-    request.size = 10;
-    
-    [request bdf_sendRequestWithComple:^(id response, BOOL success, NSString *message) {
-        if (success) {
-            BDFMessageModel *model = [BDFMessageModel modelWithDictionary:response];
-            BDFLog(@"status:%@-----data%@",model.status,model.data);
-            
-            BDFMessageDataModel *dataModel = model.data[0];
-            BDFLog(@"%ld%@",dataModel.ID,dataModel.desc);
-            
-            [self.dataArray addObjectsFromArray:model.data];
-            [self bdf_reloadData];
-        }
-    }];
+- (void)configUI {
+    [BDFUserInfoManager sharedManager].didLoginOut;
+    BOOL isLogin = [BDFUserInfoManager sharedManager].isLogin;
+    self.loginView.hidden = isLogin;
+    self.tableView.hidden = !isLogin;
+    if (isLogin) {
+        [self.loginView removeFromSuperview];
+        self.loginView = nil;
+    }
 }
 
 -(NSInteger)bdf_numberOfSections {
@@ -78,6 +70,18 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+- (BDFMessageWithOutLoginView *)loginView {
+    if (!_loginView) {
+        _loginView = [[BDFMessageWithOutLoginView alloc] initWithFrame:self.view.bounds];
+        _loginView.origin = CGPointZero;
+        _loginView.loginBlock = ^{
+            [SVProgressHUD showSuccessWithStatus:@"稍等~"];
+        };
+        [self.view addSubview:_loginView];
+    }
+    return _loginView;
 }
 
 @end

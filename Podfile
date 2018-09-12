@@ -13,4 +13,5 @@ pod 'MBProgressHUD'
 pod 'ADTickerLabel'
 pod 'MWPhotoBrowser'
 pod 'MotionBlur'
+pod 'SVProgressHUD'
 end

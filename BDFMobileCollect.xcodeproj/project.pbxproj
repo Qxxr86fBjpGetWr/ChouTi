@@ -89,6 +89,7 @@
 		ABCD18631ED7C323005AA34E /* NSDictionary+Property.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCD18621ED7C323005AA34E /* NSDictionary+Property.m */; };
 		ABCD18691ED7C898005AA34E /* BDFBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCD18681ED7C898005AA34E /* BDFBaseModel.m */; };
 		ABCD186C1ED7D61B005AA34E /* BDFMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCD186B1ED7D61B005AA34E /* BDFMessageModel.m */; };
+		ABE40A8C2148FF2600977F08 /* BDFMessageWithOutLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE40A8B2148FF2600977F08 /* BDFMessageWithOutLoginView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -275,6 +276,8 @@
 		ABCD18681ED7C898005AA34E /* BDFBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFBaseModel.m; sourceTree = "<group>"; };
 		ABCD186A1ED7D61B005AA34E /* BDFMessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFMessageModel.h; sourceTree = "<group>"; };
 		ABCD186B1ED7D61B005AA34E /* BDFMessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFMessageModel.m; sourceTree = "<group>"; };
+		ABE40A8A2148FF2600977F08 /* BDFMessageWithOutLoginView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFMessageWithOutLoginView.h; sourceTree = "<group>"; };
+		ABE40A8B2148FF2600977F08 /* BDFMessageWithOutLoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFMessageWithOutLoginView.m; sourceTree = "<group>"; };
 		DC14892B4664F90CCBCB7B63 /* libPods-BDFMobileCollect.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BDFMobileCollect.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FACCC4627B427A4C6348F8D6 /* Pods-BDFMobileCollect.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BDFMobileCollect.release.xcconfig"; path = "Pods/Target Support Files/Pods-BDFMobileCollect/Pods-BDFMobileCollect.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -906,6 +909,8 @@
 			children = (
 				ABCD18581ED6E0B8005AA34E /* BDFMessageTableViewCell.h */,
 				ABCD18591ED6E0B8005AA34E /* BDFMessageTableViewCell.m */,
+				ABE40A8A2148FF2600977F08 /* BDFMessageWithOutLoginView.h */,
+				ABE40A8B2148FF2600977F08 /* BDFMessageWithOutLoginView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1088,11 +1093,13 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-BDFMobileCollect/Pods-BDFMobileCollect-resources.sh",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 				"${PODS_ROOT}/MWPhotoBrowser/MWPhotoBrowser/MWPhotoBrowser.bundle",
+				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MWPhotoBrowser.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1124,6 +1131,7 @@
 				AB791323211BE145007AA283 /* BDFSearchPublishListModel.m in Sources */,
 				AB25D2421E2361F10093BE75 /* BDFBaseTableViewCell.m in Sources */,
 				ABA52FC521181DB40043B398 /* BDFHomePageViewController.m in Sources */,
+				ABE40A8C2148FF2600977F08 /* BDFMessageWithOutLoginView.m in Sources */,
 				ABA52FFA211840240043B398 /* BDFCustomSliderHeaderItem.m in Sources */,
 				ABA52FCC21181DB40043B398 /* BDFHomeCommenntsModel.m in Sources */,
 				ABA52FC621181DB40043B398 /* BDFDetailWebViewController.m in Sources */,
@@ -1322,6 +1330,7 @@
 			baseConfigurationReference = 6215059ED4D6E0E8BB292FEA /* Pods-BDFMobileCollect.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
@@ -1343,6 +1352,7 @@
 			baseConfigurationReference = FACCC4627B427A4C6348F8D6 /* Pods-BDFMobileCollect.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
