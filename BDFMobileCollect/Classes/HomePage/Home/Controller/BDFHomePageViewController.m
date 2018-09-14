@@ -81,6 +81,7 @@ static char const PREVIEWIMAGE;
         self.emptyView.hidden = !NULLDic(response);
         BDFHomeHotNewsModel *hotNewsModel = [BDFHomeHotNewsModel modelWithDictionary:response];
         for (BDFHomeHotNewsModelLink *obj in hotNewsModel.links) {
+            BDFLog(@"comment_count = %ld %@", obj.comments_count, obj.title);
             BDFHomeHotNewsFrame *newsFrame = [[BDFHomeHotNewsFrame alloc] init];
             newsFrame.hotNewsModel = obj;
             [self.hotNewsFrameArray addObject:newsFrame];

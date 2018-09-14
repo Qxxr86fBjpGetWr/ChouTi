@@ -90,6 +90,8 @@
 		ABCD18691ED7C898005AA34E /* BDFBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCD18681ED7C898005AA34E /* BDFBaseModel.m */; };
 		ABCD186C1ED7D61B005AA34E /* BDFMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCD186B1ED7D61B005AA34E /* BDFMessageModel.m */; };
 		ABE40A8C2148FF2600977F08 /* BDFMessageWithOutLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE40A8B2148FF2600977F08 /* BDFMessageWithOutLoginView.m */; };
+		ABE40ACD214A418600977F08 /* BDFCommentTreeItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE40ACC214A418600977F08 /* BDFCommentTreeItemModel.m */; };
+		ABE40AD0214A5ED200977F08 /* BDFCommentTreeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE40ACF214A5ED200977F08 /* BDFCommentTreeManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -278,6 +280,10 @@
 		ABCD186B1ED7D61B005AA34E /* BDFMessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFMessageModel.m; sourceTree = "<group>"; };
 		ABE40A8A2148FF2600977F08 /* BDFMessageWithOutLoginView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFMessageWithOutLoginView.h; sourceTree = "<group>"; };
 		ABE40A8B2148FF2600977F08 /* BDFMessageWithOutLoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFMessageWithOutLoginView.m; sourceTree = "<group>"; };
+		ABE40ACB214A418600977F08 /* BDFCommentTreeItemModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFCommentTreeItemModel.h; sourceTree = "<group>"; };
+		ABE40ACC214A418600977F08 /* BDFCommentTreeItemModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFCommentTreeItemModel.m; sourceTree = "<group>"; };
+		ABE40ACE214A5ED200977F08 /* BDFCommentTreeManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFCommentTreeManager.h; sourceTree = "<group>"; };
+		ABE40ACF214A5ED200977F08 /* BDFCommentTreeManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFCommentTreeManager.m; sourceTree = "<group>"; };
 		DC14892B4664F90CCBCB7B63 /* libPods-BDFMobileCollect.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BDFMobileCollect.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FACCC4627B427A4C6348F8D6 /* Pods-BDFMobileCollect.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BDFMobileCollect.release.xcconfig"; path = "Pods/Target Support Files/Pods-BDFMobileCollect/Pods-BDFMobileCollect.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -641,6 +647,10 @@
 				ABA52FA121181DB40043B398 /* BDFHomeCommenntsModel.m */,
 				ABA52F9E21181DB40043B398 /* BDFCommentFrameModel.h */,
 				ABA52FA621181DB40043B398 /* BDFCommentFrameModel.m */,
+				ABE40ACB214A418600977F08 /* BDFCommentTreeItemModel.h */,
+				ABE40ACC214A418600977F08 /* BDFCommentTreeItemModel.m */,
+				ABE40ACE214A5ED200977F08 /* BDFCommentTreeManager.h */,
+				ABE40ACF214A5ED200977F08 /* BDFCommentTreeManager.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1153,9 +1163,11 @@
 				ABA52FD021181DB40043B398 /* BDFHomeCommentsCell.m in Sources */,
 				AB1E5DC720886507002E48B5 /* BDFLoginSucModel.m in Sources */,
 				ABA52FEE21181FEF0043B398 /* BDFSearchSuggestRequest.m in Sources */,
+				ABE40ACD214A418600977F08 /* BDFCommentTreeItemModel.m in Sources */,
 				AB42A25021196A2C00916087 /* BDFSearchSuggestCell.m in Sources */,
 				ABCD18411ED6D0CF005AA34E /* UIButton+Addition.m in Sources */,
 				ABA52FD821181DB40043B398 /* BDFHomeNewsMoreRequest.m in Sources */,
+				ABE40AD0214A5ED200977F08 /* BDFCommentTreeManager.m in Sources */,
 				AB2802D41E1F81E00006A13E /* main.m in Sources */,
 				ABA52FCA21181DB40043B398 /* BDFHomeCommPoint.m in Sources */,
 				ABA5300321185FFE0043B398 /* BDFSearchPublishToolView.m in Sources */,

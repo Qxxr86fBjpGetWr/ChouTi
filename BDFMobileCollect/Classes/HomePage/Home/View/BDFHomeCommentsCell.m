@@ -10,6 +10,21 @@
 #import "BDFBaseImageView.h"
 #import "BDFUntil.h"
 
+@interface BDFCommentLayer : CALayer
+@end
+
+@implementation BDFCommentLayer
+
+- (instancetype)init
+{
+    if (self = [super init]) {
+        self.backgroundColor = [UIColor colorWithRed:0.88 green:0.88 blue:0.88 alpha:1.00].CGColor;
+    }
+    return self;
+}
+
+@end
+
 @interface BDFHomeCommentsCell ()
 
 @property (nonatomic, weak) BDFBaseImageView *userImageView;
@@ -24,15 +39,76 @@
 
 @property (nonatomic, weak) UILabel *contentLabel;
 
-@property (nonatomic, strong) CAShapeLayer *leftLine;//头像左侧的线条
-
-@property (nonatomic, weak) CAShapeLayer *bottomLine;//头像下方的线条
-
-@property (nonatomic, strong) UIBezierPath *movePath;
+@property (nonatomic, assign) CGFloat indenWidth; // 缩进宽度，默认为7.f
+@property (nonatomic, strong) CALayer *horizontalLine;
+@property (nonatomic, strong) CALayer *verticalLine;
+@property (nonatomic, strong) CALayer *separator;
+@property (nonatomic, assign) BOOL showStructureLine; // 用于标记是否显示结构线
 
 @end
 
 @implementation BDFHomeCommentsCell
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+    }
+    return self;
+}
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+    _indenWidth = 30.f;
+    CGFloat x = 0.f;
+    CGFloat radius = 15.f;
+    CGFloat maxWidth  = self.contentView.frame.size.width;
+    CGFloat maxHeight = self.contentView.frame.size.height;
+    
+    // 禁用隐式动画
+    [CATransaction begin];
+    [CATransaction setDisableActions:YES];
+    
+    if (_treeItem.level == 0) {
+        x = 20.f;
+        _horizontalLine.frame = CGRectZero;
+    } else {
+        x = (_treeItem.level) * (self.indenWidth) + 20;
+        _horizontalLine.frame = CGRectMake(x - radius, 27.5f, 15.f, 1.f);
+    }
+    
+    CGFloat verticalLineY = 16.f + radius * 2;
+    CGFloat verticalLineWidth = (_treeItem.childItems.count == 0 || !_treeItem.isExpand) ? 0.f : 1.0f;
+    
+    _verticalLine.frame = CGRectMake(x + radius, verticalLineY, verticalLineWidth, maxHeight - verticalLineY);
+    
+    CGFloat containerHeight = (_showStructureLine) ? maxHeight : (maxHeight - 0.5f);
+    //_containerView.frame = CGRectMake(x, 0.f, maxWidth - x, containerHeight);
+    _separator.frame = CGRectMake(x, containerHeight, maxWidth - x, 0.5f);
+    
+    [CATransaction commit];
+}
+
+#pragma mark -- Setter && Getter
+- (void)setShowStructureLine:(BOOL)showStructureLine
+{
+    _showStructureLine = showStructureLine;
+    
+    if (showStructureLine) {
+        [_separator removeFromSuperlayer];
+        _separator = nil;
+        [self.contentView.layer addSublayer:self.horizontalLine];
+        [self.contentView.layer addSublayer:self.verticalLine];
+    } else {
+        [_horizontalLine removeFromSuperlayer];
+        [_verticalLine removeFromSuperlayer];
+        _horizontalLine = nil;
+        _verticalLine = nil;
+        [self.contentView.layer addSublayer:self.separator];
+    }
+    [self drawStructureLine];
+}
 
 - (void)setCommentFrameModel:(BDFCommentFrameModel *)commentFrameModel {
     
@@ -42,12 +118,8 @@
     _commentFrameModel = commentFrameModel;
     BDFHomeCommenntUserModel *user = commentFrameModel.commentModel.user;
 
-    /*
-    if (self.commentFrameModel.deep > 0) {
-        [self setNeedsDisplayWithCGRect:commentFrameModel.userImageF];
-    }
-    */
     self.userImageView.frame = commentFrameModel.userImageF;
+    self.userImageView.layerCornerRadius = CGRectGetWidth(commentFrameModel.userImageF) / 2.;
     [self.userImageView setImageWithString:user.img_url placeHolder:[UIImage imageNamed:@"tou_25"]];
     
     self.userNameLabel.frame = commentFrameModel.userNameF;
@@ -58,21 +130,81 @@
     self.timeLabel.text = [BDFUntil compareCurrentTime:stringTime];
     
     self.upsButton.frame = commentFrameModel.upsButtonF;
-    self.upsButton.x = SCREEN_WIDTH - 100;
     NSInteger ups = commentFrameModel.commentModel.ups;
     if (ups > 0) {
         [self.upsButton setTitle:[NSString stringWithFormat:@"%ld",ups] forState:UIControlStateNormal];
     }
     
     self.dowsButton.frame = commentFrameModel.downButtonF;
-    self.dowsButton.x = self.upsButton.right + 30;
     NSInteger downs = commentFrameModel.commentModel.downs;
-    if (ups > 0) {
+    if (downs > 0) {
         [self.dowsButton setTitle:[NSString stringWithFormat:@"%ld",downs] forState:UIControlStateNormal];
     }
-    
     self.contentLabel.frame = commentFrameModel.contentF;
     self.contentLabel.text = [NSString stringWithFormat:@"%@ %ld",commentFrameModel.commentModel.content, commentFrameModel.commentModel.id];
+}
+
+- (void)removeAllLineLayers
+{
+    NSArray<CALayer *> *subLayers = self.contentView.layer.sublayers;
+    NSArray<CALayer *> *removedLayers = [subLayers filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id  _Nullable evaluatedObject, NSDictionary<NSString *,id> * _Nullable bindings) {
+        return [evaluatedObject isMemberOfClass:[BDFCommentLayer class]];
+    }]];
+    [removedLayers enumerateObjectsUsingBlock:^(CALayer * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [obj removeFromSuperlayer];
+    }];
+}
+
+- (void)parentItem:(BDFCommentTreeItemModel *)pItem mutArray:(NSMutableArray<NSNumber *> *)mutArray
+{
+    if (pItem.level == 0) return;
+    
+    if (pItem.parentItem.childItems.lastObject == pItem) {
+        [mutArray addObject:@(pItem.level - 1)];
+    }
+    [self parentItem:pItem.parentItem mutArray:mutArray];
+}
+
+- (void)drawStructureLine
+{
+    // 移除之前的结构线
+    [self removeAllLineLayers];
+    
+    if (!_showStructureLine) return;
+    
+    // 由 treeItem 的父节点递归到根节点，寻找当前等级下的叶节点并保存
+    NSMutableArray<NSNumber *> *mutArray = @[].mutableCopy;
+    [self parentItem:_treeItem.parentItem mutArray:mutArray];
+    
+    CGFloat lineHeight = CGRectGetMaxY(self.commentFrameModel.contentF);
+    
+    for (NSInteger i = 0; i < _treeItem.level; i++) {
+        // 若 treeItem 父节点为叶节点，则该 level 下不绘制结构线
+        if ([mutArray containsObject:@(i)]) continue;
+        
+        CGFloat lineX = 0.f;
+        
+        if (i == 0) {
+            lineX = 35.5f;
+        } else if (i == 1) {
+            lineX = 65.f;
+        } else {
+            lineX = 65.f + (i - 1) * (self.indenWidth);
+        }
+        // 判断 treeItem 是否为叶节点
+        NSArray<BDFCommentTreeItemModel *> *items = _treeItem.parentItem.childItems;
+        if ((items.lastObject == _treeItem) && i == _treeItem.level - 1) {
+            lineHeight = 28.f;
+        }
+        // 绘制结构线
+        BDFCommentLayer *otherLine = [BDFCommentLayer layer];
+        otherLine.frame = CGRectMake(lineX, 0.f, 1.0, lineHeight);
+        [self.contentView.layer addSublayer:otherLine];
+    }
+}
+
+- (void)allKindOfButtonAction:(id)sender {
+    
 }
 
 - (void)awakeFromNib {
@@ -84,25 +216,12 @@
 
 }
 
-- (void)allKindOfButtonAction:(id)sender {
+- (void)setTreeItem:(BDFCommentTreeItemModel *)treeItem {
+    _treeItem = treeItem;
     
-}
-
-- (void)setNeedsDisplayWithCGRect:(CGRect)rect {
-    [self.movePath removeAllPoints];
-    self.movePath = [UIBezierPath bezierPath];
-    [self.movePath moveToPoint:CGPointMake(rect.origin.x - 10, 0)];
-    [self.movePath addLineToPoint:CGPointMake(rect.origin.x - 10, rect.origin.y + rect.size.width / 2)];
-    [self.movePath addLineToPoint:CGPointMake(rect.origin.x, rect.origin.y + rect.size.width / 2)];
+    self.commentFrameModel = treeItem.data;
     
-    [self.leftLine removeFromSuperlayer];
-    self.leftLine = [CAShapeLayer layer];
-    self.leftLine.frame = CGRectMake(0, 0, rect.origin.x, self.frame.size.height);
-    self.leftLine.lineWidth = 1.0f;
-    self.leftLine.strokeColor = kBlackColor.CGColor;
-    self.leftLine.path = self.movePath.CGPath;
-    self.leftLine.fillColor  = nil;
-    [self.contentView.layer addSublayer:self.leftLine];
+    [self drawStructureLine];
 }
 
 - (BDFBaseImageView *)userImageView {
@@ -176,6 +295,33 @@
         _contentLabel = label;
     }
     return _contentLabel;
+}
+
+- (CALayer *)horizontalLine {
+    if (_horizontalLine == nil) {
+        
+        _horizontalLine = [CALayer layer];
+        _horizontalLine.backgroundColor = [UIColor colorWithRed:0.88 green:0.88 blue:0.88 alpha:1.00].CGColor;
+    }
+    return _horizontalLine;
+}
+
+- (CALayer *)verticalLine {
+    if (_verticalLine == nil) {
+        
+        _verticalLine = [CALayer layer];
+        _verticalLine.backgroundColor = [UIColor colorWithRed:0.88 green:0.88 blue:0.88 alpha:1.00].CGColor;
+    }
+    return _verticalLine;
+}
+
+- (CALayer *)separator {
+    if (_separator == nil) {
+        
+        _separator = [CALayer layer];
+        _separator.backgroundColor = [UIColor lightGrayColor].CGColor;
+    }
+    return _separator;
 }
 
 @end

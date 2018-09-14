@@ -20,6 +20,8 @@
 #import "UIVisualEffectView+Addition.h"
 #import "UIView+Tap.h"
 #import "BDFCommentSendRequest.h"
+#import "BDFCommentTreeItemModel.h"
+#import "BDFCommentTreeManager.h"
 
 @interface BDFHomeCommentController ()<BDFHomeHotNewsCellButtonDelegate, BDFCommentTextDelegate>
 
@@ -29,9 +31,13 @@
 
 @property (strong,nonatomic) NSMutableArray *allPoints;
 
+@property (nonatomic, strong) NSMutableArray *treeItems;
+
 @property (nonatomic, weak) BDFKeyBoardToolView *toolView;
 
 @property (nonatomic, weak) UIVisualEffectView *blurView;
+
+@property (nonatomic, strong) BDFCommentTreeManager *manager;
 
 @end
 
@@ -44,8 +50,9 @@
     self.blurView.alpha = 0.7;
     self.view.backgroundColor = kWhiteColor;
     
-    _points = [NSMutableArray array];
-    _allPoints = [NSMutableArray array];
+    _points = @[].mutableCopy;
+    _allPoints = @[].mutableCopy;
+    _treeItems = @[].mutableCopy;
     
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -60,20 +67,18 @@
     BDFHomeHotNewsUpsRequest *indexRequest = [BDFHomeHotNewsUpsRequest bdf_requestWithUrl:BDFHOMEPAGEHOTNNEWSCOMMENTINDEX isPost:YES];
     indexRequest.link_id = _cellFrame.hotNewsModel.id;
     [indexRequest bdf_sendRequestWithComple:^(id response, BOOL success, NSString *message) {
-        
+
         BDFHomeCommentIndexModel *model =
         [BDFHomeCommentIndexModel modelWithDictionary:response];
         
         NSString *tempString = [model.comments.ids componentsJoinedByString:@","];
-        NSArray *tempArray = [tempString componentsSeparatedByString:@","];
-        self.allPoints = [NSMutableArray arrayWithArray:tempArray];
-        
-        [self removeChildComment:tempArray.mutableCopy tree:model.comments.depthMap];
-        
-        [self allCommentsSortWithArray:self.allPoints treeMap:model.comments.treeMap idString:nil];
+//        NSArray *tempArray = [tempString componentsSeparatedByString:@","];
+//        self.allPoints = [NSMutableArray arrayWithArray:tempArray];
+//        [self removeChildComment:tempArray.mutableCopy tree:model.comments.depthMap];
+//        [self allCommentsSortWithArray:self.allPoints treeMap:model.comments.treeMap idString:nil];
         
         BDFHomeHotNewsAddRequest *commentsRequest = [BDFHomeHotNewsAddRequest bdf_requestWithUrl:BDFHOMEPAGEHOTNNEWSCOMMENT isPost:NO];
-        commentsRequest.ids = [self.points componentsJoinedByString:@","];
+        commentsRequest.ids = tempString;
         [commentsRequest bdf_sendRequestWithComple:^(id response, BOOL success, NSString *message) {
             BDFHomeCommenntsModel *commentModel = [[BDFHomeCommenntsModel alloc] init];
             commentModel.commentsArray = [BDFHomeCommenntModel modelArrayWithDictArray:response];
@@ -85,6 +90,20 @@
                 commentFraModel.commentModel = obj;
                 commentFraModel.indexModel = model;
                 [self.commentsArray addObject:commentFraModel];
+                
+                NSArray <NSString *>*keys = model.comments.treeMap.allKeys;
+                NSString *pid = nil;
+                for (int i = 0; i < keys.count; i ++) {
+                    NSArray *keyIds = model.comments.treeMap[keys[i]];
+                    if ([keyIds containsObject:[NSNumber numberWithInteger:obj.id]]) {
+                        pid = keys[i];
+                        break;
+                    }else {
+                        pid = nil;
+                    }
+                }
+                BDFCommentTreeItemModel *treeModel = [[BDFCommentTreeItemModel alloc] initWithID:[NSString stringWithFormat:@"%ld",obj.id] parentID:pid orderNo:nil level:commentFraModel.deep itemHeight:CGRectGetMaxY(commentFraModel.contentF) data:commentFraModel];
+                [_treeItems addObject:treeModel];
             }
             [self bdf_reloadData];
         }];
@@ -113,34 +132,34 @@
     [self endEdit];
 }
 
-- (void)removeChildComment:(NSMutableArray *)allComment tree:(NSDictionary *)treeMap {
-    for (int i = 0; i < allComment.count; i ++) {
-        NSString *string = [NSString stringWithFormat:@"%@",allComment[i]];
-        NSInteger deep = [treeMap[string] integerValue];
-        if (deep != 0) {
-            [self.allPoints removeObject:string];
-        }
-    }
-}
+//- (void)removeChildComment:(NSMutableArray *)allComment tree:(NSDictionary *)treeMap {
+//    for (int i = 0; i < allComment.count; i ++) {
+//        NSString *string = [NSString stringWithFormat:@"%@",allComment[i]];
+//        NSInteger deep = [treeMap[string] integerValue];
+//        if (deep != 0) {
+//            [self.allPoints removeObject:string];
+//        }
+//    }
+//}
 
-- (void)allCommentsSortWithArray:(NSArray *)parentArray treeMap:(NSDictionary *)map idString:(NSString *)string{
-    
-    for (int i = 0; i < parentArray.count; i ++) {
-        NSString *obj = [NSString stringWithFormat:@"%@",parentArray[i]];
-        [self.points addObject:obj];
-        
-        NSArray *childArray = map[obj];
-        if (!childArray) {
-            continue;
-        }
-        [self allCommentsSortWithArray:childArray treeMap:map idString:nil];
-    }
-}
+//- (void)allCommentsSortWithArray:(NSArray *)parentArray treeMap:(NSDictionary *)map idString:(NSString *)string{
+//
+//    for (int i = 0; i < parentArray.count; i ++) {
+//        NSString *obj = [NSString stringWithFormat:@"%@",parentArray[i]];
+//        [self.points addObject:obj];
+//
+//        NSArray *childArray = map[obj];
+//        if (!childArray) {
+//            continue;
+//        }
+//        [self allCommentsSortWithArray:childArray treeMap:map idString:nil];
+//    }
+//}
 
 #pragma mark - BDFCommentTextDelegate
 - (void)sendCommentWithText:(NSString *)text {
     
-    /** 怕图钉封号，所以评论暂不实现 */
+    /** 避免封号，评论暂不实现 */
     
     //BDFCommentSendRequest *request = [BDFCommentSendRequest bdf_request];
     //[request bdf_sendRequestWithComple:^(id response, BOOL success, NSString *message) {
@@ -167,19 +186,36 @@
     if (section == 0) {
         return 1;
     }else {
-        return self.commentsArray.count;
+        return self.manager.showItems.count;
     }
 }
 
+- (void)bdf_reloadData {
+    [super bdf_reloadData];
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        self.manager = [[BDFCommentTreeManager alloc] initWithItems:self.treeItems andExpandLevel:10];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+    });
+}
+
 -(BDFBaseTableViewCell *)bdf_cellAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (indexPath.row > self.manager.showItems.count) {
+        return nil;
+    }
     
     if (indexPath.section == 0) {
          BDFBaseTableViewCell *cell = [BDFHomeHotNewsCell cellWithTableView:self.tableView];
         [cell setValue:_cellFrame forKey:@"newsFrame"];
         return cell;
     }else {
+        BDFCommentTreeItemModel *item = self.manager.showItems[indexPath.row];
         BDFHomeCommentsCell *cell = [BDFHomeCommentsCell cellWithTableView:self.tableView];
-        cell.commentFrameModel = self.commentsArray[indexPath.row];
+//        cell.commentFrameModel = self.commentsArray[indexPath.row];
+        cell.treeItem = item;
+        [cell setValue:@(1) forKey:@"showStructureLine"];
         return cell;
     }
 }
@@ -194,8 +230,9 @@
     if (indexPath.section == 0) {
         return CGRectGetMaxY(self.cellFrame.shareButtomF);
     }else {
-         BDFCommentFrameModel *commentFrameModel = self.commentsArray[indexPath.row];
-        return CGRectGetMaxY(commentFrameModel.contentF);
+//         BDFCommentFrameModel *commentFrameModel = self.commentsArray[indexPath.row];
+//        return CGRectGetMaxY(commentFrameModel.contentF);
+         return self.manager.showItems[indexPath.row].itemHeight;
     }
 }
 

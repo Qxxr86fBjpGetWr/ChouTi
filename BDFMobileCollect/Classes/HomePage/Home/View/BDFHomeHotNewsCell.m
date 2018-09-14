@@ -71,10 +71,12 @@
     [self.mainImageView setImageWithString:self.hotNewsModel.img_url placeHolder:[UIImage imageNamed:@"chou_chou"]];
     
     self.upsButton.frame = newsFrame.upsButtonF;
+    self.upsTickerLabel.text = [NSString stringWithFormat:@"%ld",_hotNewsModel.ups];
     [self.upsTickerLabel sizeToFit];
     self.upsButton.selected = self.hotNewsModel.has_uped;
     
     self.commentButton.frame = newsFrame.commentButtonF;
+    self.commentTickerLabel.text = [NSString stringWithFormat:@"%ld",_hotNewsModel.comments_count];
     [self.commentTickerLabel sizeToFit];
     
     self.likeButton.frame = newsFrame.likeButtonF;
@@ -286,7 +288,6 @@
         ADTickerLabel *label = [[ADTickerLabel alloc] initWithFrame:CGRectMake(_newsFrame.upsButtonF.size.width - 30, (_newsFrame.upsButtonF.size.height - 16)/2., 30, 16)];
         label.font = [UIFont boldSystemFontOfSize:14.];
         label.textColor = kGrayColor;
-        label.text = [NSString stringWithFormat:@"%ld",_hotNewsModel.ups];
         [self.upsButton addSubview:label];
         [self.upsButton bringSubviewToFront:label];
         _upsTickerLabel = label;
@@ -299,7 +300,6 @@
         ADTickerLabel *label = [[ADTickerLabel alloc] initWithFrame:CGRectMake(_newsFrame.commentButtonF.size.width - 30, (_newsFrame.commentButtonF.size.height - 16)/2., 30, 16)];
         label.font = [UIFont boldSystemFontOfSize:14.];
         label.textColor = kGrayColor;
-        label.text = [NSString stringWithFormat:@"%ld",_hotNewsModel.comments_count];
         [self.commentButton addSubview:label];
         [self.commentButton bringSubviewToFront:label];
         _commentTickerLabel = label;

@@ -188,12 +188,12 @@
     self.timeAndModuleF = CGRectMake(CGRectGetMaxX(self.userNameF), CGRectGetMinY(self.userNameF), 150, 20);
     
     CGFloat upsY = CGRectGetMinY(self.userNameF);
-    CGFloat upsW = 30;
+    CGFloat upsW = 50;
     CGFloat upsH = 30;
-    CGFloat upsX = CGRectGetMaxX(self.timeAndModuleF);;
+    CGFloat upsX = SCREEN_WIDTH - 100;
     self.upsButtonF = CGRectMake(upsX, upsY, upsW, upsH);
     
-    self.downButtonF = CGRectMake(CGRectGetMaxX(self.upsButtonF), upsY, 30, 30);
+    self.downButtonF = CGRectMake(CGRectGetMaxX(self.upsButtonF), upsY, 50, 30);
     
     CGFloat contentX = CGRectGetMinX(self.userNameF);
     CGFloat contentY = CGRectGetMaxY(self.userNameF) + 10;
