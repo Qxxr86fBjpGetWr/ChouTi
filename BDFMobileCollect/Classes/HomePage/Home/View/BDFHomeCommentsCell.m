@@ -28,34 +28,24 @@
 @interface BDFHomeCommentsCell ()
 
 @property (nonatomic, weak) BDFBaseImageView *userImageView;
-
 @property (nonatomic, weak) UILabel *userNameLabel;
-
 @property (nonatomic, weak) UILabel *timeLabel;
 /** 顶 */
 @property (nonatomic, weak) UIButton *upsButton;
 /** 踩 */
 @property (nonatomic, weak) UIButton *dowsButton;
-
 @property (nonatomic, weak) UILabel *contentLabel;
-
-@property (nonatomic, assign) CGFloat indenWidth; // 缩进宽度，默认为7.f
+/** 缩进宽度，默认为30 */
+@property (nonatomic, assign) CGFloat indenWidth;
 @property (nonatomic, strong) CALayer *horizontalLine;
 @property (nonatomic, strong) CALayer *verticalLine;
 @property (nonatomic, strong) CALayer *separator;
-@property (nonatomic, assign) BOOL showStructureLine; // 用于标记是否显示结构线
+/** 用于标记是否显示结构线 */
+@property (nonatomic, assign) BOOL showStructureLine;
 
 @end
 
 @implementation BDFHomeCommentsCell
-
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-    }
-    return self;
-}
 
 - (void)layoutSubviews {
     [super layoutSubviews];

@@ -10,6 +10,7 @@
 #import "BDFBaseNavigationController.h"
 #import "BDFHomePageViewController.h"
 #import "BDFMessageTableViewController.h"
+#import "BDFMeViewController.h"
 
 @interface BDFMainTabBarController ()
 
@@ -25,9 +26,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self addChildViewControllerWithClassName:@"BDFHomePageViewController" imageName:@"tab_home" selectName:@"tab_home_pre" title:@""];
-    [self addChildViewControllerWithClassName:@"BDFMessageTableViewController" imageName:@"tab_news" selectName:@"tab_news_pre" title:@""];
-    [self addChildViewControllerWithClassName:@"BDFLogAndRegViewController" imageName:@"tab_my" selectName:@"tab_my_pre" title:@""];
+    [self addChildViewControllerWithClassName:NSStringFromClass([BDFHomePageViewController class]) imageName:@"tab_home" selectName:@"tab_home_pre" title:@""];
+    [self addChildViewControllerWithClassName:NSStringFromClass([BDFMessageTableViewController class]) imageName:@"tab_news" selectName:@"tab_news_pre" title:@""];
+    [self addChildViewControllerWithClassName:NSStringFromClass([BDFMeViewController class]) imageName:@"tab_my" selectName:@"tab_my_pre" title:@""];
 }
 
 -(void)addChildViewControllerWithClassName:(NSString *)className imageName:(NSString *)imageName selectName:(NSString *)selectName title:(NSString *)title {

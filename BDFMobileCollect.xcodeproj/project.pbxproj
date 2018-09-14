@@ -92,6 +92,10 @@
 		ABE40A8C2148FF2600977F08 /* BDFMessageWithOutLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE40A8B2148FF2600977F08 /* BDFMessageWithOutLoginView.m */; };
 		ABE40ACD214A418600977F08 /* BDFCommentTreeItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE40ACC214A418600977F08 /* BDFCommentTreeItemModel.m */; };
 		ABE40AD0214A5ED200977F08 /* BDFCommentTreeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE40ACF214A5ED200977F08 /* BDFCommentTreeManager.m */; };
+		ABE40AD8214B86DB00977F08 /* BDFMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE40AD7214B86DB00977F08 /* BDFMeViewController.m */; };
+		ABE40ADB214B896700977F08 /* BDFMeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE40ADA214B896700977F08 /* BDFMeTableViewCell.m */; };
+		ABE40ADE214B938B00977F08 /* BDFMeDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE40ADD214B938B00977F08 /* BDFMeDataModel.m */; };
+		ABE40AE1214B98EB00977F08 /* BDFMeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE40AE0214B98EB00977F08 /* BDFMeHeaderView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -284,6 +288,14 @@
 		ABE40ACC214A418600977F08 /* BDFCommentTreeItemModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFCommentTreeItemModel.m; sourceTree = "<group>"; };
 		ABE40ACE214A5ED200977F08 /* BDFCommentTreeManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFCommentTreeManager.h; sourceTree = "<group>"; };
 		ABE40ACF214A5ED200977F08 /* BDFCommentTreeManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFCommentTreeManager.m; sourceTree = "<group>"; };
+		ABE40AD6214B86DB00977F08 /* BDFMeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFMeViewController.h; sourceTree = "<group>"; };
+		ABE40AD7214B86DB00977F08 /* BDFMeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFMeViewController.m; sourceTree = "<group>"; };
+		ABE40AD9214B896700977F08 /* BDFMeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFMeTableViewCell.h; sourceTree = "<group>"; };
+		ABE40ADA214B896700977F08 /* BDFMeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFMeTableViewCell.m; sourceTree = "<group>"; };
+		ABE40ADC214B938B00977F08 /* BDFMeDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFMeDataModel.h; sourceTree = "<group>"; };
+		ABE40ADD214B938B00977F08 /* BDFMeDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFMeDataModel.m; sourceTree = "<group>"; };
+		ABE40ADF214B98EB00977F08 /* BDFMeHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFMeHeaderView.h; sourceTree = "<group>"; };
+		ABE40AE0214B98EB00977F08 /* BDFMeHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFMeHeaderView.m; sourceTree = "<group>"; };
 		DC14892B4664F90CCBCB7B63 /* libPods-BDFMobileCollect.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BDFMobileCollect.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FACCC4627B427A4C6348F8D6 /* Pods-BDFMobileCollect.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BDFMobileCollect.release.xcconfig"; path = "Pods/Target Support Files/Pods-BDFMobileCollect/Pods-BDFMobileCollect.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -379,6 +391,7 @@
 		AB2803051E1F83E50006A13E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				ABE40AD1214B86AC00977F08 /* Me */,
 				ABCD184D1ED6D1F1005AA34E /* Message */,
 				ABCD18271ED6D0CF005AA34E /* Oter */,
 				ABCD181F1ED6D0AD005AA34E /* HomePage */,
@@ -925,6 +938,53 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		ABE40AD1214B86AC00977F08 /* Me */ = {
+			isa = PBXGroup;
+			children = (
+				ABE40AD2214B86AC00977F08 /* Controller */,
+				ABE40AD3214B86AC00977F08 /* Model */,
+				ABE40AD4214B86AC00977F08 /* View */,
+				ABE40AD5214B86AC00977F08 /* Request */,
+			);
+			path = Me;
+			sourceTree = "<group>";
+		};
+		ABE40AD2214B86AC00977F08 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				ABE40AD6214B86DB00977F08 /* BDFMeViewController.h */,
+				ABE40AD7214B86DB00977F08 /* BDFMeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		ABE40AD3214B86AC00977F08 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ABE40ADC214B938B00977F08 /* BDFMeDataModel.h */,
+				ABE40ADD214B938B00977F08 /* BDFMeDataModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ABE40AD4214B86AC00977F08 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ABE40AD9214B896700977F08 /* BDFMeTableViewCell.h */,
+				ABE40ADA214B896700977F08 /* BDFMeTableViewCell.m */,
+				ABE40ADF214B98EB00977F08 /* BDFMeHeaderView.h */,
+				ABE40AE0214B98EB00977F08 /* BDFMeHeaderView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ABE40AD5214B86AC00977F08 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
 		DC59F5175C109E40CA4E873E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1193,15 +1253,19 @@
 				ABCD185A1ED6E0B8005AA34E /* BDFMessageTableViewCell.m in Sources */,
 				AB1E5DCA20886632002E48B5 /* BDFUserInfoManager.m in Sources */,
 				ABA52FD221181DB40043B398 /* BDFHomeHotNewsCell.m in Sources */,
+				ABE40AE1214B98EB00977F08 /* BDFMeHeaderView.m in Sources */,
 				ABCD18471ED6D0CF005AA34E /* BDFUntil.m in Sources */,
 				ABA52FDC21181DB40043B398 /* BDFHomePageHotNewsRequest.m in Sources */,
 				ABCD186C1ED7D61B005AA34E /* BDFMessageModel.m in Sources */,
 				ABCD185D1ED7B7D5005AA34E /* BDFMessageRequest.m in Sources */,
+				ABE40AD8214B86DB00977F08 /* BDFMeViewController.m in Sources */,
 				ABA52FC721181DB40043B398 /* BDFHomeCommentController.m in Sources */,
 				ABA52FEB21181FE20043B398 /* BDFSearchSuggestModel.m in Sources */,
 				ABA52FFD21185D880043B398 /* BDFSearchPublishViewController.m in Sources */,
 				AB1E5DD920901828002E48B5 /* BDFRefreshNormalHeader.m in Sources */,
+				ABE40ADE214B938B00977F08 /* BDFMeDataModel.m in Sources */,
 				AB25D2451E2367710093BE75 /* BDFBaseTableView.m in Sources */,
+				ABE40ADB214B896700977F08 /* BDFMeTableViewCell.m in Sources */,
 				ABCD18691ED7C898005AA34E /* BDFBaseModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

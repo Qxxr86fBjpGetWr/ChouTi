@@ -13,6 +13,7 @@
 #import "BDFUserInfoManager.h"
 #import "BDFMessageWithOutLoginView.h"
 #import <SVProgressHUD.h>
+#import "BDFLogAndRegViewController.h"
 
 @interface BDFMessageTableViewController ()
 
@@ -74,10 +75,12 @@
 
 - (BDFMessageWithOutLoginView *)loginView {
     if (!_loginView) {
+        WeakSelf(weakSelf);
         _loginView = [[BDFMessageWithOutLoginView alloc] initWithFrame:self.view.bounds];
         _loginView.origin = CGPointZero;
         _loginView.loginBlock = ^{
-            [SVProgressHUD showSuccessWithStatus:@"稍等~"];
+            //[SVProgressHUD showSuccessWithStatus:@"稍等~"];
+            [weakSelf pushVc:[[BDFLogAndRegViewController alloc]init]];
         };
         [self.view addSubview:_loginView];
     }
