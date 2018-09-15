@@ -12,7 +12,7 @@
 
 @implementation UIVisualEffectView (Addition)
 
--(instancetype)initVisualEffectView {
+- (instancetype)initVisualEffectView {
     
     self = [super init];
     if (self) {

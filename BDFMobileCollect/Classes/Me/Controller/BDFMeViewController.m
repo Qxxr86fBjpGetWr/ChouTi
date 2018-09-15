@@ -10,6 +10,10 @@
 #import "BDFMeTableViewCell.h"
 #import "BDFMeDataModel.h"
 #import "BDFMeHeaderView.h"
+#import "UIVisualEffectView+Addition.h"
+#import "BDFMeRequest.h"
+#import "BDFLoginSucModel.h"
+#import "BDFUserInfoManager.h"
 
 #define TITLE @"meCellTitle"
 #define ICON @"meCellIcon"
@@ -18,6 +22,7 @@
 @property (nonatomic, strong) NSDictionary <NSNumber *, NSArray<NSDictionary *> *> *dateSource;
 
 @property (nonatomic, strong) BDFMeHeaderView *headerView;
+@property (nonatomic, strong) UIVisualEffectView *effectView;
 @end
 
 @implementation BDFMeViewController
@@ -29,7 +34,16 @@
     self.tableView.dataSource = self;
     
     [self.headerView stretchHeaderForTableView:self.tableView withView:self.headerView subViews:nil];
+    [self loadData];
     [self creatMeData];
+}
+
+-(void)loadData {
+    BDFMeRequest *request = [BDFMeRequest bdf_requestWithUrl:BDFMEDATA];
+    [request bdf_sendRequestWithComple:^(id response, BOOL success, NSString *message) {
+        BDFLoginSucModel *sucModel = [BDFLoginSucModel modelWithDictionary:response];
+        [[BDFUserInfoManager sharedManager] resetUserInfoWithUserInfo:sucModel];
+    }];
 }
 
 - (void)creatMeData {
@@ -84,6 +98,14 @@
         _headerView = [[BDFMeHeaderView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 100)];
     }
     return _headerView;
+}
+
+- (UIVisualEffectView *)effectView {
+    if (!_effectView) {
+        _effectView = [[UIVisualEffectView alloc] initVisualEffectView];
+        _effectView.size = CGSizeMake(SCREEN_WIDTH, 100);
+    }
+    return _effectView;
 }
 
 - (void)didReceiveMemoryWarning {

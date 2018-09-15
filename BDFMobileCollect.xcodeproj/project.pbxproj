@@ -96,6 +96,7 @@
 		ABE40ADB214B896700977F08 /* BDFMeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE40ADA214B896700977F08 /* BDFMeTableViewCell.m */; };
 		ABE40ADE214B938B00977F08 /* BDFMeDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE40ADD214B938B00977F08 /* BDFMeDataModel.m */; };
 		ABE40AE1214B98EB00977F08 /* BDFMeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE40AE0214B98EB00977F08 /* BDFMeHeaderView.m */; };
+		ABE40AE4214D17FB00977F08 /* BDFMeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE40AE3214D17FB00977F08 /* BDFMeRequest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -296,6 +297,8 @@
 		ABE40ADD214B938B00977F08 /* BDFMeDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFMeDataModel.m; sourceTree = "<group>"; };
 		ABE40ADF214B98EB00977F08 /* BDFMeHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFMeHeaderView.h; sourceTree = "<group>"; };
 		ABE40AE0214B98EB00977F08 /* BDFMeHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFMeHeaderView.m; sourceTree = "<group>"; };
+		ABE40AE2214D17FB00977F08 /* BDFMeRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFMeRequest.h; sourceTree = "<group>"; };
+		ABE40AE3214D17FB00977F08 /* BDFMeRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFMeRequest.m; sourceTree = "<group>"; };
 		DC14892B4664F90CCBCB7B63 /* libPods-BDFMobileCollect.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BDFMobileCollect.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FACCC4627B427A4C6348F8D6 /* Pods-BDFMobileCollect.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BDFMobileCollect.release.xcconfig"; path = "Pods/Target Support Files/Pods-BDFMobileCollect/Pods-BDFMobileCollect.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -981,6 +984,8 @@
 		ABE40AD5214B86AC00977F08 /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				ABE40AE2214D17FB00977F08 /* BDFMeRequest.h */,
+				ABE40AE3214D17FB00977F08 /* BDFMeRequest.m */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -1237,6 +1242,7 @@
 				ABCD181E1ED6C4F7005AA34E /* BDFBaseImageView.m in Sources */,
 				AB3F102E21241B5100D283CC /* BDFSearchPublishMenuView.m in Sources */,
 				AB778F6C2116F5E800A81791 /* BDFCustomCommonEmptyView.m in Sources */,
+				ABE40AE4214D17FB00977F08 /* BDFMeRequest.m in Sources */,
 				AB3F0FE4211F2A7A00D283CC /* BDFSearchPublishToolButton.m in Sources */,
 				AB1E5DD620888639002E48B5 /* NSString+Size.m in Sources */,
 				ABA52FD721181DB40043B398 /* BDFHomeHotNewsAddRequest.m in Sources */,
