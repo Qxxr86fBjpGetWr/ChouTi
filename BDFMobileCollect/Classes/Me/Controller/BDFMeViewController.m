@@ -10,7 +10,6 @@
 #import "BDFMeTableViewCell.h"
 #import "BDFMeDataModel.h"
 #import "BDFMeHeaderView.h"
-#import "UIVisualEffectView+Addition.h"
 #import "BDFMeRequest.h"
 #import "BDFLoginSucModel.h"
 #import "BDFUserInfoManager.h"
@@ -22,7 +21,7 @@
 @property (nonatomic, strong) NSDictionary <NSNumber *, NSArray<NSDictionary *> *> *dateSource;
 
 @property (nonatomic, strong) BDFMeHeaderView *headerView;
-@property (nonatomic, strong) UIVisualEffectView *effectView;
+
 @end
 
 @implementation BDFMeViewController
@@ -30,6 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.backgroundColor = kColorFromRGB(0xf5f5f5);
+    self.tableView.separatorColor = kColorFromRGB(0xededed);
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
@@ -95,17 +95,9 @@
 
 - (BDFMeHeaderView *)headerView {
     if (!_headerView) {
-        _headerView = [[BDFMeHeaderView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 100)];
+        _headerView = [[BDFMeHeaderView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 200)];
     }
     return _headerView;
-}
-
-- (UIVisualEffectView *)effectView {
-    if (!_effectView) {
-        _effectView = [[UIVisualEffectView alloc] initVisualEffectView];
-        _effectView.size = CGSizeMake(SCREEN_WIDTH, 100);
-    }
-    return _effectView;
 }
 
 - (void)didReceiveMemoryWarning {
