@@ -10,7 +10,8 @@
 
 @protocol BDFLogAndRegViewDelegate <NSObject>
 
--(void)clickLoginButtonComplie;
+- (void)clickLoginButtonComplete;
+- (void)clickCloseButtonComplte;
 
 @end
 

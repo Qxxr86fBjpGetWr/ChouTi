@@ -46,9 +46,14 @@
     }];
 }
 
-- (void)clickLoginButtonComplie {
+- (void)clickLoginButtonComplete {
     [self login];
-    [self presentVc:[[BDFMainTabBarController alloc] init]];
+    //[self presentVc:[[BDFMainTabBarController alloc] init]];
+    [self dismiss];
+}
+
+- (void)clickCloseButtonComplte {
+    [self dismiss];
 }
 
 - (void)didReceiveMemoryWarning {

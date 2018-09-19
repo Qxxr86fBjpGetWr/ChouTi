@@ -79,8 +79,7 @@
         _loginView = [[BDFMessageWithOutLoginView alloc] initWithFrame:self.view.bounds];
         _loginView.origin = CGPointZero;
         _loginView.loginBlock = ^{
-            //[SVProgressHUD showSuccessWithStatus:@"稍等~"];
-            [weakSelf pushVc:[[BDFLogAndRegViewController alloc]init]];
+            [weakSelf presentVc:[[BDFLogAndRegViewController alloc]init]];
         };
         [self.view addSubview:_loginView];
     }
