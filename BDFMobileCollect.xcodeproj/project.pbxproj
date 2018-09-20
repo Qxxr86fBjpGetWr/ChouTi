@@ -39,6 +39,10 @@
 		AB791323211BE145007AA283 /* BDFSearchPublishListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB791322211BE145007AA283 /* BDFSearchPublishListModel.m */; };
 		AB791329211C48DE007AA283 /* NSString+Html.m in Sources */ = {isa = PBXBuildFile; fileRef = AB791328211C48DE007AA283 /* NSString+Html.m */; };
 		AB7C1A5C21524A43005D63FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB7C1A5B21524A43005D63FA /* Assets.xcassets */; };
+		AB7C1A6121538B5C005D63FA /* BDFHomeSliderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB7C1A5F21538B5C005D63FA /* BDFHomeSliderViewController.m */; };
+		AB7C1A6421538C2E005D63FA /* BDFHomeHeaderOptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB7C1A6321538C2E005D63FA /* BDFHomeHeaderOptionView.m */; };
+		AB7C1A6721538C59005D63FA /* BDFHomeHeaderOptionItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB7C1A6521538C59005D63FA /* BDFHomeHeaderOptionItemView.m */; };
+		AB7C1A6A215392C8005D63FA /* BDFNotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB7C1A69215392C8005D63FA /* BDFNotificationViewController.m */; };
 		AB8DFB1E2094436C00B30A63 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8DFB1C2094436C00B30A63 /* UIView+Frame.m */; };
 		ABA52FC521181DB40043B398 /* BDFHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABA52F9221181DB40043B398 /* BDFHomePageViewController.m */; };
 		ABA52FC621181DB40043B398 /* BDFDetailWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABA52F9321181DB40043B398 /* BDFDetailWebViewController.m */; };
@@ -183,6 +187,14 @@
 		AB791327211C48DE007AA283 /* NSString+Html.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Html.h"; sourceTree = "<group>"; };
 		AB791328211C48DE007AA283 /* NSString+Html.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Html.m"; sourceTree = "<group>"; };
 		AB7C1A5B21524A43005D63FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AB7C1A5F21538B5C005D63FA /* BDFHomeSliderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFHomeSliderViewController.m; sourceTree = "<group>"; };
+		AB7C1A6021538B5C005D63FA /* BDFHomeSliderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFHomeSliderViewController.h; sourceTree = "<group>"; };
+		AB7C1A6221538C2E005D63FA /* BDFHomeHeaderOptionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFHomeHeaderOptionView.h; sourceTree = "<group>"; };
+		AB7C1A6321538C2E005D63FA /* BDFHomeHeaderOptionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFHomeHeaderOptionView.m; sourceTree = "<group>"; };
+		AB7C1A6521538C59005D63FA /* BDFHomeHeaderOptionItemView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFHomeHeaderOptionItemView.m; sourceTree = "<group>"; };
+		AB7C1A6621538C59005D63FA /* BDFHomeHeaderOptionItemView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFHomeHeaderOptionItemView.h; sourceTree = "<group>"; };
+		AB7C1A68215392C8005D63FA /* BDFNotificationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFNotificationViewController.h; sourceTree = "<group>"; };
+		AB7C1A69215392C8005D63FA /* BDFNotificationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFNotificationViewController.m; sourceTree = "<group>"; };
 		AB8DFB1C2094436C00B30A63 /* UIView+Frame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		AB8DFB1D2094436C00B30A63 /* UIView+Frame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
 		ABA52F9121181DB40043B398 /* BDFHomeCommentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFHomeCommentController.h; sourceTree = "<group>"; };
@@ -908,6 +920,10 @@
 			children = (
 				ABCD18521ED6D22B005AA34E /* BDFMessageTableViewController.h */,
 				ABCD18531ED6D22B005AA34E /* BDFMessageTableViewController.m */,
+				AB7C1A68215392C8005D63FA /* BDFNotificationViewController.h */,
+				AB7C1A69215392C8005D63FA /* BDFNotificationViewController.m */,
+				AB7C1A6021538B5C005D63FA /* BDFHomeSliderViewController.h */,
+				AB7C1A5F21538B5C005D63FA /* BDFHomeSliderViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -933,6 +949,10 @@
 		ABCD18511ED6D1F1005AA34E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AB7C1A6221538C2E005D63FA /* BDFHomeHeaderOptionView.h */,
+				AB7C1A6321538C2E005D63FA /* BDFHomeHeaderOptionView.m */,
+				AB7C1A6621538C59005D63FA /* BDFHomeHeaderOptionItemView.h */,
+				AB7C1A6521538C59005D63FA /* BDFHomeHeaderOptionItemView.m */,
 				ABCD18581ED6E0B8005AA34E /* BDFMessageTableViewCell.h */,
 				ABCD18591ED6E0B8005AA34E /* BDFMessageTableViewCell.m */,
 				ABE40A8A2148FF2600977F08 /* BDFMessageWithOutLoginView.h */,
@@ -1189,6 +1209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABA52FCE21181DB40043B398 /* BDFHomeHotNewsFrame.m in Sources */,
+				AB7C1A6421538C2E005D63FA /* BDFHomeHeaderOptionView.m in Sources */,
 				AB2803231E1F87620006A13E /* BDFBaseViewController.m in Sources */,
 				ABA52FDB21181DB40043B398 /* BDFHomeHotNewsUpsRequest.m in Sources */,
 				ABCD18601ED7BAD2005AA34E /* BDFCommentAPIConstant.m in Sources */,
@@ -1204,6 +1225,7 @@
 				AB28030E1E1F83E50006A13E /* AppDelegate.m in Sources */,
 				AB6FFE381E247CE000837AB6 /* BDFRequestManager.m in Sources */,
 				AB791323211BE145007AA283 /* BDFSearchPublishListModel.m in Sources */,
+				AB7C1A6721538C59005D63FA /* BDFHomeHeaderOptionItemView.m in Sources */,
 				AB25D2421E2361F10093BE75 /* BDFBaseTableViewCell.m in Sources */,
 				ABA52FC521181DB40043B398 /* BDFHomePageViewController.m in Sources */,
 				ABE40A8C2148FF2600977F08 /* BDFMessageWithOutLoginView.m in Sources */,
@@ -1222,9 +1244,11 @@
 				ABA52FC921181DB40043B398 /* BDFHomeHotNewsModel.m in Sources */,
 				AB25D2371E2331980093BE75 /* BDFLogAndRegView.m in Sources */,
 				ABA52FDD21181DB40043B398 /* BDFCommentSendRequest.m in Sources */,
+				AB7C1A6A215392C8005D63FA /* BDFNotificationViewController.m in Sources */,
 				ABA52FD921181DB40043B398 /* BDFTestRequest.m in Sources */,
 				AB25D2331E2327BF0093BE75 /* BDFBaseNavigationController.m in Sources */,
 				ABB3FFE420F4B238000472D3 /* UIVisualEffectView+Addition.m in Sources */,
+				AB7C1A6121538B5C005D63FA /* BDFHomeSliderViewController.m in Sources */,
 				ABA52FD021181DB40043B398 /* BDFHomeCommentsCell.m in Sources */,
 				AB1E5DC720886507002E48B5 /* BDFLoginSucModel.m in Sources */,
 				ABA52FEE21181FEF0043B398 /* BDFSearchSuggestRequest.m in Sources */,
