@@ -150,6 +150,15 @@
     return strTime;
 }
 
++ (NSString *)registerYearsWithTime:(NSInteger)time {
+    NSDate *detailDate = [NSDate dateWithTimeIntervalSince1970:time];
+    NSDate *currentDate = [NSDate date];
+    
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSDateComponents *comp = [calendar components:NSCalendarUnitYear fromDate:detailDate toDate:currentDate options:NSCalendarWrapComponents];
+    return [NSString stringWithFormat:@"%ld年", comp.year];
+}
+
 -(void)refreshCompleWithOffset:(UIScrollView *)scrollView {
     scrollView.mj_offsetY = 100;
 }

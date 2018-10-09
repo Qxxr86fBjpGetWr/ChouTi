@@ -44,6 +44,11 @@ typedef void(^XRRefreshAndLoadMoreHandle)(void);
 /**
  时间戳——字符串时间
  */
-+(NSString *)cStringFromTimestamp:(NSString *)timestamp;
++ (NSString *)cStringFromTimestamp:(NSString *)timestamp;
+
+/**
+注册年限
+ */
++ (NSString *)registerYearsWithTime:(NSInteger)time;
 
 @end

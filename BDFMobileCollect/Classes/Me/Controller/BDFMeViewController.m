@@ -95,7 +95,7 @@
 
 - (BDFMeHeaderView *)headerView {
     if (!_headerView) {
-        _headerView = [[BDFMeHeaderView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 200)];
+        _headerView = [[BDFMeHeaderView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 250)];
     }
     return _headerView;
 }

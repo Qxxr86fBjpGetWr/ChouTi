@@ -10,6 +10,8 @@
 #import "BDFBaseImageView.h"
 #import "BDFUserInfoManager.h"
 #import "UIVisualEffectView+Addition.h"
+#import "BDFUntil.h"
+#import "NSString+Size.h"
 
 @interface BDFMeHeaderView (){
     CGRect initialFrame;
@@ -18,7 +20,13 @@
 
 @property (nonatomic, strong) UIButton *loginButton;
 @property (nonatomic, strong) UIButton *registerButton;
+@property (nonatomic, strong) UILabel *nameLabel;
 @property (nonatomic, strong) BDFBaseImageView *headerImageView;
+@property (nonatomic, strong) BDFBaseImageView *backImageView;
+@property (nonatomic, strong) BDFBaseImageView *sexImageView;
+@property (nonatomic, strong) UIButton *locationButton;
+@property (nonatomic, strong) UIButton *editButton;
+@property (nonatomic, strong) UILabel *yearsLabel;
 @property (nonatomic, strong) UIVisualEffectView *effectView;
 
 @end
@@ -28,8 +36,15 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    self.headerImageView.x = (_view.size.width - 50) / 2.;
-    self.headerImageView.y = (_view.size.height - 50) / 2.;
+    BDFLoginSucModel *model = [BDFUserInfoManager sharedManager].currentUserInfo;
+    self.headerImageView.x = (_view.width - 100) / 2.;
+    self.headerImageView.y = (_view.height - 100) / 2.;
+    
+    self.nameLabel.y = self.headerImageView.y - self.nameLabel.height;
+    self.nameLabel.x = (_view.width - self.nameLabel.width) / 2.;;
+    CGFloat nameLabelW = [model.nick widthWithFont:self.nameLabel.font constrainedToHeight:self.nameLabel.height];
+    self.nameLabel.width = nameLabelW;
+    self.nameLabel.text = model.nick;
     
     self.loginButton.x = self.headerImageView.x - _loginButton.width - 20;
     self.loginButton.y = (_view.size.height - 30) / 2.;
@@ -37,12 +52,24 @@
     self.registerButton.x = self.headerImageView.right + 20;
     self.registerButton.y = (_view.size.height - 30) / 2.;
     
+    NSString *yearString = [BDFUntil registerYearsWithTime:model.createTime / 1000000];
+    self.yearsLabel.text = yearString;
+    
+    self.sexImageView.frame = CGRectMake(self.headerImageView.x, self.headerImageView.bottom + 20, 20, 20);
+    self.sexImageView.image = model.sex ? [UIImage imageNamed:@"boy"] : [UIImage imageNamed:@"girl"];
+    
+    self.locationButton.frame = CGRectMake(self.sexImageView.right + 20, self.sexImageView.y, 100, self.sexImageView.height);
+    [self.locationButton setTitle:model.cityName forState:UIControlStateNormal];
+    
+//    CGFloat sexImageX = (SCREEN_WIDTH - (self.locationButton.right - self.sexImageView.x)) / 2;
+//    self.sexImageView.x = sexImageX;
+    
+    self.editButton.frame = CGRectMake(0, self.sexImageView.bottom, 100, 30);
+    self.editButton.x = (_view.width - _editButton.width) / 2;
+    
     dispatch_async(dispatch_get_main_queue(), ^{
-        BDFLoginSucModel *model = [BDFUserInfoManager sharedManager].currentUserInfo;
-        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:model.img_url]];
-        UIImage *image = [UIImage imageWithData:data];
-        self.layer.contents = (id)image.CGImage;
-        [self.headerImageView setImageWithString:model.img_url];
+        [self.backImageView setImageWithString:model.img_url placeHolder:[UIImage imageNamed:@"tou_70"]];
+        [self.headerImageView setImageWithString:model.img_url placeHolder:[UIImage imageNamed:@"tou_25"]];
     });
 }
 
@@ -59,11 +86,12 @@
     self.effectView.height = _view.height;
     
     [_view addSubview:_headerImageView];
-    [_view bringSubviewToFront:_headerImageView];
     [_view addSubview:_loginButton];
-    [_view bringSubviewToFront:_loginButton];
     [_view addSubview:_registerButton];
-    [_view bringSubviewToFront:_loginButton];
+    [_view addSubview:_sexImageView];
+    [_view addSubview:_locationButton];
+    [_view addSubview:_editButton];
+    [_view addSubview:_nameLabel];
     
     [_tableView addSubview:_view];
     [_tableView addSubview:subview];
@@ -84,21 +112,24 @@
         initialFrame.size.height = defaultViewHeight + offsetY;
         
         _view.frame = initialFrame;
+        _backImageView.frame = _view.bounds;
         _effectView.frame = _view.bounds;
     }
 }
 
 - (BDFBaseImageView *)headerImageView {
     if (!_headerImageView) {
-        _headerImageView = [[BDFBaseImageView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
-        _headerImageView.layerCornerRadius = 25.f;
+        _headerImageView = [[BDFBaseImageView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+        _headerImageView.layerCornerRadius = 50.f;
+        _headerImageView.layerBorderWidth = 1;
+        _headerImageView.layerBorderColor = kWhiteColor;
     }
     return _headerImageView;
 }
 
 - (UIButton *)loginButton {
     if (!_loginButton) {
-        _loginButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 60, 30)];
+        _loginButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, (SCREEN_WIDTH - self.headerImageView.width - 30)/2., 30)];
         _loginButton.layerCornerRadius = 15.f;
         _loginButton.layerBorderWidth = 1.0;
         _loginButton.layerBorderColor = kWhiteColor;
@@ -109,13 +140,22 @@
 
 - (UIButton *)registerButton {
     if (!_registerButton) {
-        _registerButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 60, 30)];
+        _registerButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, (SCREEN_WIDTH - self.headerImageView.width - 30)/2., 30)];
         _registerButton.layerCornerRadius = 15.f;
         _registerButton.layerBorderWidth = 1.f;
         _registerButton.layerBorderColor = kWhiteColor;
         [_registerButton setTitle:@"注册" forState:UIControlStateNormal];
     }
     return _registerButton;
+}
+
+- (BDFBaseImageView *)backImageView {
+    if (!_backImageView) {
+        _backImageView = [[BDFBaseImageView alloc] initWithFrame:self.bounds];
+        [_view addSubview:_backImageView];
+        [_view sendSubviewToBack:_backImageView];
+    }
+    return _backImageView;
 }
 
 - (UIVisualEffectView *)effectView {
@@ -125,6 +165,51 @@
         [_view addSubview:_effectView];
     }
     return _effectView;
+}
+
+- (UILabel *)yearsLabel {
+    if (!_yearsLabel) {
+        _yearsLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+        _yearsLabel.backgroundColor = kOrangeColor;
+        _yearsLabel.textColor = kBlackColor;
+        _yearsLabel.layerCornerRadius = 15.f;
+        [self.headerImageView addSubview:_yearsLabel];
+    }
+    return _yearsLabel;
+}
+
+- (BDFBaseImageView *)sexImageView {
+    if (!_sexImageView) {
+        _sexImageView = [[BDFBaseImageView alloc] initWithFrame:CGRectZero];
+    }
+    return _sexImageView;
+}
+
+- (UIButton *)locationButton {
+    if (!_locationButton) {
+        _locationButton = [[UIButton alloc] initWithFrame:CGRectZero];
+        _locationButton.titleLabel.textAlignment = NSTextAlignmentRight;
+        [_locationButton setImage:[UIImage imageNamed:@"add"] forState:UIControlStateNormal];
+    }
+    return _locationButton;
+}
+
+- (UIButton *)editButton {
+    if (!_editButton) {
+        _editButton = [[UIButton alloc] initWithFrame:CGRectZero];
+        [_editButton setImage:[UIImage imageNamed:@"my_write"] forState:UIControlStateNormal];
+    }
+    return _editButton;
+}
+
+- (UILabel *)nameLabel {
+    if (!_nameLabel) {
+        _nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
+        _nameLabel.textAlignment = NSTextAlignmentCenter;
+        _nameLabel.font = kFont(22);
+        _nameLabel.textColor = kWhiteColor;
+    }
+    return _nameLabel;
 }
 
 @end

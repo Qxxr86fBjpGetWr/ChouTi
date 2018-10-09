@@ -33,6 +33,7 @@ static char const PREVIEWIMAGE;
 
 @property (nonatomic, strong) NSMutableArray *hotNewsFrameArray;
 @property (nonatomic, weak) BDFCustomCommonEmptyView *emptyView;
+@property (nonatomic, strong) UIButton *homeChnnelButton;
 @end
 
 @implementation BDFHomePageViewController
