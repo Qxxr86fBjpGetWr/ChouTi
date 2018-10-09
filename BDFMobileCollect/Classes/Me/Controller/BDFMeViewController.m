@@ -26,6 +26,14 @@
 
 @implementation BDFMeViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    if (@available(iOS 11, *)) {
+        [UIScrollView appearance].contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.backgroundColor = kColorFromRGB(0xf5f5f5);

@@ -47,6 +47,9 @@ const char BDFBaseTableVcNavLeftItemHandleKey;
 - (BDFBaseTableView *)tableView {
     if(!_tableView){
         BDFBaseTableView *tab = [[BDFBaseTableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+        if (SCREEN_iPhoneX) {
+            tab.height = SCREEN_HEIGHT - SCREEN_StatusBarAndNavBarHeight - SCREEN_TabbarHeight;
+        }
         [self.view addSubview:tab];
         _tableView = tab;
         tab.dataSource = self;

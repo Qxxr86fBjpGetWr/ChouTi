@@ -34,6 +34,7 @@
 /** 导航栏的高度 */
 #define SCREEN_iPhoneX (SCREEN_WIDTH == 375.f && SCREEN_HEIGHT == 812.f ? YES : NO)
 #define SCREEN_StatusBarAndNavBarHeight  (SCREEN_iPhoneX ? 88.f : 64.f)
+#define SCREEN_TabbarHeight         (SCREEN_iPhoneX ? (49.f+34.f) : 49.f)
 
 #pragma mark - 颜色
 #define kWhiteColor [UIColor whiteColor]
