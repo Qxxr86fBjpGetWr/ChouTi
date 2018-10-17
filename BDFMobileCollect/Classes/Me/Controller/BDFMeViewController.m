@@ -13,15 +13,29 @@
 #import "BDFMeRequest.h"
 #import "BDFLoginSucModel.h"
 #import "BDFUserInfoManager.h"
+#import "BDFMeMoreSettingController.h"
+#import "BDFLogAndRegViewController.h"
+#import "BDFLogAndRegViewDelegate.h"
+#import "BDFMainTabBarController.h"
+#import "AppDelegate.h"
 
 #define TITLE @"meCellTitle"
 #define ICON @"meCellIcon"
+#define TYPE @"type"
+#define DATA @"data"
+#define ACTION @"action"
 
-@interface BDFMeViewController ()
+typedef NS_ENUM(NSInteger, BDFMeCellType) {
+    BDFMeCellNormal,
+    BDFMeCellDetail,
+    BDFMeCellSwitch,
+};
+
+@interface BDFMeViewController () <BDFMeAttentionDelegate, BDFMeMoreSettingDelegate, BDFLogAndRegViewDelegate>
 @property (nonatomic, strong) NSDictionary <NSNumber *, NSArray<NSDictionary *> *> *dateSource;
 
 @property (nonatomic, strong) BDFMeHeaderView *headerView;
-
+@property (nonatomic, strong) BDFLoginSucModel *sucModel;
 @end
 
 @implementation BDFMeViewController
@@ -49,27 +63,9 @@
 -(void)loadData {
     BDFMeRequest *request = [BDFMeRequest bdf_requestWithUrl:BDFMEDATA];
     [request bdf_sendRequestWithComple:^(id response, BOOL success, NSString *message) {
-        BDFLoginSucModel *sucModel = [BDFLoginSucModel modelWithDictionary:response];
-        [[BDFUserInfoManager sharedManager] resetUserInfoWithUserInfo:sucModel];
+        self.sucModel = [BDFLoginSucModel modelWithDictionary:response];
+        [[BDFUserInfoManager sharedManager] resetUserInfoWithUserInfo:_sucModel];
     }];
-}
-
-- (void)creatMeData {
-    self.dateSource = @{
-                       @0 : @[
-                           @{TITLE : @"最近浏览",ICON : @"time",},
-                           @{TITLE : @"私藏",ICON : @"my_collection",},
-                           @{TITLE : @"推荐",ICON : @"my_good",},
-                           @{TITLE : @"评论",ICON : @"my_comment",},
-                           @{TITLE : @"发布",ICON : @"my_pub",},
-                           @{TITLE : @"钱包",ICON : @"my_wallet",},
-                           @{TITLE : @"黑名单",ICON : @"my_hei",},
-                         ],
-                       @1 : @[
-                           @{TITLE : @"夜间模式",ICON : @"my_night",},
-                           @{TITLE : @"更多设置",ICON : @"my_set",},
-                           ],
-                       };
 }
 
 - (NSInteger)bdf_numberOfSections {
@@ -84,13 +80,18 @@
 
 - (BDFBaseTableViewCell *)bdf_cellAtIndexPath:(NSIndexPath *)indexPath {
     
-    NSNumber *sectionNum = [NSNumber numberWithInteger:indexPath.section];
-    NSArray *sectionArray = self.dateSource[sectionNum];
-    
     BDFMeTableViewCell *cell = [BDFMeTableViewCell cellWithTableView:self.tableView];
-    BDFMeDataModel *dataModel = [BDFMeDataModel modelWithDictionary:sectionArray[indexPath.row]];
+    BDFMeDataModel *dataModel = [self getMeDataModeWithIndexPath:indexPath];
     cell.dataModel = dataModel;
     return cell;
+}
+
+- (void)bdf_didSelectCellAtIndexPath:(NSIndexPath *)indexPath cell:(BDFBaseTableViewCell *)cell {
+    BDFMeDataModel *dataModel = [self getMeDataModeWithIndexPath:indexPath];
+    SEL cellAction = NSSelectorFromString(dataModel.action);
+    if ([self respondsToSelector:cellAction]) {
+        [self performSelector:cellAction];
+    }
 }
 
 - (CGFloat)bdf_cellheightAtIndexPath:(NSIndexPath *)indexPath {
@@ -101,15 +102,133 @@
     [self.headerView scrollViewDidScroll:scrollView];
 }
 
+- (BDFMeDataModel *)getMeDataModeWithIndexPath:(NSIndexPath *)indexPath {
+    NSNumber *sectionNum = [NSNumber numberWithInteger:indexPath.section];
+    NSArray *sectionArray = self.dateSource[sectionNum];
+    BDFMeDataModel *dataModel = [BDFMeDataModel modelWithDictionary:sectionArray[indexPath.row]];
+    return dataModel;
+}
+
 - (BDFMeHeaderView *)headerView {
     if (!_headerView) {
         _headerView = [[BDFMeHeaderView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 250)];
+        _headerView.delegete = self;
+        _headerView.loginDelegate = self;
     }
     return _headerView;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+#pragma mark - 更多设置
+- (void)moreSetting {
+    BDFMeMoreSettingController *vc = [[BDFMeMoreSettingController alloc] init];
+    vc.moreDelegate = self;
+    [self pushVc:vc];
+}
+
+#pragma mark - BDFMeAttentionDelegate
+- (void)bdfMeAttention {}
+
+- (void)bdfAttentionMe {}
+
+#pragma mark - BDFLogAndRegViewDelegate
+- (void)clickLoginButtonComplete {
+    BDFLogAndRegViewController *vc = [[BDFLogAndRegViewController alloc] init];
+    vc.loginComplete = ^{
+        [self.headerView setNeedsLayout];
+        [self bdf_reloadData];
+    };
+    [self presentVc:vc];
+}
+
+- (void)clickRegisterButtonComplete {}
+
+- (void)clickCloseButtonComplte {}
+
+#pragma mark - BDFMeMoreSettingDelegate
+- (void)didLoginOut {
+    [self.headerView setNeedsLayout];
+    [self bdf_reloadData];
+}
+
+- (void)creatMeData {
+    
+    NSString *likeCount = [NSString stringWithFormat:@"%ld",self.sucModel.liked_count];
+    NSString *followCount = [NSString stringWithFormat:@"%ld",self.sucModel.followCount];
+    NSString *commentCount = [NSString stringWithFormat:@"%ld",self.sucModel.selfCommentsCount];
+    NSString *pulishCount = [NSString stringWithFormat:@"%ld",self.sucModel.submitted_count];
+    NSString *ctCount = [NSString stringWithFormat:@"%ld",self.sucModel.ct];
+    NSString *banCount = [NSString stringWithFormat:@"%ld",self.sucModel.isBindPhone];
+    
+    self.dateSource = @{
+                        @0 : @[
+                                @{
+                                    TITLE : @"最近浏览",
+                                    ICON : @"time",
+                                    TYPE : @0,
+                                    ACTION : @"",
+                                    },
+                                @{
+                                    TITLE : @"私藏",
+                                    ICON : @"my_collection",
+                                    TYPE : @1,
+                                    DATA : likeCount,
+                                    ACTION : @"",
+                                    },
+                                @{
+                                    TITLE : @"推荐",
+                                    ICON : @"my_good",
+                                    TYPE : @1,
+                                    DATA : followCount,
+                                    ACTION : @"",
+                                    },
+                                @{
+                                    TITLE : @"评论",
+                                    ICON : @"my_comment",
+                                    TYPE : @1,
+                                    DATA : commentCount,
+                                    ACTION : @"",
+                                    },
+                                @{
+                                    TITLE : @"发布",
+                                    ICON : @"my_pub",
+                                    TYPE : @1,
+                                    DATA : pulishCount,
+                                    ACTION : @"",
+                                    },
+                                @{
+                                    TITLE : @"钱包",
+                                    ICON : @"my_wallet",
+                                    TYPE : @1,
+                                    DATA : ctCount,
+                                    ACTION : @"",
+                                    },
+                                @{
+                                    TITLE : @"黑名单",
+                                    ICON : @"my_hei",
+                                    TYPE : @0,
+                                    DATA : banCount,
+                                    ACTION : @"",
+                                    },
+                                ],
+                        @1 : @[
+                                @{
+                                    TITLE : @"夜间模式",
+                                    ICON : @"my_night",
+                                    TYPE : @2,
+                                    ACTION : @"",
+                                    },
+                                @{
+                                    TITLE : @"更多设置",
+                                    ICON : @"my_set",
+                                    TYPE : @0,
+                                    ACTION : NSStringFromSelector(@selector(moreSetting)),
+                                    },
+                                ],
+                        };
 }
 
 @end

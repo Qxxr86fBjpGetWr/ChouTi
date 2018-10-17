@@ -7,19 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@protocol BDFLogAndRegViewDelegate <NSObject>
-
-- (void)clickLoginButtonComplete;
-- (void)clickCloseButtonComplte;
-
-@end
+#import "BDFLogAndRegViewDelegate.h"
 
 typedef NSString * (^loginViewCllickHandle)(NSString *test);
 
 @interface BDFLogAndRegView : UIView
 
-@property (nonatomic, weak) id<BDFLogAndRegViewDelegate> delegate;
+@property (nonatomic, weak) id <BDFLogAndRegViewDelegate> delegate;
 
 @property (nonatomic, weak) loginViewCllickHandle loginHndle;
 

@@ -12,4 +12,6 @@
 
 - (instancetype)initVisualEffectView;
 
+- (instancetype)initVisualEffectWithStyle:(UIBlurEffectStyle)style;
+
 @end

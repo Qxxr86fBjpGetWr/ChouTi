@@ -7,6 +7,7 @@
 //
 
 #import "BDFBaseModel.h"
+#import "BDFCommentFrameModel.h"
 
 @interface BDFCommentTreeItemModel : BDFBaseModel
 
@@ -14,7 +15,7 @@
 @property (nonatomic, readonly, copy) NSString *parentID;   // 父级节点唯一标识
 @property (nonatomic, readonly, copy) NSString *orderNo;    // 序号
 @property (nonatomic, readonly, assign) CGFloat itemHeight; // cell的行高
-@property (nonatomic, readonly, strong) id data;            // 完整数据，可以是数据模型
+@property (nonatomic, readonly, strong) BDFCommentFrameModel *data;            // 完整数据，可以是数据模型
 @property (nonatomic, assign) NSInteger level;              // 层级
 @property (nonatomic, assign) BOOL isExpand;                // 是否为展开状态
 @property (nonatomic, weak)   BDFCommentTreeItemModel *parentItem;

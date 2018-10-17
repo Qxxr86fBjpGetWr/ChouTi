@@ -14,9 +14,13 @@
 
 - (instancetype)initVisualEffectView {
     
+    return [self initVisualEffectWithStyle:UIBlurEffectStyleLight];
+}
+
+- (instancetype)initVisualEffectWithStyle:(UIBlurEffectStyle)style {
     self = [super init];
     if (self) {
-        UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+        UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:style];
         self = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
         self.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
     }

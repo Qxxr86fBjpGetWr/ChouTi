@@ -24,12 +24,9 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
-    //设置登录view
     BDFLogAndRegView *loginView = [[BDFLogAndRegView alloc] initWithFrame:self.view.frame];
     loginView.delegate = self;
     [self.view addSubview:loginView];
-    
-    [self login];
 }
 
 - (void)login {
@@ -43,6 +40,9 @@
         
         BDFLoginSucModel *loginSucModel = [BDFLoginSucModel modelWithDictionary:response];
         BDFLog(@"%@",loginSucModel);
+        if (self.loginComplete) {
+            self.loginComplete();
+        }
     }];
 }
 
@@ -54,6 +54,10 @@
 
 - (void)clickCloseButtonComplte {
     [self dismiss];
+}
+
+- (void)clickRegisterButtonComplete {
+    
 }
 
 - (void)didReceiveMemoryWarning {

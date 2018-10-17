@@ -12,5 +12,8 @@
 
 @property (nonatomic, strong) NSString *meCellTitle;
 @property (nonatomic, strong) NSString *meCellIcon;
+@property (nonatomic, strong) NSNumber *type;
+@property (nonatomic, strong) NSString *data;
+@property (nonatomic, strong) NSString *action;
 
 @end

@@ -13,6 +13,7 @@
 		AB1E5DCA20886632002E48B5 /* BDFUserInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AB1E5DC820886632002E48B5 /* BDFUserInfoManager.m */; };
 		AB1E5DD620888639002E48B5 /* NSString+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = AB1E5DD420888638002E48B5 /* NSString+Size.m */; };
 		AB1E5DD920901828002E48B5 /* BDFRefreshNormalHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = AB1E5DD820901828002E48B5 /* BDFRefreshNormalHeader.m */; };
+		AB20098B217481F6002A9B7C /* BDFMeMoreSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB20098A217481F6002A9B7C /* BDFMeMoreSettingController.m */; };
 		AB25D2331E2327BF0093BE75 /* BDFBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB25D2321E2327BF0093BE75 /* BDFBaseNavigationController.m */; };
 		AB25D2371E2331980093BE75 /* BDFLogAndRegView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB25D2361E2331980093BE75 /* BDFLogAndRegView.m */; };
 		AB25D2421E2361F10093BE75 /* BDFBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB25D2411E2361F10093BE75 /* BDFBaseTableViewCell.m */; };
@@ -132,6 +133,8 @@
 		AB1E5DD520888639002E48B5 /* NSString+Size.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Size.h"; sourceTree = "<group>"; };
 		AB1E5DD720901828002E48B5 /* BDFRefreshNormalHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFRefreshNormalHeader.h; sourceTree = "<group>"; };
 		AB1E5DD820901828002E48B5 /* BDFRefreshNormalHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFRefreshNormalHeader.m; sourceTree = "<group>"; };
+		AB200989217481F6002A9B7C /* BDFMeMoreSettingController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFMeMoreSettingController.h; sourceTree = "<group>"; };
+		AB20098A217481F6002A9B7C /* BDFMeMoreSettingController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFMeMoreSettingController.m; sourceTree = "<group>"; };
 		AB25D2311E2327BF0093BE75 /* BDFBaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFBaseNavigationController.h; sourceTree = "<group>"; };
 		AB25D2321E2327BF0093BE75 /* BDFBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFBaseNavigationController.m; sourceTree = "<group>"; };
 		AB25D2341E2329930093BE75 /* BDFMobileCollect.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFMobileCollect.pch; sourceTree = "<group>"; };
@@ -295,6 +298,7 @@
 		ABCD18681ED7C898005AA34E /* BDFBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFBaseModel.m; sourceTree = "<group>"; };
 		ABCD186A1ED7D61B005AA34E /* BDFMessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFMessageModel.h; sourceTree = "<group>"; };
 		ABCD186B1ED7D61B005AA34E /* BDFMessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFMessageModel.m; sourceTree = "<group>"; };
+		ABCFB41E217716A7006BE1C4 /* BDFLogAndRegViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFLogAndRegViewDelegate.h; sourceTree = "<group>"; };
 		ABE40A8A2148FF2600977F08 /* BDFMessageWithOutLoginView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFMessageWithOutLoginView.h; sourceTree = "<group>"; };
 		ABE40A8B2148FF2600977F08 /* BDFMessageWithOutLoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFMessageWithOutLoginView.m; sourceTree = "<group>"; };
 		ABE40ACB214A418600977F08 /* BDFCommentTreeItemModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFCommentTreeItemModel.h; sourceTree = "<group>"; };
@@ -515,6 +519,7 @@
 			children = (
 				AB2803181E1F86700006A13E /* Controller */,
 				AB2803191E1F86700006A13E /* Model */,
+				ABCFB41D21771681006BE1C4 /* Protocol */,
 				AB28031A1E1F86700006A13E /* Request */,
 				AB28031B1E1F86700006A13E /* View */,
 			);
@@ -961,6 +966,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		ABCFB41D21771681006BE1C4 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				ABCFB41E217716A7006BE1C4 /* BDFLogAndRegViewDelegate.h */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		ABE40AD1214B86AC00977F08 /* Me */ = {
 			isa = PBXGroup;
 			children = (
@@ -977,6 +990,8 @@
 			children = (
 				ABE40AD6214B86DB00977F08 /* BDFMeViewController.h */,
 				ABE40AD7214B86DB00977F08 /* BDFMeViewController.m */,
+				AB200989217481F6002A9B7C /* BDFMeMoreSettingController.h */,
+				AB20098A217481F6002A9B7C /* BDFMeMoreSettingController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1272,6 +1287,7 @@
 				ABA52FD721181DB40043B398 /* BDFHomeHotNewsAddRequest.m in Sources */,
 				AB1E5DC1208854B0002E48B5 /* BDFLoginRequest.m in Sources */,
 				AB2F360B2119AFA4008DA8F1 /* BDFSearchPublishRequest.m in Sources */,
+				AB20098B217481F6002A9B7C /* BDFMeMoreSettingController.m in Sources */,
 				ABCD18431ED6D0CF005AA34E /* UIView+Tap.m in Sources */,
 				AB778F6F2116F63A00A81791 /* NSAttributedString+Size.m in Sources */,
 				ABA52FD421181DB40043B398 /* BDFHomeDetailWebView.m in Sources */,

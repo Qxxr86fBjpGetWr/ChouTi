@@ -36,7 +36,12 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    BDFLoginSucModel *model = [BDFUserInfoManager sharedManager].currentUserInfo;
+    BOOL isLogin = [BDFUserInfoManager sharedManager].isLogin;
+    BDFLoginSucModel *model = nil;
+    if (isLogin) {
+        model = [BDFUserInfoManager sharedManager].currentUserInfo;
+    }
+   
     self.headerImageView.x = (_view.width - 100) / 2.;
     self.headerImageView.y = (_view.height - 100) / 2.;
     
@@ -48,24 +53,39 @@
     
     self.loginButton.x = self.headerImageView.x - _loginButton.width - 20;
     self.loginButton.y = (_view.size.height - 30) / 2.;
+    NSString *loginTitle = nil;
+    if (isLogin) {
+        loginTitle = [NSString stringWithFormat:@"关注%ld",model.followCount];
+    } else {
+        loginTitle = @"登录";
+    }
+    [self.loginButton setTitle:loginTitle forState:UIControlStateNormal];
     
     self.registerButton.x = self.headerImageView.right + 20;
     self.registerButton.y = (_view.size.height - 30) / 2.;
+    NSString *registerTitle = nil;
+    if (isLogin) {
+        registerTitle = [NSString stringWithFormat:@"被关注%ld",model.fansCount];
+    } else {
+        registerTitle = @"注册";
+    }
+    [self.registerButton setTitle:registerTitle forState:UIControlStateNormal];
     
     NSString *yearString = [BDFUntil registerYearsWithTime:model.createTime / 1000000];
     self.yearsLabel.text = yearString;
+    self.yearsLabel.hidden = !isLogin;
     
     self.sexImageView.frame = CGRectMake(self.headerImageView.x, self.headerImageView.bottom + 20, 20, 20);
     self.sexImageView.image = model.sex ? [UIImage imageNamed:@"boy"] : [UIImage imageNamed:@"girl"];
+    self.sexImageView.hidden = !isLogin;
     
     self.locationButton.frame = CGRectMake(self.sexImageView.right + 20, self.sexImageView.y, 100, self.sexImageView.height);
     [self.locationButton setTitle:model.cityName forState:UIControlStateNormal];
-    
-//    CGFloat sexImageX = (SCREEN_WIDTH - (self.locationButton.right - self.sexImageView.x)) / 2;
-//    self.sexImageView.x = sexImageX;
+    self.locationButton.hidden = !isLogin;
     
     self.editButton.frame = CGRectMake(0, self.sexImageView.bottom, 100, 30);
     self.editButton.x = (_view.width - _editButton.width) / 2;
+    self.editButton.hidden = !isLogin;
     
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.backImageView setImageWithString:model.img_url placeHolder:[UIImage imageNamed:@"tou_70"]];
@@ -117,6 +137,33 @@
     }
 }
 
+- (void)bdfLogin {
+    BOOL isLogin = [BDFUserInfoManager sharedManager].isLogin;
+    if (isLogin) {
+        if ([self.delegete respondsToSelector:@selector(bdfMeAttention)]) {
+            [self.delegete bdfMeAttention];
+        }
+    }else {
+        if ([self.delegete respondsToSelector:@selector(clickLoginButtonComplete)]) {
+            [self.loginDelegate clickLoginButtonComplete];
+        }
+    }
+}
+
+- (void)bdfRegister {
+    BOOL isLogin = [BDFUserInfoManager sharedManager].isLogin;
+    if (isLogin) {
+        if ([self.delegete respondsToSelector:@selector(bdfAttentionMe)]) {
+            [self.delegete bdfAttentionMe];
+        }
+    }else {
+        if ([self.delegete respondsToSelector:@selector(clickRegisterButtonComplete)]) {
+            [self.loginDelegate clickRegisterButtonComplete];
+        }
+    }
+}
+
+
 - (BDFBaseImageView *)headerImageView {
     if (!_headerImageView) {
         _headerImageView = [[BDFBaseImageView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
@@ -133,6 +180,7 @@
         _loginButton.layerCornerRadius = 15.f;
         _loginButton.layerBorderWidth = 1.0;
         _loginButton.layerBorderColor = kWhiteColor;
+        [_loginButton addTarget:self action:@selector(bdfLogin) forControlEvents:UIControlEventTouchUpInside];
         [_loginButton setTitle:@"登录" forState:UIControlStateNormal];
     }
     return _loginButton;
@@ -144,6 +192,7 @@
         _registerButton.layerCornerRadius = 15.f;
         _registerButton.layerBorderWidth = 1.f;
         _registerButton.layerBorderColor = kWhiteColor;
+        [_registerButton addTarget:self action:@selector(bdfRegister) forControlEvents:UIControlEventTouchUpInside];
         [_registerButton setTitle:@"注册" forState:UIControlStateNormal];
     }
     return _registerButton;
@@ -160,7 +209,7 @@
 
 - (UIVisualEffectView *)effectView {
     if (!_effectView) {
-        _effectView = [[UIVisualEffectView alloc] initVisualEffectView];
+        _effectView = [[UIVisualEffectView alloc] initVisualEffectWithStyle:UIBlurEffectStyleDark];
         _effectView.frame = CGRectMake(0, 0, SCREEN_WIDTH, _view.height);
         [_view addSubview:_effectView];
     }

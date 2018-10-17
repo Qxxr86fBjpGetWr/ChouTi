@@ -9,5 +9,5 @@
 #import "BDFBaseViewController.h"
 
 @interface BDFLogAndRegViewController : BDFBaseViewController
-
+@property (nonatomic, copy) dispatch_block_t loginComplete;
 @end

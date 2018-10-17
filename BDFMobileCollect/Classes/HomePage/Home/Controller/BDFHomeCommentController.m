@@ -72,11 +72,6 @@
         [BDFHomeCommentIndexModel modelWithDictionary:response];
         
         NSString *tempString = [model.comments.ids componentsJoinedByString:@","];
-//        NSArray *tempArray = [tempString componentsSeparatedByString:@","];
-//        self.allPoints = [NSMutableArray arrayWithArray:tempArray];
-//        [self removeChildComment:tempArray.mutableCopy tree:model.comments.depthMap];
-//        [self allCommentsSortWithArray:self.allPoints treeMap:model.comments.treeMap idString:nil];
-        
         BDFHomeHotNewsAddRequest *commentsRequest = [BDFHomeHotNewsAddRequest bdf_requestWithUrl:BDFHOMEPAGEHOTNNEWSCOMMENT isPost:NO];
         commentsRequest.ids = tempString;
         [commentsRequest bdf_sendRequestWithComple:^(id response, BOOL success, NSString *message) {
@@ -126,35 +121,9 @@
 }
 
 - (void)keyboardWillHide:(NSNotification *)notification {
-//    [self.view sendSubviewToBack:self.blurView];
-//    self.toolView.transform = CGAffineTransformIdentity;
-//    [self.blurView removeFromSuperview];
+
     [self endEdit];
 }
-
-//- (void)removeChildComment:(NSMutableArray *)allComment tree:(NSDictionary *)treeMap {
-//    for (int i = 0; i < allComment.count; i ++) {
-//        NSString *string = [NSString stringWithFormat:@"%@",allComment[i]];
-//        NSInteger deep = [treeMap[string] integerValue];
-//        if (deep != 0) {
-//            [self.allPoints removeObject:string];
-//        }
-//    }
-//}
-
-//- (void)allCommentsSortWithArray:(NSArray *)parentArray treeMap:(NSDictionary *)map idString:(NSString *)string{
-//
-//    for (int i = 0; i < parentArray.count; i ++) {
-//        NSString *obj = [NSString stringWithFormat:@"%@",parentArray[i]];
-//        [self.points addObject:obj];
-//
-//        NSArray *childArray = map[obj];
-//        if (!childArray) {
-//            continue;
-//        }
-//        [self allCommentsSortWithArray:childArray treeMap:map idString:nil];
-//    }
-//}
 
 #pragma mark - BDFCommentTextDelegate
 - (void)sendCommentWithText:(NSString *)text {
@@ -213,7 +182,6 @@
     }else {
         BDFCommentTreeItemModel *item = self.manager.showItems[indexPath.row];
         BDFHomeCommentsCell *cell = [BDFHomeCommentsCell cellWithTableView:self.tableView];
-//        cell.commentFrameModel = self.commentsArray[indexPath.row];
         cell.treeItem = item;
         [cell setValue:@(1) forKey:@"showStructureLine"];
         return cell;
