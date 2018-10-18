@@ -131,7 +131,7 @@
         [self.dowsButton setTitle:[NSString stringWithFormat:@"%ld",downs] forState:UIControlStateNormal];
     }
     self.contentLabel.frame = commentFrameModel.contentF;
-    self.contentLabel.text = [NSString stringWithFormat:@"%@ %ld",commentFrameModel.commentModel.content, commentFrameModel.commentModel.id];
+    self.contentLabel.text = [NSString stringWithFormat:@"%@",commentFrameModel.commentModel.content];
 }
 
 - (void)removeAllLineLayers

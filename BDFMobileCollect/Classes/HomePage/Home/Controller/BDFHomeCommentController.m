@@ -77,6 +77,11 @@
         [commentsRequest bdf_sendRequestWithComple:^(id response, BOOL success, NSString *message) {
             BDFHomeCommenntsModel *commentModel = [[BDFHomeCommenntsModel alloc] init];
             commentModel.commentsArray = [BDFHomeCommenntModel modelArrayWithDictArray:response];
+            NSMutableDictionary *commentsMap = @{}.mutableCopy;
+            for (int i = 0; i < commentModel.commentsArray.count; i ++) {
+                BDFHomeCommenntModel *model = commentModel.commentsArray[i];
+                [commentsMap setObject:model forKey:[NSString stringWithFormat:@"%ld",model.id]];
+            }
             
             for (BDFHomeCommenntModel *obj in commentModel.commentsArray) {
                 BDFCommentFrameModel *commentFraModel = [[BDFCommentFrameModel alloc] init];
@@ -97,7 +102,10 @@
                         pid = nil;
                     }
                 }
-                BDFCommentTreeItemModel *treeModel = [[BDFCommentTreeItemModel alloc] initWithID:[NSString stringWithFormat:@"%ld",obj.id] parentID:pid orderNo:nil level:commentFraModel.deep itemHeight:CGRectGetMaxY(commentFraModel.contentF) data:commentFraModel];
+                NSString *commendId = [NSString stringWithFormat:@"%ld",obj.id];
+                NSNumber *scores = model.comments.scores[commendId];
+                NSString *scoresString = [NSString stringWithFormat:@"%lf",1-[scores doubleValue]];
+                BDFCommentTreeItemModel *treeModel = [[BDFCommentTreeItemModel alloc] initWithID:[NSString stringWithFormat:@"%ld",obj.id] parentID:pid orderNo:scoresString level:commentFraModel.deep itemHeight:CGRectGetMaxY(commentFraModel.contentF) data:commentFraModel];
                 [_treeItems addObject:treeModel];
             }
             [self bdf_reloadData];
