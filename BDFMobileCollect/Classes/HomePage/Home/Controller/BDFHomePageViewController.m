@@ -26,14 +26,19 @@
 #import "BDFAvatarBrowser.h"
 #import "BDFHomeSearchController.h"
 #import "BDFCustomCommonEmptyView.h"
+#import "BDFHomeTitleView.h"
+#import <DXPopover.h>
+#import "BDFAllTypeNewsView.h"
 
 static char const PREVIEWIMAGE;
 
-@interface BDFHomePageViewController ()<BDFHomeHotNewsCellButtonDelegate>
+@interface BDFHomePageViewController ()<BDFHomeHotNewsCellButtonDelegate, BDFHomeTitleDelegate>
 
 @property (nonatomic, strong) NSMutableArray *hotNewsFrameArray;
 @property (nonatomic, weak) BDFCustomCommonEmptyView *emptyView;
 @property (nonatomic, strong) UIButton *homeChnnelButton;
+@property (nonatomic, strong) DXPopover *popover;
+@property (nonatomic, strong) BDFAllTypeNewsView *newsView;
 @end
 
 @implementation BDFHomePageViewController
@@ -45,8 +50,15 @@ static char const PREVIEWIMAGE;
     self.refreshType = BDFBaseTableVcRefreshTypeRefreshAndLoadMore;
     self.emptyView.hidden = NO;
     
+    [self setTitleView];
     [self setNav];
     [self loadData];
+}
+
+- (void)setTitleView {
+    BDFHomeTitleView *titleView = [[BDFHomeTitleView alloc] initWithFrame:CGRectMake(0, 0, 150, 30)];
+    titleView.delegate = self;
+    self.navigationItem.titleView = titleView;
 }
 
 - (void)setNav {
@@ -156,6 +168,15 @@ static char const PREVIEWIMAGE;
     view.tintColor = kClearColor;
 }
 
+#pragma mark - BDFHomeTitleDelegate
+- (void)homeTitleCliclAction {
+
+    UIView *inView = self.tabBarController.view;
+    CGPoint converPoint = CGPointMake(SCREEN_WIDTH / 2, 0);
+    CGPoint inPoint = [self.view convertPoint:converPoint toView:inView];
+    [self.popover showAtPoint:inPoint popoverPostion:DXPopoverPositionDown withContentView:self.newsView inView:inView];
+}
+
 #pragma mark - BDFHomeHotNewsCellButtonDelegate
 -(void)homeTableViewCell:(BDFHomeHotNewsCell *)cell didClickItemWithType:(BDFHomeTableViewCellItemType)itemType {
     
@@ -245,6 +266,26 @@ static char const PREVIEWIMAGE;
         _emptyView = empty;
     }
     return _emptyView;
+}
+
+- (DXPopover *)popover {
+    if (!_popover) {
+        DXPopover *popover = [DXPopover popover];
+        WeakSelf(weakSelf);
+        popover.didDismissHandler = ^{
+            weakSelf.popover = nil;
+        };
+        _popover = popover;
+    }
+    return _popover;
+}
+
+- (BDFAllTypeNewsView *)newsView {
+    if (!_newsView) {
+        BDFAllTypeNewsView *newsView = [[BDFAllTypeNewsView alloc] initWithFrame:CGRectMake(0, 0, 150, 200)];
+        _newsView = newsView;
+    }
+    return _newsView;
 }
 
 

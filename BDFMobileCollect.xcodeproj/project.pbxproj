@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		20524D5E88229D6B3F29DAD7 /* libPods-BDFMobileCollect.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC14892B4664F90CCBCB7B63 /* libPods-BDFMobileCollect.a */; };
+		AB0332EC217B26F0005951F1 /* BDFHomeTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0332EB217B26F0005951F1 /* BDFHomeTitleView.m */; };
+		AB0332EF217B298E005951F1 /* BDFAllTypeNewsView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0332EE217B298E005951F1 /* BDFAllTypeNewsView.m */; };
 		AB1E5DC1208854B0002E48B5 /* BDFLoginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AB1E5DC0208854B0002E48B5 /* BDFLoginRequest.m */; };
 		AB1E5DC720886507002E48B5 /* BDFLoginSucModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB1E5DC620886507002E48B5 /* BDFLoginSucModel.m */; };
 		AB1E5DCA20886632002E48B5 /* BDFUserInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AB1E5DC820886632002E48B5 /* BDFUserInfoManager.m */; };
@@ -123,6 +125,10 @@
 
 /* Begin PBXFileReference section */
 		6215059ED4D6E0E8BB292FEA /* Pods-BDFMobileCollect.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BDFMobileCollect.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BDFMobileCollect/Pods-BDFMobileCollect.debug.xcconfig"; sourceTree = "<group>"; };
+		AB0332EA217B26F0005951F1 /* BDFHomeTitleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFHomeTitleView.h; sourceTree = "<group>"; };
+		AB0332EB217B26F0005951F1 /* BDFHomeTitleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFHomeTitleView.m; sourceTree = "<group>"; };
+		AB0332ED217B298E005951F1 /* BDFAllTypeNewsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFAllTypeNewsView.h; sourceTree = "<group>"; };
+		AB0332EE217B298E005951F1 /* BDFAllTypeNewsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFAllTypeNewsView.m; sourceTree = "<group>"; };
 		AB1E5DBF208854B0002E48B5 /* BDFLoginRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFLoginRequest.h; sourceTree = "<group>"; };
 		AB1E5DC0208854B0002E48B5 /* BDFLoginRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFLoginRequest.m; sourceTree = "<group>"; };
 		AB1E5DC520886507002E48B5 /* BDFLoginSucModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFLoginSucModel.h; sourceTree = "<group>"; };
@@ -703,6 +709,10 @@
 				ABA52FAD21181DB40043B398 /* BDFHomeHotNewsCell.m */,
 				ABA52FB321181DB40043B398 /* BDFComBottomToolView.h */,
 				ABA52FAE21181DB40043B398 /* BDFComBottomToolView.m */,
+				AB0332EA217B26F0005951F1 /* BDFHomeTitleView.h */,
+				AB0332EB217B26F0005951F1 /* BDFHomeTitleView.m */,
+				AB0332ED217B298E005951F1 /* BDFAllTypeNewsView.h */,
+				AB0332EE217B298E005951F1 /* BDFAllTypeNewsView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1201,12 +1211,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-BDFMobileCollect/Pods-BDFMobileCollect-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/DXPopover/DXPopover.bundle",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 				"${PODS_ROOT}/MWPhotoBrowser/MWPhotoBrowser/MWPhotoBrowser.bundle",
 				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/DXPopover.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MWPhotoBrowser.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
@@ -1227,6 +1239,7 @@
 				AB7C1A6421538C2E005D63FA /* BDFHomeHeaderOptionView.m in Sources */,
 				AB2803231E1F87620006A13E /* BDFBaseViewController.m in Sources */,
 				ABA52FDB21181DB40043B398 /* BDFHomeHotNewsUpsRequest.m in Sources */,
+				AB0332EC217B26F0005951F1 /* BDFHomeTitleView.m in Sources */,
 				ABCD18601ED7BAD2005AA34E /* BDFCommentAPIConstant.m in Sources */,
 				AB778F632116E88E00A81791 /* BDFAvatarBrowser.m in Sources */,
 				ABA52FD321181DB40043B398 /* BDFComBottomToolView.m in Sources */,
@@ -1296,6 +1309,7 @@
 				ABCD18461ED6D0CF005AA34E /* BDFFileCacheManager.m in Sources */,
 				ABA52FE821181FC90043B398 /* BDFHomeSearchController.m in Sources */,
 				ABCD18631ED7C323005AA34E /* NSDictionary+Property.m in Sources */,
+				AB0332EF217B298E005951F1 /* BDFAllTypeNewsView.m in Sources */,
 				ABCD185A1ED6E0B8005AA34E /* BDFMessageTableViewCell.m in Sources */,
 				AB1E5DCA20886632002E48B5 /* BDFUserInfoManager.m in Sources */,
 				ABA52FD221181DB40043B398 /* BDFHomeHotNewsCell.m in Sources */,

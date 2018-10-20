@@ -14,4 +14,5 @@ pod 'ADTickerLabel'
 pod 'MWPhotoBrowser'
 pod 'MotionBlur'
 pod 'SVProgressHUD'
+pod 'DXPopover'
 end
