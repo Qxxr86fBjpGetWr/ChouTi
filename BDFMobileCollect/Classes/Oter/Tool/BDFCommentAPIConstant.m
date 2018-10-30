@@ -36,5 +36,7 @@ NSString *const BDFHOMESEARCHSUGGEST = @"https://api.chouti.com/search/suggest.j
 NSString *const BDFHOMESEARCHPUBLISH = @"https://api.chouti.com/search/show.json";
 /** 我的 */
 NSString *const BDFMEDATA = @"https://api.chouti.com/users/profile.json";
+/** 首页顶部的分类 */
+NSString *const BDFHOMENEWSCATEGORY = @"https://api.chouti.com/subjects.json";
 
 @end
