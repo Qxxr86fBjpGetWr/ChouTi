@@ -64,13 +64,7 @@
     }
     BDFHomeSubjectModel *rowData = [self getDataModelWithIndexPath:indexPath];
     collectionViewCell.titleLabel.text = rowData.name_cn;
-//    UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, collectionViewCell.width, collectionViewCell.height)];
-//    title.textAlignment = NSTextAlignmentCenter;
-//    title.center = collectionViewCell.center;
-//    title.textColor = kLightGrayColor;
-//    title.text = rowData.name_cn;
-//    title.backgroundColor = kClearColor;
-//    title.center = collectionViewCell.contentView.center;
+
     if ([indexPath isEqual:self.selectIndexPath]) {
         collectionViewCell.backgroundColor = kColorFromRGB(0xf5f5f5);
     } else {
@@ -136,6 +130,7 @@
     /** 第一组数据源拼接 */
     BDFHomeSubjectModel *model = [[BDFHomeSubjectModel alloc] init];
     model.name_cn = @"新热榜";
+    model.name_en = @"hotnews";
     model.id = @"0";
     [subjectsModel.subjects insertObject:model atIndex:0];
     

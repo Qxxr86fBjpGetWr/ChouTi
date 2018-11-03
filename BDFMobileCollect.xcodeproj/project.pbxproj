@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		20524D5E88229D6B3F29DAD7 /* libPods-BDFMobileCollect.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC14892B4664F90CCBCB7B63 /* libPods-BDFMobileCollect.a */; };
-		AB0332EC217B26F0005951F1 /* BDFHomeTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0332EB217B26F0005951F1 /* BDFHomeTitleView.m */; };
-		AB0332EF217B298E005951F1 /* BDFAllTypeNewsView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0332EE217B298E005951F1 /* BDFAllTypeNewsView.m */; };
 		AB1E5DC1208854B0002E48B5 /* BDFLoginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AB1E5DC0208854B0002E48B5 /* BDFLoginRequest.m */; };
 		AB1E5DC720886507002E48B5 /* BDFLoginSucModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB1E5DC620886507002E48B5 /* BDFLoginSucModel.m */; };
 		AB1E5DCA20886632002E48B5 /* BDFUserInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AB1E5DC820886632002E48B5 /* BDFUserInfoManager.m */; };
@@ -30,14 +28,47 @@
 		AB2803161E1F84930006A13E /* BDFMainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2803151E1F84930006A13E /* BDFMainTabBarController.m */; };
 		AB2803231E1F87620006A13E /* BDFBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2803221E1F87620006A13E /* BDFBaseViewController.m */; };
 		AB2803261E1F87C10006A13E /* BDFLogAndRegViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2803251E1F87C10006A13E /* BDFLogAndRegViewController.m */; };
+		AB2B02B4218D583A00A4AA74 /* BDF42NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2B02B3218D583A00A4AA74 /* BDF42NewsViewController.m */; };
 		AB2F360B2119AFA4008DA8F1 /* BDFSearchPublishRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2F360A2119AFA4008DA8F1 /* BDFSearchPublishRequest.m */; };
 		AB3F0FE4211F2A7A00D283CC /* BDFSearchPublishToolButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3F0FE3211F2A7A00D283CC /* BDFSearchPublishToolButton.m */; };
 		AB3F102E21241B5100D283CC /* BDFSearchPublishMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3F102D21241B5100D283CC /* BDFSearchPublishMenuView.m */; };
 		AB42A25021196A2C00916087 /* BDFSearchSuggestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB42A24F21196A2C00916087 /* BDFSearchSuggestCell.m */; };
-		AB4F0BDC21883A2A005A1FE5 /* BDFHomeNewsSubjectsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4F0BDB21883A2A005A1FE5 /* BDFHomeNewsSubjectsRequest.m */; };
-		AB4F0BDF21884595005A1FE5 /* BDFHomeSubjectsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4F0BDE21884595005A1FE5 /* BDFHomeSubjectsModel.m */; };
-		AB4F0BE221885EAA005A1FE5 /* BDFSubHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4F0BE121885EAA005A1FE5 /* BDFSubHomePageViewController.m */; };
-		AB4F0BE52188681F005A1FE5 /* BDFAllTypeCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4F0BE42188681F005A1FE5 /* BDFAllTypeCollectionCell.m */; };
+		AB6D633D218C5AEA009B1AD4 /* BDFHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6D62F3218C5AEA009B1AD4 /* BDFHomePageViewController.m */; };
+		AB6D633E218C5AEA009B1AD4 /* BDFSubHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6D62F4218C5AEA009B1AD4 /* BDFSubHomePageViewController.m */; };
+		AB6D633F218C5AEA009B1AD4 /* BDFDetailWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6D62F5218C5AEA009B1AD4 /* BDFDetailWebViewController.m */; };
+		AB6D6340218C5AEA009B1AD4 /* BDFHomeCommentController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6D62F6218C5AEA009B1AD4 /* BDFHomeCommentController.m */; };
+		AB6D6341218C5AEA009B1AD4 /* BDFHomeHotNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6D62FB218C5AEA009B1AD4 /* BDFHomeHotNewsModel.m */; };
+		AB6D6342218C5AEA009B1AD4 /* BDFCommentTreeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6D62FF218C5AEA009B1AD4 /* BDFCommentTreeManager.m */; };
+		AB6D6343218C5AEA009B1AD4 /* BDFHomeCommPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6D6300218C5AEA009B1AD4 /* BDFHomeCommPoint.m */; };
+		AB6D6344218C5AEA009B1AD4 /* BDFHomeCommenntsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6D6304218C5AEA009B1AD4 /* BDFHomeCommenntsModel.m */; };
+		AB6D6345218C5AEA009B1AD4 /* BDFCommentTreeItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6D6306218C5AEA009B1AD4 /* BDFCommentTreeItemModel.m */; };
+		AB6D6346218C5AEA009B1AD4 /* BDFHomeCommentIndexModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6D6307218C5AEA009B1AD4 /* BDFHomeCommentIndexModel.m */; };
+		AB6D6347218C5AEA009B1AD4 /* BDFHomeHotNewsFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6D630A218C5AEA009B1AD4 /* BDFHomeHotNewsFrame.m */; };
+		AB6D6348218C5AEA009B1AD4 /* BDFCommentFrameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6D630B218C5AEA009B1AD4 /* BDFCommentFrameModel.m */; };
+		AB6D6349218C5AEA009B1AD4 /* BDFHomeSubjectsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6D630C218C5AEA009B1AD4 /* BDFHomeSubjectsModel.m */; };
+		AB6D634A218C5AEA009B1AD4 /* BDFHomeTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6D630E218C5AEA009B1AD4 /* BDFHomeTitleView.m */; };
+		AB6D634B218C5AEA009B1AD4 /* BDFAllTypeCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6D630F218C5AEA009B1AD4 /* BDFAllTypeCollectionCell.m */; };
+		AB6D634C218C5AEA009B1AD4 /* BDFHomeCommentsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6D6310218C5AEA009B1AD4 /* BDFHomeCommentsCell.m */; };
+		AB6D634D218C5AEA009B1AD4 /* BDFKeyBoardToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6D6311218C5AEA009B1AD4 /* BDFKeyBoardToolView.m */; };
+		AB6D634E218C5AEA009B1AD4 /* BDFMostHotView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6D6313218C5AEA009B1AD4 /* BDFMostHotView.m */; };
+		AB6D634F218C5AEA009B1AD4 /* BDFHomeHotNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6D6315218C5AEA009B1AD4 /* BDFHomeHotNewsCell.m */; };
+		AB6D6350218C5AEA009B1AD4 /* BDFComBottomToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6D6316218C5AEA009B1AD4 /* BDFComBottomToolView.m */; };
+		AB6D6351218C5AEA009B1AD4 /* BDFHomeDetailWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6D631E218C5AEA009B1AD4 /* BDFHomeDetailWebView.m */; };
+		AB6D6352218C5AEA009B1AD4 /* BDFAllTypeNewsView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6D631F218C5AEA009B1AD4 /* BDFAllTypeNewsView.m */; };
+		AB6D6353218C5AEA009B1AD4 /* BDFHomeImagePreview.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6D6322218C5AEA009B1AD4 /* BDFHomeImagePreview.m */; };
+		AB6D6354218C5AEA009B1AD4 /* BDFNewsHotView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6D6323218C5AEA009B1AD4 /* BDFNewsHotView.m */; };
+		AB6D6355218C5AEA009B1AD4 /* BDFHomeHotNewsAddRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6D6326218C5AEA009B1AD4 /* BDFHomeHotNewsAddRequest.m */; };
+		AB6D6356218C5AEA009B1AD4 /* BDFHomeNewsSubjectsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6D632A218C5AEA009B1AD4 /* BDFHomeNewsSubjectsRequest.m */; };
+		AB6D6357218C5AEA009B1AD4 /* BDFHomeNewsMoreRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6D632C218C5AEA009B1AD4 /* BDFHomeNewsMoreRequest.m */; };
+		AB6D6358218C5AEA009B1AD4 /* BDFTestRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6D632E218C5AEA009B1AD4 /* BDFTestRequest.m */; };
+		AB6D6359218C5AEA009B1AD4 /* BDFHomeHotNewsUpsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6D6330218C5AEA009B1AD4 /* BDFHomeHotNewsUpsRequest.m */; };
+		AB6D635A218C5AEA009B1AD4 /* BDFHomePageHotNewsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6D6331218C5AEA009B1AD4 /* BDFHomePageHotNewsRequest.m */; };
+		AB6D635B218C5AEA009B1AD4 /* BDFCommentSendRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6D6332218C5AEA009B1AD4 /* BDFCommentSendRequest.m */; };
+		AB6D6361218C6156009B1AD4 /* BDFNewsHotTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6D6360218C6156009B1AD4 /* BDFNewsHotTableView.m */; };
+		AB6D6364218D31E0009B1AD4 /* BDFNewsHotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6D6363218D31E0009B1AD4 /* BDFNewsHotViewController.m */; };
+		AB6D6367218D3BDC009B1AD4 /* BDFMostHotNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6D6366218D3BDC009B1AD4 /* BDFMostHotNewsViewController.m */; };
+		AB6D636A218D3C97009B1AD4 /* BDFMostHotNewsSubController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6D6369218D3C97009B1AD4 /* BDFMostHotNewsSubController.m */; };
+		AB6D636D218D4E3B009B1AD4 /* BDFMostHotListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6D636C218D4E3B009B1AD4 /* BDFMostHotListRequest.m */; };
 		AB6FFE381E247CE000837AB6 /* BDFRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6FFE371E247CE000837AB6 /* BDFRequestManager.m */; };
 		AB6FFE3B1E24AABF00837AB6 /* BDFBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AB6FFE3A1E24AABF00837AB6 /* BDFBaseRequest.m */; };
 		AB778F632116E88E00A81791 /* BDFAvatarBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = AB778F622116E88E00A81791 /* BDFAvatarBrowser.m */; };
@@ -51,27 +82,6 @@
 		AB7C1A6721538C59005D63FA /* BDFHomeHeaderOptionItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = AB7C1A6521538C59005D63FA /* BDFHomeHeaderOptionItemView.m */; };
 		AB7C1A6A215392C8005D63FA /* BDFNotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB7C1A69215392C8005D63FA /* BDFNotificationViewController.m */; };
 		AB8DFB1E2094436C00B30A63 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = AB8DFB1C2094436C00B30A63 /* UIView+Frame.m */; };
-		ABA52FC521181DB40043B398 /* BDFHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABA52F9221181DB40043B398 /* BDFHomePageViewController.m */; };
-		ABA52FC621181DB40043B398 /* BDFDetailWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABA52F9321181DB40043B398 /* BDFDetailWebViewController.m */; };
-		ABA52FC721181DB40043B398 /* BDFHomeCommentController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABA52F9421181DB40043B398 /* BDFHomeCommentController.m */; };
-		ABA52FC921181DB40043B398 /* BDFHomeHotNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ABA52F9921181DB40043B398 /* BDFHomeHotNewsModel.m */; };
-		ABA52FCA21181DB40043B398 /* BDFHomeCommPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = ABA52F9D21181DB40043B398 /* BDFHomeCommPoint.m */; };
-		ABA52FCC21181DB40043B398 /* BDFHomeCommenntsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ABA52FA121181DB40043B398 /* BDFHomeCommenntsModel.m */; };
-		ABA52FCD21181DB40043B398 /* BDFHomeCommentIndexModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ABA52FA321181DB40043B398 /* BDFHomeCommentIndexModel.m */; };
-		ABA52FCE21181DB40043B398 /* BDFHomeHotNewsFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = ABA52FA521181DB40043B398 /* BDFHomeHotNewsFrame.m */; };
-		ABA52FCF21181DB40043B398 /* BDFCommentFrameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ABA52FA621181DB40043B398 /* BDFCommentFrameModel.m */; };
-		ABA52FD021181DB40043B398 /* BDFHomeCommentsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ABA52FA821181DB40043B398 /* BDFHomeCommentsCell.m */; };
-		ABA52FD121181DB40043B398 /* BDFKeyBoardToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABA52FAA21181DB40043B398 /* BDFKeyBoardToolView.m */; };
-		ABA52FD221181DB40043B398 /* BDFHomeHotNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ABA52FAD21181DB40043B398 /* BDFHomeHotNewsCell.m */; };
-		ABA52FD321181DB40043B398 /* BDFComBottomToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABA52FAE21181DB40043B398 /* BDFComBottomToolView.m */; };
-		ABA52FD421181DB40043B398 /* BDFHomeDetailWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABA52FB121181DB40043B398 /* BDFHomeDetailWebView.m */; };
-		ABA52FD621181DB40043B398 /* BDFHomeImagePreview.m in Sources */ = {isa = PBXBuildFile; fileRef = ABA52FB521181DB40043B398 /* BDFHomeImagePreview.m */; };
-		ABA52FD721181DB40043B398 /* BDFHomeHotNewsAddRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = ABA52FB921181DB40043B398 /* BDFHomeHotNewsAddRequest.m */; };
-		ABA52FD821181DB40043B398 /* BDFHomeNewsMoreRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = ABA52FBE21181DB40043B398 /* BDFHomeNewsMoreRequest.m */; };
-		ABA52FD921181DB40043B398 /* BDFTestRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = ABA52FC021181DB40043B398 /* BDFTestRequest.m */; };
-		ABA52FDB21181DB40043B398 /* BDFHomeHotNewsUpsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = ABA52FC221181DB40043B398 /* BDFHomeHotNewsUpsRequest.m */; };
-		ABA52FDC21181DB40043B398 /* BDFHomePageHotNewsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = ABA52FC321181DB40043B398 /* BDFHomePageHotNewsRequest.m */; };
-		ABA52FDD21181DB40043B398 /* BDFCommentSendRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = ABA52FC421181DB40043B398 /* BDFCommentSendRequest.m */; };
 		ABA52FE821181FC90043B398 /* BDFHomeSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABA52FE721181FC90043B398 /* BDFHomeSearchController.m */; };
 		ABA52FEB21181FE20043B398 /* BDFSearchSuggestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ABA52FE921181FE20043B398 /* BDFSearchSuggestModel.m */; };
 		ABA52FEE21181FEF0043B398 /* BDFSearchSuggestRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = ABA52FED21181FEF0043B398 /* BDFSearchSuggestRequest.m */; };
@@ -82,6 +92,13 @@
 		ABA52FFD21185D880043B398 /* BDFSearchPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABA52FFC21185D880043B398 /* BDFSearchPublishViewController.m */; };
 		ABA5300021185DA30043B398 /* BDFSearchUsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABA52FFF21185DA30043B398 /* BDFSearchUsersViewController.m */; };
 		ABA5300321185FFE0043B398 /* BDFSearchPublishToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABA5300221185FFE0043B398 /* BDFSearchPublishToolView.m */; };
+		ABB18825218D9F58006A9295 /* BDFHomeTopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB18824218D9F58006A9295 /* BDFHomeTopicViewController.m */; };
+		ABB18828218DA08F006A9295 /* BDFHomeTopicRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB18827218DA08F006A9295 /* BDFHomeTopicRequest.m */; };
+		ABB1882B218DA306006A9295 /* BDFHomeTopicListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB1882A218DA306006A9295 /* BDFHomeTopicListModel.m */; };
+		ABB1882E218DA6F4006A9295 /* BDFHomeTopicListTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB1882D218DA6F4006A9295 /* BDFHomeTopicListTableCell.m */; };
+		ABB18831218DAE00006A9295 /* BDFHomeTopicDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB18830218DAE00006A9295 /* BDFHomeTopicDetailController.m */; };
+		ABB18834218DB25A006A9295 /* BDFHomeTopicDetailRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB18833218DB25A006A9295 /* BDFHomeTopicDetailRequest.m */; };
+		ABB18837218DB7E1006A9295 /* BDFHomeTopicListDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB18836218DB7E1006A9295 /* BDFHomeTopicListDetailModel.m */; };
 		ABB3FFE420F4B238000472D3 /* UIVisualEffectView+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB3FFE320F4B238000472D3 /* UIVisualEffectView+Addition.m */; };
 		ABCD181E1ED6C4F7005AA34E /* BDFBaseImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCD181D1ED6C4F7005AA34E /* BDFBaseImageView.m */; };
 		ABCD183F1ED6D0CF005AA34E /* NSFileManager+Paths.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCD182B1ED6D0CF005AA34E /* NSFileManager+Paths.m */; };
@@ -101,8 +118,6 @@
 		ABCD18691ED7C898005AA34E /* BDFBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCD18681ED7C898005AA34E /* BDFBaseModel.m */; };
 		ABCD186C1ED7D61B005AA34E /* BDFMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCD186B1ED7D61B005AA34E /* BDFMessageModel.m */; };
 		ABE40A8C2148FF2600977F08 /* BDFMessageWithOutLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE40A8B2148FF2600977F08 /* BDFMessageWithOutLoginView.m */; };
-		ABE40ACD214A418600977F08 /* BDFCommentTreeItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE40ACC214A418600977F08 /* BDFCommentTreeItemModel.m */; };
-		ABE40AD0214A5ED200977F08 /* BDFCommentTreeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE40ACF214A5ED200977F08 /* BDFCommentTreeManager.m */; };
 		ABE40AD8214B86DB00977F08 /* BDFMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE40AD7214B86DB00977F08 /* BDFMeViewController.m */; };
 		ABE40ADB214B896700977F08 /* BDFMeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE40ADA214B896700977F08 /* BDFMeTableViewCell.m */; };
 		ABE40ADE214B938B00977F08 /* BDFMeDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE40ADD214B938B00977F08 /* BDFMeDataModel.m */; };
@@ -129,10 +144,6 @@
 
 /* Begin PBXFileReference section */
 		6215059ED4D6E0E8BB292FEA /* Pods-BDFMobileCollect.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BDFMobileCollect.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BDFMobileCollect/Pods-BDFMobileCollect.debug.xcconfig"; sourceTree = "<group>"; };
-		AB0332EA217B26F0005951F1 /* BDFHomeTitleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFHomeTitleView.h; sourceTree = "<group>"; };
-		AB0332EB217B26F0005951F1 /* BDFHomeTitleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFHomeTitleView.m; sourceTree = "<group>"; };
-		AB0332ED217B298E005951F1 /* BDFAllTypeNewsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFAllTypeNewsView.h; sourceTree = "<group>"; };
-		AB0332EE217B298E005951F1 /* BDFAllTypeNewsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFAllTypeNewsView.m; sourceTree = "<group>"; };
 		AB1E5DBF208854B0002E48B5 /* BDFLoginRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFLoginRequest.h; sourceTree = "<group>"; };
 		AB1E5DC0208854B0002E48B5 /* BDFLoginRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFLoginRequest.m; sourceTree = "<group>"; };
 		AB1E5DC520886507002E48B5 /* BDFLoginSucModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFLoginSucModel.h; sourceTree = "<group>"; };
@@ -177,6 +188,8 @@
 		AB2803221E1F87620006A13E /* BDFBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFBaseViewController.m; sourceTree = "<group>"; };
 		AB2803241E1F87C10006A13E /* BDFLogAndRegViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFLogAndRegViewController.h; sourceTree = "<group>"; };
 		AB2803251E1F87C10006A13E /* BDFLogAndRegViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFLogAndRegViewController.m; sourceTree = "<group>"; };
+		AB2B02B2218D583A00A4AA74 /* BDF42NewsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDF42NewsViewController.h; sourceTree = "<group>"; };
+		AB2B02B3218D583A00A4AA74 /* BDF42NewsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDF42NewsViewController.m; sourceTree = "<group>"; };
 		AB2F36092119AFA4008DA8F1 /* BDFSearchPublishRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFSearchPublishRequest.h; sourceTree = "<group>"; };
 		AB2F360A2119AFA4008DA8F1 /* BDFSearchPublishRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFSearchPublishRequest.m; sourceTree = "<group>"; };
 		AB3F0FE2211F2A7A00D283CC /* BDFSearchPublishToolButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFSearchPublishToolButton.h; sourceTree = "<group>"; };
@@ -185,14 +198,78 @@
 		AB3F102D21241B5100D283CC /* BDFSearchPublishMenuView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFSearchPublishMenuView.m; sourceTree = "<group>"; };
 		AB42A24E21196A2C00916087 /* BDFSearchSuggestCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFSearchSuggestCell.h; sourceTree = "<group>"; };
 		AB42A24F21196A2C00916087 /* BDFSearchSuggestCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFSearchSuggestCell.m; sourceTree = "<group>"; };
-		AB4F0BDA21883A2A005A1FE5 /* BDFHomeNewsSubjectsRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFHomeNewsSubjectsRequest.h; sourceTree = "<group>"; };
-		AB4F0BDB21883A2A005A1FE5 /* BDFHomeNewsSubjectsRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFHomeNewsSubjectsRequest.m; sourceTree = "<group>"; };
-		AB4F0BDD21884595005A1FE5 /* BDFHomeSubjectsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFHomeSubjectsModel.h; sourceTree = "<group>"; };
-		AB4F0BDE21884595005A1FE5 /* BDFHomeSubjectsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFHomeSubjectsModel.m; sourceTree = "<group>"; };
-		AB4F0BE021885EAA005A1FE5 /* BDFSubHomePageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFSubHomePageViewController.h; sourceTree = "<group>"; };
-		AB4F0BE121885EAA005A1FE5 /* BDFSubHomePageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFSubHomePageViewController.m; sourceTree = "<group>"; };
-		AB4F0BE32188681F005A1FE5 /* BDFAllTypeCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFAllTypeCollectionCell.h; sourceTree = "<group>"; };
-		AB4F0BE42188681F005A1FE5 /* BDFAllTypeCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFAllTypeCollectionCell.m; sourceTree = "<group>"; };
+		AB6D62F2218C5AEA009B1AD4 /* BDFHomeCommentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFHomeCommentController.h; sourceTree = "<group>"; };
+		AB6D62F3218C5AEA009B1AD4 /* BDFHomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFHomePageViewController.m; sourceTree = "<group>"; };
+		AB6D62F4218C5AEA009B1AD4 /* BDFSubHomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFSubHomePageViewController.m; sourceTree = "<group>"; };
+		AB6D62F5218C5AEA009B1AD4 /* BDFDetailWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFDetailWebViewController.m; sourceTree = "<group>"; };
+		AB6D62F6218C5AEA009B1AD4 /* BDFHomeCommentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFHomeCommentController.m; sourceTree = "<group>"; };
+		AB6D62F7218C5AEA009B1AD4 /* BDFHomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFHomePageViewController.h; sourceTree = "<group>"; };
+		AB6D62F8218C5AEA009B1AD4 /* BDFSubHomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFSubHomePageViewController.h; sourceTree = "<group>"; };
+		AB6D62F9218C5AEA009B1AD4 /* BDFDetailWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFDetailWebViewController.h; sourceTree = "<group>"; };
+		AB6D62FB218C5AEA009B1AD4 /* BDFHomeHotNewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFHomeHotNewsModel.m; sourceTree = "<group>"; };
+		AB6D62FC218C5AEA009B1AD4 /* BDFHomeCommenntsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFHomeCommenntsModel.h; sourceTree = "<group>"; };
+		AB6D62FD218C5AEA009B1AD4 /* BDFHomeCommentIndexModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFHomeCommentIndexModel.h; sourceTree = "<group>"; };
+		AB6D62FE218C5AEA009B1AD4 /* BDFCommentTreeItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFCommentTreeItemModel.h; sourceTree = "<group>"; };
+		AB6D62FF218C5AEA009B1AD4 /* BDFCommentTreeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFCommentTreeManager.m; sourceTree = "<group>"; };
+		AB6D6300218C5AEA009B1AD4 /* BDFHomeCommPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFHomeCommPoint.m; sourceTree = "<group>"; };
+		AB6D6301218C5AEA009B1AD4 /* BDFHomeSubjectsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFHomeSubjectsModel.h; sourceTree = "<group>"; };
+		AB6D6302218C5AEA009B1AD4 /* BDFCommentFrameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFCommentFrameModel.h; sourceTree = "<group>"; };
+		AB6D6303218C5AEA009B1AD4 /* BDFHomeHotNewsFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFHomeHotNewsFrame.h; sourceTree = "<group>"; };
+		AB6D6304218C5AEA009B1AD4 /* BDFHomeCommenntsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFHomeCommenntsModel.m; sourceTree = "<group>"; };
+		AB6D6305218C5AEA009B1AD4 /* BDFHomeHotNewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFHomeHotNewsModel.h; sourceTree = "<group>"; };
+		AB6D6306218C5AEA009B1AD4 /* BDFCommentTreeItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFCommentTreeItemModel.m; sourceTree = "<group>"; };
+		AB6D6307218C5AEA009B1AD4 /* BDFHomeCommentIndexModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFHomeCommentIndexModel.m; sourceTree = "<group>"; };
+		AB6D6308218C5AEA009B1AD4 /* BDFHomeCommPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFHomeCommPoint.h; sourceTree = "<group>"; };
+		AB6D6309218C5AEA009B1AD4 /* BDFCommentTreeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFCommentTreeManager.h; sourceTree = "<group>"; };
+		AB6D630A218C5AEA009B1AD4 /* BDFHomeHotNewsFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFHomeHotNewsFrame.m; sourceTree = "<group>"; };
+		AB6D630B218C5AEA009B1AD4 /* BDFCommentFrameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFCommentFrameModel.m; sourceTree = "<group>"; };
+		AB6D630C218C5AEA009B1AD4 /* BDFHomeSubjectsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFHomeSubjectsModel.m; sourceTree = "<group>"; };
+		AB6D630E218C5AEA009B1AD4 /* BDFHomeTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFHomeTitleView.m; sourceTree = "<group>"; };
+		AB6D630F218C5AEA009B1AD4 /* BDFAllTypeCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFAllTypeCollectionCell.m; sourceTree = "<group>"; };
+		AB6D6310218C5AEA009B1AD4 /* BDFHomeCommentsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFHomeCommentsCell.m; sourceTree = "<group>"; };
+		AB6D6311218C5AEA009B1AD4 /* BDFKeyBoardToolView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFKeyBoardToolView.m; sourceTree = "<group>"; };
+		AB6D6312218C5AEA009B1AD4 /* BDFHomeDetailWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFHomeDetailWebView.h; sourceTree = "<group>"; };
+		AB6D6313218C5AEA009B1AD4 /* BDFMostHotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFMostHotView.m; sourceTree = "<group>"; };
+		AB6D6314218C5AEA009B1AD4 /* BDFHomeImagePreview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFHomeImagePreview.h; sourceTree = "<group>"; };
+		AB6D6315218C5AEA009B1AD4 /* BDFHomeHotNewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFHomeHotNewsCell.m; sourceTree = "<group>"; };
+		AB6D6316218C5AEA009B1AD4 /* BDFComBottomToolView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFComBottomToolView.m; sourceTree = "<group>"; };
+		AB6D6317218C5AEA009B1AD4 /* BDFAllTypeNewsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFAllTypeNewsView.h; sourceTree = "<group>"; };
+		AB6D6318218C5AEA009B1AD4 /* BDFNewsHotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFNewsHotView.h; sourceTree = "<group>"; };
+		AB6D6319218C5AEA009B1AD4 /* BDFHomeCommentsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFHomeCommentsCell.h; sourceTree = "<group>"; };
+		AB6D631A218C5AEA009B1AD4 /* BDFAllTypeCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFAllTypeCollectionCell.h; sourceTree = "<group>"; };
+		AB6D631B218C5AEA009B1AD4 /* BDFHomeTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFHomeTitleView.h; sourceTree = "<group>"; };
+		AB6D631C218C5AEA009B1AD4 /* BDFMostHotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFMostHotView.h; sourceTree = "<group>"; };
+		AB6D631D218C5AEA009B1AD4 /* BDFKeyBoardToolView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFKeyBoardToolView.h; sourceTree = "<group>"; };
+		AB6D631E218C5AEA009B1AD4 /* BDFHomeDetailWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFHomeDetailWebView.m; sourceTree = "<group>"; };
+		AB6D631F218C5AEA009B1AD4 /* BDFAllTypeNewsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFAllTypeNewsView.m; sourceTree = "<group>"; };
+		AB6D6320218C5AEA009B1AD4 /* BDFComBottomToolView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFComBottomToolView.h; sourceTree = "<group>"; };
+		AB6D6321218C5AEA009B1AD4 /* BDFHomeHotNewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFHomeHotNewsCell.h; sourceTree = "<group>"; };
+		AB6D6322218C5AEA009B1AD4 /* BDFHomeImagePreview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFHomeImagePreview.m; sourceTree = "<group>"; };
+		AB6D6323218C5AEA009B1AD4 /* BDFNewsHotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFNewsHotView.m; sourceTree = "<group>"; };
+		AB6D6325218C5AEA009B1AD4 /* BDFTestRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFTestRequest.h; sourceTree = "<group>"; };
+		AB6D6326218C5AEA009B1AD4 /* BDFHomeHotNewsAddRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFHomeHotNewsAddRequest.m; sourceTree = "<group>"; };
+		AB6D6327218C5AEA009B1AD4 /* BDFHomeNewsMoreRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFHomeNewsMoreRequest.h; sourceTree = "<group>"; };
+		AB6D6328218C5AEA009B1AD4 /* BDFHomePageHotNewsRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFHomePageHotNewsRequest.h; sourceTree = "<group>"; };
+		AB6D6329218C5AEA009B1AD4 /* BDFHomeHotNewsUpsRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFHomeHotNewsUpsRequest.h; sourceTree = "<group>"; };
+		AB6D632A218C5AEA009B1AD4 /* BDFHomeNewsSubjectsRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFHomeNewsSubjectsRequest.m; sourceTree = "<group>"; };
+		AB6D632B218C5AEA009B1AD4 /* BDFCommentSendRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFCommentSendRequest.h; sourceTree = "<group>"; };
+		AB6D632C218C5AEA009B1AD4 /* BDFHomeNewsMoreRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFHomeNewsMoreRequest.m; sourceTree = "<group>"; };
+		AB6D632D218C5AEA009B1AD4 /* BDFHomeHotNewsAddRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFHomeHotNewsAddRequest.h; sourceTree = "<group>"; };
+		AB6D632E218C5AEA009B1AD4 /* BDFTestRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFTestRequest.m; sourceTree = "<group>"; };
+		AB6D632F218C5AEA009B1AD4 /* BDFHomeNewsSubjectsRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFHomeNewsSubjectsRequest.h; sourceTree = "<group>"; };
+		AB6D6330218C5AEA009B1AD4 /* BDFHomeHotNewsUpsRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFHomeHotNewsUpsRequest.m; sourceTree = "<group>"; };
+		AB6D6331218C5AEA009B1AD4 /* BDFHomePageHotNewsRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFHomePageHotNewsRequest.m; sourceTree = "<group>"; };
+		AB6D6332218C5AEA009B1AD4 /* BDFCommentSendRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFCommentSendRequest.m; sourceTree = "<group>"; };
+		AB6D635F218C6156009B1AD4 /* BDFNewsHotTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFNewsHotTableView.h; sourceTree = "<group>"; };
+		AB6D6360218C6156009B1AD4 /* BDFNewsHotTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFNewsHotTableView.m; sourceTree = "<group>"; };
+		AB6D6362218D31E0009B1AD4 /* BDFNewsHotViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFNewsHotViewController.h; sourceTree = "<group>"; };
+		AB6D6363218D31E0009B1AD4 /* BDFNewsHotViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFNewsHotViewController.m; sourceTree = "<group>"; };
+		AB6D6365218D3BDC009B1AD4 /* BDFMostHotNewsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFMostHotNewsViewController.h; sourceTree = "<group>"; };
+		AB6D6366218D3BDC009B1AD4 /* BDFMostHotNewsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFMostHotNewsViewController.m; sourceTree = "<group>"; };
+		AB6D6368218D3C97009B1AD4 /* BDFMostHotNewsSubController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFMostHotNewsSubController.h; sourceTree = "<group>"; };
+		AB6D6369218D3C97009B1AD4 /* BDFMostHotNewsSubController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFMostHotNewsSubController.m; sourceTree = "<group>"; };
+		AB6D636B218D4E3B009B1AD4 /* BDFMostHotListRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFMostHotListRequest.h; sourceTree = "<group>"; };
+		AB6D636C218D4E3B009B1AD4 /* BDFMostHotListRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFMostHotListRequest.m; sourceTree = "<group>"; };
 		AB6FFE361E247CE000837AB6 /* BDFRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFRequestManager.h; sourceTree = "<group>"; };
 		AB6FFE371E247CE000837AB6 /* BDFRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFRequestManager.m; sourceTree = "<group>"; };
 		AB6FFE391E24AABF00837AB6 /* BDFBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFBaseRequest.h; sourceTree = "<group>"; };
@@ -218,48 +295,6 @@
 		AB7C1A69215392C8005D63FA /* BDFNotificationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFNotificationViewController.m; sourceTree = "<group>"; };
 		AB8DFB1C2094436C00B30A63 /* UIView+Frame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		AB8DFB1D2094436C00B30A63 /* UIView+Frame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
-		ABA52F9121181DB40043B398 /* BDFHomeCommentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFHomeCommentController.h; sourceTree = "<group>"; };
-		ABA52F9221181DB40043B398 /* BDFHomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFHomePageViewController.m; sourceTree = "<group>"; };
-		ABA52F9321181DB40043B398 /* BDFDetailWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFDetailWebViewController.m; sourceTree = "<group>"; };
-		ABA52F9421181DB40043B398 /* BDFHomeCommentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFHomeCommentController.m; sourceTree = "<group>"; };
-		ABA52F9621181DB40043B398 /* BDFHomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFHomePageViewController.h; sourceTree = "<group>"; };
-		ABA52F9721181DB40043B398 /* BDFDetailWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFDetailWebViewController.h; sourceTree = "<group>"; };
-		ABA52F9921181DB40043B398 /* BDFHomeHotNewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFHomeHotNewsModel.m; sourceTree = "<group>"; };
-		ABA52F9A21181DB40043B398 /* BDFHomeCommenntsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFHomeCommenntsModel.h; sourceTree = "<group>"; };
-		ABA52F9C21181DB40043B398 /* BDFHomeCommentIndexModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFHomeCommentIndexModel.h; sourceTree = "<group>"; };
-		ABA52F9D21181DB40043B398 /* BDFHomeCommPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFHomeCommPoint.m; sourceTree = "<group>"; };
-		ABA52F9E21181DB40043B398 /* BDFCommentFrameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFCommentFrameModel.h; sourceTree = "<group>"; };
-		ABA52F9F21181DB40043B398 /* BDFHomeHotNewsFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFHomeHotNewsFrame.h; sourceTree = "<group>"; };
-		ABA52FA121181DB40043B398 /* BDFHomeCommenntsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFHomeCommenntsModel.m; sourceTree = "<group>"; };
-		ABA52FA221181DB40043B398 /* BDFHomeHotNewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFHomeHotNewsModel.h; sourceTree = "<group>"; };
-		ABA52FA321181DB40043B398 /* BDFHomeCommentIndexModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFHomeCommentIndexModel.m; sourceTree = "<group>"; };
-		ABA52FA421181DB40043B398 /* BDFHomeCommPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFHomeCommPoint.h; sourceTree = "<group>"; };
-		ABA52FA521181DB40043B398 /* BDFHomeHotNewsFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFHomeHotNewsFrame.m; sourceTree = "<group>"; };
-		ABA52FA621181DB40043B398 /* BDFCommentFrameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFCommentFrameModel.m; sourceTree = "<group>"; };
-		ABA52FA821181DB40043B398 /* BDFHomeCommentsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFHomeCommentsCell.m; sourceTree = "<group>"; };
-		ABA52FAA21181DB40043B398 /* BDFKeyBoardToolView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFKeyBoardToolView.m; sourceTree = "<group>"; };
-		ABA52FAB21181DB40043B398 /* BDFHomeDetailWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFHomeDetailWebView.h; sourceTree = "<group>"; };
-		ABA52FAC21181DB40043B398 /* BDFHomeImagePreview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFHomeImagePreview.h; sourceTree = "<group>"; };
-		ABA52FAD21181DB40043B398 /* BDFHomeHotNewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFHomeHotNewsCell.m; sourceTree = "<group>"; };
-		ABA52FAE21181DB40043B398 /* BDFComBottomToolView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFComBottomToolView.m; sourceTree = "<group>"; };
-		ABA52FAF21181DB40043B398 /* BDFHomeCommentsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFHomeCommentsCell.h; sourceTree = "<group>"; };
-		ABA52FB021181DB40043B398 /* BDFKeyBoardToolView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFKeyBoardToolView.h; sourceTree = "<group>"; };
-		ABA52FB121181DB40043B398 /* BDFHomeDetailWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFHomeDetailWebView.m; sourceTree = "<group>"; };
-		ABA52FB321181DB40043B398 /* BDFComBottomToolView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFComBottomToolView.h; sourceTree = "<group>"; };
-		ABA52FB421181DB40043B398 /* BDFHomeHotNewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFHomeHotNewsCell.h; sourceTree = "<group>"; };
-		ABA52FB521181DB40043B398 /* BDFHomeImagePreview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFHomeImagePreview.m; sourceTree = "<group>"; };
-		ABA52FB821181DB40043B398 /* BDFTestRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFTestRequest.h; sourceTree = "<group>"; };
-		ABA52FB921181DB40043B398 /* BDFHomeHotNewsAddRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFHomeHotNewsAddRequest.m; sourceTree = "<group>"; };
-		ABA52FBA21181DB40043B398 /* BDFHomeNewsMoreRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFHomeNewsMoreRequest.h; sourceTree = "<group>"; };
-		ABA52FBB21181DB40043B398 /* BDFHomePageHotNewsRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFHomePageHotNewsRequest.h; sourceTree = "<group>"; };
-		ABA52FBC21181DB40043B398 /* BDFHomeHotNewsUpsRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFHomeHotNewsUpsRequest.h; sourceTree = "<group>"; };
-		ABA52FBD21181DB40043B398 /* BDFCommentSendRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFCommentSendRequest.h; sourceTree = "<group>"; };
-		ABA52FBE21181DB40043B398 /* BDFHomeNewsMoreRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFHomeNewsMoreRequest.m; sourceTree = "<group>"; };
-		ABA52FBF21181DB40043B398 /* BDFHomeHotNewsAddRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFHomeHotNewsAddRequest.h; sourceTree = "<group>"; };
-		ABA52FC021181DB40043B398 /* BDFTestRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFTestRequest.m; sourceTree = "<group>"; };
-		ABA52FC221181DB40043B398 /* BDFHomeHotNewsUpsRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFHomeHotNewsUpsRequest.m; sourceTree = "<group>"; };
-		ABA52FC321181DB40043B398 /* BDFHomePageHotNewsRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFHomePageHotNewsRequest.m; sourceTree = "<group>"; };
-		ABA52FC421181DB40043B398 /* BDFCommentSendRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFCommentSendRequest.m; sourceTree = "<group>"; };
 		ABA52FE621181FC90043B398 /* BDFHomeSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFHomeSearchController.h; sourceTree = "<group>"; };
 		ABA52FE721181FC90043B398 /* BDFHomeSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFHomeSearchController.m; sourceTree = "<group>"; };
 		ABA52FE921181FE20043B398 /* BDFSearchSuggestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDFSearchSuggestModel.m; sourceTree = "<group>"; };
@@ -280,6 +315,20 @@
 		ABA52FFF21185DA30043B398 /* BDFSearchUsersViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFSearchUsersViewController.m; sourceTree = "<group>"; };
 		ABA5300121185FFE0043B398 /* BDFSearchPublishToolView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFSearchPublishToolView.h; sourceTree = "<group>"; };
 		ABA5300221185FFE0043B398 /* BDFSearchPublishToolView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFSearchPublishToolView.m; sourceTree = "<group>"; };
+		ABB18823218D9F58006A9295 /* BDFHomeTopicViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFHomeTopicViewController.h; sourceTree = "<group>"; };
+		ABB18824218D9F58006A9295 /* BDFHomeTopicViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFHomeTopicViewController.m; sourceTree = "<group>"; };
+		ABB18826218DA08F006A9295 /* BDFHomeTopicRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFHomeTopicRequest.h; sourceTree = "<group>"; };
+		ABB18827218DA08F006A9295 /* BDFHomeTopicRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFHomeTopicRequest.m; sourceTree = "<group>"; };
+		ABB18829218DA306006A9295 /* BDFHomeTopicListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFHomeTopicListModel.h; sourceTree = "<group>"; };
+		ABB1882A218DA306006A9295 /* BDFHomeTopicListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFHomeTopicListModel.m; sourceTree = "<group>"; };
+		ABB1882C218DA6F4006A9295 /* BDFHomeTopicListTableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFHomeTopicListTableCell.h; sourceTree = "<group>"; };
+		ABB1882D218DA6F4006A9295 /* BDFHomeTopicListTableCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFHomeTopicListTableCell.m; sourceTree = "<group>"; };
+		ABB1882F218DAE00006A9295 /* BDFHomeTopicDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFHomeTopicDetailController.h; sourceTree = "<group>"; };
+		ABB18830218DAE00006A9295 /* BDFHomeTopicDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFHomeTopicDetailController.m; sourceTree = "<group>"; };
+		ABB18832218DB25A006A9295 /* BDFHomeTopicDetailRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFHomeTopicDetailRequest.h; sourceTree = "<group>"; };
+		ABB18833218DB25A006A9295 /* BDFHomeTopicDetailRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFHomeTopicDetailRequest.m; sourceTree = "<group>"; };
+		ABB18835218DB7E1006A9295 /* BDFHomeTopicListDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFHomeTopicListDetailModel.h; sourceTree = "<group>"; };
+		ABB18836218DB7E1006A9295 /* BDFHomeTopicListDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFHomeTopicListDetailModel.m; sourceTree = "<group>"; };
 		ABB3FFE220F4B238000472D3 /* UIVisualEffectView+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIVisualEffectView+Addition.h"; sourceTree = "<group>"; };
 		ABB3FFE320F4B238000472D3 /* UIVisualEffectView+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIVisualEffectView+Addition.m"; sourceTree = "<group>"; };
 		ABCD181C1ED6C4F7005AA34E /* BDFBaseImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDFBaseImageView.h; sourceTree = "<group>"; };
@@ -319,10 +368,6 @@
 		ABCFB41E217716A7006BE1C4 /* BDFLogAndRegViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFLogAndRegViewDelegate.h; sourceTree = "<group>"; };
 		ABE40A8A2148FF2600977F08 /* BDFMessageWithOutLoginView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFMessageWithOutLoginView.h; sourceTree = "<group>"; };
 		ABE40A8B2148FF2600977F08 /* BDFMessageWithOutLoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFMessageWithOutLoginView.m; sourceTree = "<group>"; };
-		ABE40ACB214A418600977F08 /* BDFCommentTreeItemModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFCommentTreeItemModel.h; sourceTree = "<group>"; };
-		ABE40ACC214A418600977F08 /* BDFCommentTreeItemModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFCommentTreeItemModel.m; sourceTree = "<group>"; };
-		ABE40ACE214A5ED200977F08 /* BDFCommentTreeManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFCommentTreeManager.h; sourceTree = "<group>"; };
-		ABE40ACF214A5ED200977F08 /* BDFCommentTreeManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFCommentTreeManager.m; sourceTree = "<group>"; };
 		ABE40AD6214B86DB00977F08 /* BDFMeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFMeViewController.h; sourceTree = "<group>"; };
 		ABE40AD7214B86DB00977F08 /* BDFMeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFMeViewController.m; sourceTree = "<group>"; };
 		ABE40AD9214B896700977F08 /* BDFMeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFMeTableViewCell.h; sourceTree = "<group>"; };
@@ -637,6 +682,248 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		AB2B02AD218D573600A4AA74 /* 42 */ = {
+			isa = PBXGroup;
+			children = (
+				AB2B02B0218D575300A4AA74 /* Controller */,
+				AB2B02AF218D575300A4AA74 /* Model */,
+				AB2B02B1218D575300A4AA74 /* Request */,
+				AB2B02AE218D575300A4AA74 /* View */,
+			);
+			path = 42;
+			sourceTree = "<group>";
+		};
+		AB2B02AE218D575300A4AA74 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AB2B02AF218D575300A4AA74 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AB2B02B0218D575300A4AA74 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AB2B02B2218D583A00A4AA74 /* BDF42NewsViewController.h */,
+				AB2B02B3218D583A00A4AA74 /* BDF42NewsViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AB2B02B1218D575300A4AA74 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		AB6D62EF218C5AEA009B1AD4 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				ABB1881E218D9E8B006A9295 /* Topic */,
+				AB2B02AD218D573600A4AA74 /* 42 */,
+				AB6D62F0218C5AEA009B1AD4 /* HomePage */,
+				AB6D6333218C5AEA009B1AD4 /* NewsHot */,
+				AB6D6338218C5AEA009B1AD4 /* MostHot */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		AB6D62F0218C5AEA009B1AD4 /* HomePage */ = {
+			isa = PBXGroup;
+			children = (
+				AB6D62F1218C5AEA009B1AD4 /* Controller */,
+				AB6D62FA218C5AEA009B1AD4 /* Model */,
+				AB6D630D218C5AEA009B1AD4 /* View */,
+				AB6D6324218C5AEA009B1AD4 /* Request */,
+			);
+			path = HomePage;
+			sourceTree = "<group>";
+		};
+		AB6D62F1218C5AEA009B1AD4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AB6D62F9218C5AEA009B1AD4 /* BDFDetailWebViewController.h */,
+				AB6D62F5218C5AEA009B1AD4 /* BDFDetailWebViewController.m */,
+				AB6D62F2218C5AEA009B1AD4 /* BDFHomeCommentController.h */,
+				AB6D62F6218C5AEA009B1AD4 /* BDFHomeCommentController.m */,
+				AB6D62F7218C5AEA009B1AD4 /* BDFHomePageViewController.h */,
+				AB6D62F3218C5AEA009B1AD4 /* BDFHomePageViewController.m */,
+				AB6D62F8218C5AEA009B1AD4 /* BDFSubHomePageViewController.h */,
+				AB6D62F4218C5AEA009B1AD4 /* BDFSubHomePageViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AB6D62FA218C5AEA009B1AD4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AB6D6302218C5AEA009B1AD4 /* BDFCommentFrameModel.h */,
+				AB6D630B218C5AEA009B1AD4 /* BDFCommentFrameModel.m */,
+				AB6D62FE218C5AEA009B1AD4 /* BDFCommentTreeItemModel.h */,
+				AB6D6306218C5AEA009B1AD4 /* BDFCommentTreeItemModel.m */,
+				AB6D6309218C5AEA009B1AD4 /* BDFCommentTreeManager.h */,
+				AB6D62FF218C5AEA009B1AD4 /* BDFCommentTreeManager.m */,
+				AB6D62FC218C5AEA009B1AD4 /* BDFHomeCommenntsModel.h */,
+				AB6D6304218C5AEA009B1AD4 /* BDFHomeCommenntsModel.m */,
+				AB6D62FD218C5AEA009B1AD4 /* BDFHomeCommentIndexModel.h */,
+				AB6D6307218C5AEA009B1AD4 /* BDFHomeCommentIndexModel.m */,
+				AB6D6308218C5AEA009B1AD4 /* BDFHomeCommPoint.h */,
+				AB6D6300218C5AEA009B1AD4 /* BDFHomeCommPoint.m */,
+				AB6D6303218C5AEA009B1AD4 /* BDFHomeHotNewsFrame.h */,
+				AB6D630A218C5AEA009B1AD4 /* BDFHomeHotNewsFrame.m */,
+				AB6D6305218C5AEA009B1AD4 /* BDFHomeHotNewsModel.h */,
+				AB6D62FB218C5AEA009B1AD4 /* BDFHomeHotNewsModel.m */,
+				AB6D6301218C5AEA009B1AD4 /* BDFHomeSubjectsModel.h */,
+				AB6D630C218C5AEA009B1AD4 /* BDFHomeSubjectsModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AB6D630D218C5AEA009B1AD4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AB6D631A218C5AEA009B1AD4 /* BDFAllTypeCollectionCell.h */,
+				AB6D630F218C5AEA009B1AD4 /* BDFAllTypeCollectionCell.m */,
+				AB6D6317218C5AEA009B1AD4 /* BDFAllTypeNewsView.h */,
+				AB6D631F218C5AEA009B1AD4 /* BDFAllTypeNewsView.m */,
+				AB6D6320218C5AEA009B1AD4 /* BDFComBottomToolView.h */,
+				AB6D6316218C5AEA009B1AD4 /* BDFComBottomToolView.m */,
+				AB6D6319218C5AEA009B1AD4 /* BDFHomeCommentsCell.h */,
+				AB6D6310218C5AEA009B1AD4 /* BDFHomeCommentsCell.m */,
+				AB6D6312218C5AEA009B1AD4 /* BDFHomeDetailWebView.h */,
+				AB6D631E218C5AEA009B1AD4 /* BDFHomeDetailWebView.m */,
+				AB6D6321218C5AEA009B1AD4 /* BDFHomeHotNewsCell.h */,
+				AB6D6315218C5AEA009B1AD4 /* BDFHomeHotNewsCell.m */,
+				AB6D6314218C5AEA009B1AD4 /* BDFHomeImagePreview.h */,
+				AB6D6322218C5AEA009B1AD4 /* BDFHomeImagePreview.m */,
+				AB6D631B218C5AEA009B1AD4 /* BDFHomeTitleView.h */,
+				AB6D630E218C5AEA009B1AD4 /* BDFHomeTitleView.m */,
+				AB6D631D218C5AEA009B1AD4 /* BDFKeyBoardToolView.h */,
+				AB6D6311218C5AEA009B1AD4 /* BDFKeyBoardToolView.m */,
+				AB6D631C218C5AEA009B1AD4 /* BDFMostHotView.h */,
+				AB6D6313218C5AEA009B1AD4 /* BDFMostHotView.m */,
+				AB6D6318218C5AEA009B1AD4 /* BDFNewsHotView.h */,
+				AB6D6323218C5AEA009B1AD4 /* BDFNewsHotView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AB6D6324218C5AEA009B1AD4 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				AB6D6325218C5AEA009B1AD4 /* BDFTestRequest.h */,
+				AB6D6326218C5AEA009B1AD4 /* BDFHomeHotNewsAddRequest.m */,
+				AB6D6327218C5AEA009B1AD4 /* BDFHomeNewsMoreRequest.h */,
+				AB6D6328218C5AEA009B1AD4 /* BDFHomePageHotNewsRequest.h */,
+				AB6D6329218C5AEA009B1AD4 /* BDFHomeHotNewsUpsRequest.h */,
+				AB6D632A218C5AEA009B1AD4 /* BDFHomeNewsSubjectsRequest.m */,
+				AB6D632B218C5AEA009B1AD4 /* BDFCommentSendRequest.h */,
+				AB6D632C218C5AEA009B1AD4 /* BDFHomeNewsMoreRequest.m */,
+				AB6D632D218C5AEA009B1AD4 /* BDFHomeHotNewsAddRequest.h */,
+				AB6D632E218C5AEA009B1AD4 /* BDFTestRequest.m */,
+				AB6D632F218C5AEA009B1AD4 /* BDFHomeNewsSubjectsRequest.h */,
+				AB6D6330218C5AEA009B1AD4 /* BDFHomeHotNewsUpsRequest.m */,
+				AB6D6331218C5AEA009B1AD4 /* BDFHomePageHotNewsRequest.m */,
+				AB6D6332218C5AEA009B1AD4 /* BDFCommentSendRequest.m */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		AB6D6333218C5AEA009B1AD4 /* NewsHot */ = {
+			isa = PBXGroup;
+			children = (
+				AB6D6334218C5AEA009B1AD4 /* Controller */,
+				AB6D6335218C5AEA009B1AD4 /* Model */,
+				AB6D6336218C5AEA009B1AD4 /* View */,
+				AB6D6337218C5AEA009B1AD4 /* Request */,
+			);
+			path = NewsHot;
+			sourceTree = "<group>";
+		};
+		AB6D6334218C5AEA009B1AD4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AB6D6362218D31E0009B1AD4 /* BDFNewsHotViewController.h */,
+				AB6D6363218D31E0009B1AD4 /* BDFNewsHotViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AB6D6335218C5AEA009B1AD4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AB6D6336218C5AEA009B1AD4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AB6D635F218C6156009B1AD4 /* BDFNewsHotTableView.h */,
+				AB6D6360218C6156009B1AD4 /* BDFNewsHotTableView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AB6D6337218C5AEA009B1AD4 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		AB6D6338218C5AEA009B1AD4 /* MostHot */ = {
+			isa = PBXGroup;
+			children = (
+				AB6D6339218C5AEA009B1AD4 /* Controller */,
+				AB6D633A218C5AEA009B1AD4 /* Model */,
+				AB6D633B218C5AEA009B1AD4 /* View */,
+				AB6D633C218C5AEA009B1AD4 /* Request */,
+			);
+			path = MostHot;
+			sourceTree = "<group>";
+		};
+		AB6D6339218C5AEA009B1AD4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AB6D6365218D3BDC009B1AD4 /* BDFMostHotNewsViewController.h */,
+				AB6D6366218D3BDC009B1AD4 /* BDFMostHotNewsViewController.m */,
+				AB6D6368218D3C97009B1AD4 /* BDFMostHotNewsSubController.h */,
+				AB6D6369218D3C97009B1AD4 /* BDFMostHotNewsSubController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AB6D633A218C5AEA009B1AD4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AB6D633B218C5AEA009B1AD4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AB6D633C218C5AEA009B1AD4 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				AB6D636B218D4E3B009B1AD4 /* BDFMostHotListRequest.h */,
+				AB6D636C218D4E3B009B1AD4 /* BDFMostHotListRequest.m */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
 		ABA52F8C21181DB40043B398 /* Publish */ = {
 			isa = PBXGroup;
 			children = (
@@ -657,103 +944,6 @@
 				ABA52FDE21181DE80043B398 /* View */,
 			);
 			path = Search;
-			sourceTree = "<group>";
-		};
-		ABA52F8E21181DB40043B398 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				ABA52F8F21181DB40043B398 /* Controller */,
-				ABA52F9821181DB40043B398 /* Model */,
-				ABA52FA721181DB40043B398 /* View */,
-				ABA52FB621181DB40043B398 /* Request */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
-		ABA52F8F21181DB40043B398 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				ABA52F9121181DB40043B398 /* BDFHomeCommentController.h */,
-				ABA52F9421181DB40043B398 /* BDFHomeCommentController.m */,
-				ABA52F9621181DB40043B398 /* BDFHomePageViewController.h */,
-				ABA52F9221181DB40043B398 /* BDFHomePageViewController.m */,
-				AB4F0BE021885EAA005A1FE5 /* BDFSubHomePageViewController.h */,
-				AB4F0BE121885EAA005A1FE5 /* BDFSubHomePageViewController.m */,
-				ABA52F9721181DB40043B398 /* BDFDetailWebViewController.h */,
-				ABA52F9321181DB40043B398 /* BDFDetailWebViewController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		ABA52F9821181DB40043B398 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				ABA52F9C21181DB40043B398 /* BDFHomeCommentIndexModel.h */,
-				ABA52FA321181DB40043B398 /* BDFHomeCommentIndexModel.m */,
-				ABA52FA421181DB40043B398 /* BDFHomeCommPoint.h */,
-				ABA52F9D21181DB40043B398 /* BDFHomeCommPoint.m */,
-				ABA52F9F21181DB40043B398 /* BDFHomeHotNewsFrame.h */,
-				ABA52FA521181DB40043B398 /* BDFHomeHotNewsFrame.m */,
-				ABA52FA221181DB40043B398 /* BDFHomeHotNewsModel.h */,
-				ABA52F9921181DB40043B398 /* BDFHomeHotNewsModel.m */,
-				ABA52F9A21181DB40043B398 /* BDFHomeCommenntsModel.h */,
-				ABA52FA121181DB40043B398 /* BDFHomeCommenntsModel.m */,
-				ABA52F9E21181DB40043B398 /* BDFCommentFrameModel.h */,
-				ABA52FA621181DB40043B398 /* BDFCommentFrameModel.m */,
-				ABE40ACB214A418600977F08 /* BDFCommentTreeItemModel.h */,
-				ABE40ACC214A418600977F08 /* BDFCommentTreeItemModel.m */,
-				ABE40ACE214A5ED200977F08 /* BDFCommentTreeManager.h */,
-				ABE40ACF214A5ED200977F08 /* BDFCommentTreeManager.m */,
-				AB4F0BDD21884595005A1FE5 /* BDFHomeSubjectsModel.h */,
-				AB4F0BDE21884595005A1FE5 /* BDFHomeSubjectsModel.m */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		ABA52FA721181DB40043B398 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				ABA52FAF21181DB40043B398 /* BDFHomeCommentsCell.h */,
-				ABA52FA821181DB40043B398 /* BDFHomeCommentsCell.m */,
-				ABA52FB021181DB40043B398 /* BDFKeyBoardToolView.h */,
-				ABA52FAA21181DB40043B398 /* BDFKeyBoardToolView.m */,
-				ABA52FAB21181DB40043B398 /* BDFHomeDetailWebView.h */,
-				ABA52FB121181DB40043B398 /* BDFHomeDetailWebView.m */,
-				ABA52FAC21181DB40043B398 /* BDFHomeImagePreview.h */,
-				ABA52FB521181DB40043B398 /* BDFHomeImagePreview.m */,
-				ABA52FB421181DB40043B398 /* BDFHomeHotNewsCell.h */,
-				ABA52FAD21181DB40043B398 /* BDFHomeHotNewsCell.m */,
-				ABA52FB321181DB40043B398 /* BDFComBottomToolView.h */,
-				ABA52FAE21181DB40043B398 /* BDFComBottomToolView.m */,
-				AB0332EA217B26F0005951F1 /* BDFHomeTitleView.h */,
-				AB0332EB217B26F0005951F1 /* BDFHomeTitleView.m */,
-				AB0332ED217B298E005951F1 /* BDFAllTypeNewsView.h */,
-				AB0332EE217B298E005951F1 /* BDFAllTypeNewsView.m */,
-				AB4F0BE32188681F005A1FE5 /* BDFAllTypeCollectionCell.h */,
-				AB4F0BE42188681F005A1FE5 /* BDFAllTypeCollectionCell.m */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		ABA52FB621181DB40043B398 /* Request */ = {
-			isa = PBXGroup;
-			children = (
-				ABA52FB821181DB40043B398 /* BDFTestRequest.h */,
-				ABA52FC021181DB40043B398 /* BDFTestRequest.m */,
-				ABA52FBC21181DB40043B398 /* BDFHomeHotNewsUpsRequest.h */,
-				ABA52FB921181DB40043B398 /* BDFHomeHotNewsAddRequest.m */,
-				ABA52FBB21181DB40043B398 /* BDFHomePageHotNewsRequest.h */,
-				ABA52FC321181DB40043B398 /* BDFHomePageHotNewsRequest.m */,
-				ABA52FBA21181DB40043B398 /* BDFHomeNewsMoreRequest.h */,
-				ABA52FBE21181DB40043B398 /* BDFHomeNewsMoreRequest.m */,
-				ABA52FBF21181DB40043B398 /* BDFHomeHotNewsAddRequest.h */,
-				ABA52FC221181DB40043B398 /* BDFHomeHotNewsUpsRequest.m */,
-				ABA52FBD21181DB40043B398 /* BDFCommentSendRequest.h */,
-				ABA52FC421181DB40043B398 /* BDFCommentSendRequest.m */,
-				AB4F0BDA21883A2A005A1FE5 /* BDFHomeNewsSubjectsRequest.h */,
-				AB4F0BDB21883A2A005A1FE5 /* BDFHomeNewsSubjectsRequest.m */,
-			);
-			path = Request;
 			sourceTree = "<group>";
 		};
 		ABA52FDE21181DE80043B398 /* View */ = {
@@ -842,10 +1032,63 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		ABB1881E218D9E8B006A9295 /* Topic */ = {
+			isa = PBXGroup;
+			children = (
+				ABB1881F218D9E8B006A9295 /* Controller */,
+				ABB18820218D9E8B006A9295 /* Model */,
+				ABB18821218D9E8B006A9295 /* View */,
+				ABB18822218D9E8B006A9295 /* Request */,
+			);
+			path = Topic;
+			sourceTree = "<group>";
+		};
+		ABB1881F218D9E8B006A9295 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				ABB18823218D9F58006A9295 /* BDFHomeTopicViewController.h */,
+				ABB18824218D9F58006A9295 /* BDFHomeTopicViewController.m */,
+				ABB1882F218DAE00006A9295 /* BDFHomeTopicDetailController.h */,
+				ABB18830218DAE00006A9295 /* BDFHomeTopicDetailController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		ABB18820218D9E8B006A9295 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ABB18829218DA306006A9295 /* BDFHomeTopicListModel.h */,
+				ABB1882A218DA306006A9295 /* BDFHomeTopicListModel.m */,
+				ABB18835218DB7E1006A9295 /* BDFHomeTopicListDetailModel.h */,
+				ABB18836218DB7E1006A9295 /* BDFHomeTopicListDetailModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ABB18821218D9E8B006A9295 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ABB1882C218DA6F4006A9295 /* BDFHomeTopicListTableCell.h */,
+				ABB1882D218DA6F4006A9295 /* BDFHomeTopicListTableCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ABB18822218D9E8B006A9295 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				ABB18826218DA08F006A9295 /* BDFHomeTopicRequest.h */,
+				ABB18827218DA08F006A9295 /* BDFHomeTopicRequest.m */,
+				ABB18832218DB25A006A9295 /* BDFHomeTopicDetailRequest.h */,
+				ABB18833218DB25A006A9295 /* BDFHomeTopicDetailRequest.m */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
 		ABCD181F1ED6D0AD005AA34E /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
-				ABA52F8E21181DB40043B398 /* Home */,
+				AB6D62EF218C5AEA009B1AD4 /* Home */,
 				ABA52F8C21181DB40043B398 /* Publish */,
 				ABA52F8D21181DB40043B398 /* Search */,
 			);
@@ -1255,97 +1498,112 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB4F0BE221885EAA005A1FE5 /* BDFSubHomePageViewController.m in Sources */,
-				ABA52FCE21181DB40043B398 /* BDFHomeHotNewsFrame.m in Sources */,
+				ABB18834218DB25A006A9295 /* BDFHomeTopicDetailRequest.m in Sources */,
+				AB6D635B218C5AEA009B1AD4 /* BDFCommentSendRequest.m in Sources */,
+				ABB18828218DA08F006A9295 /* BDFHomeTopicRequest.m in Sources */,
 				AB7C1A6421538C2E005D63FA /* BDFHomeHeaderOptionView.m in Sources */,
+				ABB1882B218DA306006A9295 /* BDFHomeTopicListModel.m in Sources */,
 				AB2803231E1F87620006A13E /* BDFBaseViewController.m in Sources */,
-				ABA52FDB21181DB40043B398 /* BDFHomeHotNewsUpsRequest.m in Sources */,
-				AB0332EC217B26F0005951F1 /* BDFHomeTitleView.m in Sources */,
 				ABCD18601ED7BAD2005AA34E /* BDFCommentAPIConstant.m in Sources */,
+				AB6D6344218C5AEA009B1AD4 /* BDFHomeCommenntsModel.m in Sources */,
+				AB6D634A218C5AEA009B1AD4 /* BDFHomeTitleView.m in Sources */,
+				AB6D6352218C5AEA009B1AD4 /* BDFAllTypeNewsView.m in Sources */,
 				AB778F632116E88E00A81791 /* BDFAvatarBrowser.m in Sources */,
-				ABA52FD321181DB40043B398 /* BDFComBottomToolView.m in Sources */,
+				ABB18825218D9F58006A9295 /* BDFHomeTopicViewController.m in Sources */,
 				AB791329211C48DE007AA283 /* NSString+Html.m in Sources */,
-				ABA52FD121181DB40043B398 /* BDFKeyBoardToolView.m in Sources */,
+				AB6D633E218C5AEA009B1AD4 /* BDFSubHomePageViewController.m in Sources */,
 				ABCD18451ED6D0CF005AA34E /* BDFCommonConstant.m in Sources */,
 				AB2803261E1F87C10006A13E /* BDFLogAndRegViewController.m in Sources */,
+				AB6D6357218C5AEA009B1AD4 /* BDFHomeNewsMoreRequest.m in Sources */,
+				AB6D634D218C5AEA009B1AD4 /* BDFKeyBoardToolView.m in Sources */,
 				AB25D2491E237C620093BE75 /* BDFTableViewHeaderFooterView.m in Sources */,
 				ABCD18541ED6D22B005AA34E /* BDFMessageTableViewController.m in Sources */,
-				ABA52FCF21181DB40043B398 /* BDFCommentFrameModel.m in Sources */,
-				AB4F0BDC21883A2A005A1FE5 /* BDFHomeNewsSubjectsRequest.m in Sources */,
 				AB28030E1E1F83E50006A13E /* AppDelegate.m in Sources */,
+				AB6D6356218C5AEA009B1AD4 /* BDFHomeNewsSubjectsRequest.m in Sources */,
+				AB6D6348218C5AEA009B1AD4 /* BDFCommentFrameModel.m in Sources */,
 				AB6FFE381E247CE000837AB6 /* BDFRequestManager.m in Sources */,
-				AB4F0BDF21884595005A1FE5 /* BDFHomeSubjectsModel.m in Sources */,
 				AB791323211BE145007AA283 /* BDFSearchPublishListModel.m in Sources */,
+				AB6D635A218C5AEA009B1AD4 /* BDFHomePageHotNewsRequest.m in Sources */,
 				AB7C1A6721538C59005D63FA /* BDFHomeHeaderOptionItemView.m in Sources */,
 				AB25D2421E2361F10093BE75 /* BDFBaseTableViewCell.m in Sources */,
-				ABA52FC521181DB40043B398 /* BDFHomePageViewController.m in Sources */,
 				ABE40A8C2148FF2600977F08 /* BDFMessageWithOutLoginView.m in Sources */,
 				ABA52FFA211840240043B398 /* BDFCustomSliderHeaderItem.m in Sources */,
-				ABA52FCC21181DB40043B398 /* BDFHomeCommenntsModel.m in Sources */,
-				ABA52FC621181DB40043B398 /* BDFDetailWebViewController.m in Sources */,
-				ABA52FCD21181DB40043B398 /* BDFHomeCommentIndexModel.m in Sources */,
+				AB2B02B4218D583A00A4AA74 /* BDF42NewsViewController.m in Sources */,
+				AB6D6361218C6156009B1AD4 /* BDFNewsHotTableView.m in Sources */,
 				ABCD18441ED6D0CF005AA34E /* BDFRefreshFooter.m in Sources */,
+				ABB18831218DAE00006A9295 /* BDFHomeTopicDetailController.m in Sources */,
 				AB6FFE3B1E24AABF00837AB6 /* BDFBaseRequest.m in Sources */,
 				ABA52FF721183FFE0043B398 /* BDFCustomSliderHeaderView.m in Sources */,
 				AB8DFB1E2094436C00B30A63 /* UIView+Frame.m in Sources */,
 				ABCD18421ED6D0CF005AA34E /* UIView+Layer.m in Sources */,
+				AB6D636D218D4E3B009B1AD4 /* BDFMostHotListRequest.m in Sources */,
+				AB6D6351218C5AEA009B1AD4 /* BDFHomeDetailWebView.m in Sources */,
 				ABA52FF121181FF90043B398 /* BDFHomeSearchTextField.m in Sources */,
 				ABCD183F1ED6D0CF005AA34E /* NSFileManager+Paths.m in Sources */,
 				AB25D24F1E237F010093BE75 /* BDFBaseTableViewController.m in Sources */,
-				ABA52FC921181DB40043B398 /* BDFHomeHotNewsModel.m in Sources */,
 				AB25D2371E2331980093BE75 /* BDFLogAndRegView.m in Sources */,
-				ABA52FDD21181DB40043B398 /* BDFCommentSendRequest.m in Sources */,
 				AB7C1A6A215392C8005D63FA /* BDFNotificationViewController.m in Sources */,
-				ABA52FD921181DB40043B398 /* BDFTestRequest.m in Sources */,
 				AB25D2331E2327BF0093BE75 /* BDFBaseNavigationController.m in Sources */,
+				AB6D633D218C5AEA009B1AD4 /* BDFHomePageViewController.m in Sources */,
 				ABB3FFE420F4B238000472D3 /* UIVisualEffectView+Addition.m in Sources */,
 				AB7C1A6121538B5C005D63FA /* BDFHomeSliderViewController.m in Sources */,
-				ABA52FD021181DB40043B398 /* BDFHomeCommentsCell.m in Sources */,
 				AB1E5DC720886507002E48B5 /* BDFLoginSucModel.m in Sources */,
+				AB6D6367218D3BDC009B1AD4 /* BDFMostHotNewsViewController.m in Sources */,
+				AB6D634F218C5AEA009B1AD4 /* BDFHomeHotNewsCell.m in Sources */,
 				ABA52FEE21181FEF0043B398 /* BDFSearchSuggestRequest.m in Sources */,
-				ABE40ACD214A418600977F08 /* BDFCommentTreeItemModel.m in Sources */,
 				AB42A25021196A2C00916087 /* BDFSearchSuggestCell.m in Sources */,
 				ABCD18411ED6D0CF005AA34E /* UIButton+Addition.m in Sources */,
-				ABA52FD821181DB40043B398 /* BDFHomeNewsMoreRequest.m in Sources */,
-				ABE40AD0214A5ED200977F08 /* BDFCommentTreeManager.m in Sources */,
 				AB2802D41E1F81E00006A13E /* main.m in Sources */,
-				ABA52FCA21181DB40043B398 /* BDFHomeCommPoint.m in Sources */,
 				ABA5300321185FFE0043B398 /* BDFSearchPublishToolView.m in Sources */,
+				AB6D6355218C5AEA009B1AD4 /* BDFHomeHotNewsAddRequest.m in Sources */,
 				ABA52FF42118262D0043B398 /* BDFCustomSliderViewController.m in Sources */,
+				AB6D6343218C5AEA009B1AD4 /* BDFHomeCommPoint.m in Sources */,
+				AB6D634B218C5AEA009B1AD4 /* BDFAllTypeCollectionCell.m in Sources */,
 				AB2803161E1F84930006A13E /* BDFMainTabBarController.m in Sources */,
-				ABA52FD621181DB40043B398 /* BDFHomeImagePreview.m in Sources */,
+				AB6D633F218C5AEA009B1AD4 /* BDFDetailWebViewController.m in Sources */,
+				AB6D6346218C5AEA009B1AD4 /* BDFHomeCommentIndexModel.m in Sources */,
 				ABCD181E1ED6C4F7005AA34E /* BDFBaseImageView.m in Sources */,
 				AB3F102E21241B5100D283CC /* BDFSearchPublishMenuView.m in Sources */,
 				AB778F6C2116F5E800A81791 /* BDFCustomCommonEmptyView.m in Sources */,
 				ABE40AE4214D17FB00977F08 /* BDFMeRequest.m in Sources */,
 				AB3F0FE4211F2A7A00D283CC /* BDFSearchPublishToolButton.m in Sources */,
+				AB6D634E218C5AEA009B1AD4 /* BDFMostHotView.m in Sources */,
+				AB6D6350218C5AEA009B1AD4 /* BDFComBottomToolView.m in Sources */,
+				AB6D6345218C5AEA009B1AD4 /* BDFCommentTreeItemModel.m in Sources */,
 				AB1E5DD620888639002E48B5 /* NSString+Size.m in Sources */,
-				ABA52FD721181DB40043B398 /* BDFHomeHotNewsAddRequest.m in Sources */,
 				AB1E5DC1208854B0002E48B5 /* BDFLoginRequest.m in Sources */,
 				AB2F360B2119AFA4008DA8F1 /* BDFSearchPublishRequest.m in Sources */,
 				AB20098B217481F6002A9B7C /* BDFMeMoreSettingController.m in Sources */,
+				AB6D6342218C5AEA009B1AD4 /* BDFCommentTreeManager.m in Sources */,
 				ABCD18431ED6D0CF005AA34E /* UIView+Tap.m in Sources */,
+				AB6D6364218D31E0009B1AD4 /* BDFNewsHotViewController.m in Sources */,
 				AB778F6F2116F63A00A81791 /* NSAttributedString+Size.m in Sources */,
-				ABA52FD421181DB40043B398 /* BDFHomeDetailWebView.m in Sources */,
-				AB4F0BE52188681F005A1FE5 /* BDFAllTypeCollectionCell.m in Sources */,
 				ABA5300021185DA30043B398 /* BDFSearchUsersViewController.m in Sources */,
 				ABCD18401ED6D0CF005AA34E /* NSNotificationCenter+Addition.m in Sources */,
 				ABCD18461ED6D0CF005AA34E /* BDFFileCacheManager.m in Sources */,
+				AB6D6341218C5AEA009B1AD4 /* BDFHomeHotNewsModel.m in Sources */,
+				AB6D6340218C5AEA009B1AD4 /* BDFHomeCommentController.m in Sources */,
 				ABA52FE821181FC90043B398 /* BDFHomeSearchController.m in Sources */,
+				AB6D636A218D3C97009B1AD4 /* BDFMostHotNewsSubController.m in Sources */,
 				ABCD18631ED7C323005AA34E /* NSDictionary+Property.m in Sources */,
-				AB0332EF217B298E005951F1 /* BDFAllTypeNewsView.m in Sources */,
+				AB6D6358218C5AEA009B1AD4 /* BDFTestRequest.m in Sources */,
 				ABCD185A1ED6E0B8005AA34E /* BDFMessageTableViewCell.m in Sources */,
 				AB1E5DCA20886632002E48B5 /* BDFUserInfoManager.m in Sources */,
-				ABA52FD221181DB40043B398 /* BDFHomeHotNewsCell.m in Sources */,
 				ABE40AE1214B98EB00977F08 /* BDFMeHeaderView.m in Sources */,
 				ABCD18471ED6D0CF005AA34E /* BDFUntil.m in Sources */,
-				ABA52FDC21181DB40043B398 /* BDFHomePageHotNewsRequest.m in Sources */,
+				AB6D6353218C5AEA009B1AD4 /* BDFHomeImagePreview.m in Sources */,
 				ABCD186C1ED7D61B005AA34E /* BDFMessageModel.m in Sources */,
 				ABCD185D1ED7B7D5005AA34E /* BDFMessageRequest.m in Sources */,
+				ABB1882E218DA6F4006A9295 /* BDFHomeTopicListTableCell.m in Sources */,
+				AB6D6359218C5AEA009B1AD4 /* BDFHomeHotNewsUpsRequest.m in Sources */,
 				ABE40AD8214B86DB00977F08 /* BDFMeViewController.m in Sources */,
-				ABA52FC721181DB40043B398 /* BDFHomeCommentController.m in Sources */,
 				ABA52FEB21181FE20043B398 /* BDFSearchSuggestModel.m in Sources */,
+				ABB18837218DB7E1006A9295 /* BDFHomeTopicListDetailModel.m in Sources */,
 				ABA52FFD21185D880043B398 /* BDFSearchPublishViewController.m in Sources */,
+				AB6D634C218C5AEA009B1AD4 /* BDFHomeCommentsCell.m in Sources */,
+				AB6D6354218C5AEA009B1AD4 /* BDFNewsHotView.m in Sources */,
+				AB6D6347218C5AEA009B1AD4 /* BDFHomeHotNewsFrame.m in Sources */,
+				AB6D6349218C5AEA009B1AD4 /* BDFHomeSubjectsModel.m in Sources */,
 				AB1E5DD920901828002E48B5 /* BDFRefreshNormalHeader.m in Sources */,
 				ABE40ADE214B938B00977F08 /* BDFMeDataModel.m in Sources */,
 				AB25D2451E2367710093BE75 /* BDFBaseTableView.m in Sources */,

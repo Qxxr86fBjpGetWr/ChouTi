@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class BDFHomeTitleDelegate;
 @interface BDFHomeTitleView : UIButton
-
+@property (nonatomic, strong) NSString *title;
 @property (nonatomic, weak) id <BDFHomeTitleDelegate> delegate;
 
 @end

@@ -13,11 +13,19 @@
 #import "BDFHomeNewsSubjectsRequest.h"
 #import "BDFHomeSearchController.h"
 #import "BDFAllTypeCollectionCell.h"
+#import "BDFMostHotView.h"
+
+#import "BDFNewsHotViewController.h"
+#import "BDFMostHotNewsViewController.h"
+#import "BDF42NewsViewController.h"
+#import "BDFHomeTopicViewController.h"
+#import "BDFHomeTopicViewController.h"
 
 @interface BDFSubHomePageViewController ()<BDFHomeTitleDelegate, BDFAllTypeNewsViewDidSelectDelegate>
 
 @property (nonatomic, strong) DXPopover *popover;
 @property (nonatomic, strong) BDFAllTypeNewsView *newsView;
+@property (nonatomic, strong) BDFHomeTitleView *titleView;
 
 @end
 
@@ -26,28 +34,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self bdfHomeSubjectsDidSelect_hotnews];
+
     /**
-     42区：https://api.chouti.com/v2/r/news.json?deviceId=12ec7b9b922138b8a6bc55070a164669d050bb7a&source=c40fe2f61bcfd611177be71ec305196b&version=3.2.0.6
-     话题：https://api.chouti.com/api/topic/list.jsondeviceId=12ec7b9b922138b8a6bc55070a164669d050bb7a&pageNumber=1&source=c40fe2f61bcfd611177be71ec305196b&version=3.2.0.6
-     
-     点击cell ：https://api.chouti.com/api/topic/linkList.jsondeviceId=12ec7b9b922138b8a6bc55070a164669d050bb7a&pageNumber=1&source=c40fe2f61bcfd611177be71ec305196b&topicId=186&version=3.2.0.6
-     最热：URL    https://api.chouti.com/r/top.json?deviceId=12ec7b9b922138b8a6bc55070a164669d050bb7a&limit=72hr&source=c40fe2f61bcfd611177be71ec305196b&version=3.2.0.6
-     24hr 72hr 168hr
-     段子：https://api.chouti.com/v2/r/scoff.json?deviceId=12ec7b9b922138b8a6bc55070a164669d050bb7a&source=c40fe2f61bcfd611177be71ec305196b&version=3.2.0.6
-     首页新闻分类       https://api.chouti.com/subjects.json?access_token=c40fe2f61bcfd611177be71ec305196bB896036B802CBA1762D0D6C3A48792ED&content_version_ios=110&deviceId=12ec7b9b922138b8a6bc55070a164669d050bb7a&source=c40fe2f61bcfd611177be71ec305196b&version=3.2.0.6
      
      //刷新消息提示
      //https://api.chouti.com/api/refreshHintsList.json?access_token=c40fe2f61bcfd611177be71ec305196bB896036B802CBA1762D0D6C3A48792ED&deviceId=12ec7b9b922138b8a6bc55070a164669d050bb7a&source=c40fe2f61bcfd611177be71ec305196b&version=3.2.0.6
      */
     
     [self setNav];
-    [self setTitleView];
+    [self loadData];
+    [self setCustomTitleView:nil];
 }
 
-- (void)setTitleView {
-    BDFHomeTitleView *titleView = [[BDFHomeTitleView alloc] initWithFrame:CGRectMake(0, 0, 150, 30)];
-    titleView.delegate = self;
-    self.navigationItem.titleView = titleView;
+- (void)setCustomTitleView:(NSString *)title {
+
+    self.titleView.title = title;
+    self.navigationItem.titleView = self.titleView;
 }
 
 - (void)loadData {
@@ -99,55 +102,88 @@
     self.popover = nil;
 }
 
+- (void)removeAllChildVC {
+    [self.childViewControllers enumerateObjectsUsingBlock:^(__kindof UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [self removeChildVc:obj];
+    }];
+}
+
 #pragma mark - BDFAllTypeNewsViewDidSelectDelegate
 /** 新热榜 */
 - (void)bdfHomeSubjectsDidSelect_hotnews {
-    [self dismissPop];
+    [self setCustomTitleView:nil];
+    [self handChageViewWithClass:[BDFNewsHotViewController class]];
 }
 /** 42区 */
 - (void)bdfHomeSubjectsDidSelect_news {
+    [self setCustomTitleView:@"42区"];
+    [self removeAllChildVC];
     [self dismissPop];
+    BDF42NewsViewController *vc = [[BDF42NewsViewController alloc] initWithBaseUrl:BDFHOMECATEGORY42];
+    [self addChildVc:vc];
 }
 /** 段子 */
 - (void)bdfHomeSubjectsDidSelect_scoff {
+    [self setCustomTitleView:@"段子"];
+    [self removeAllChildVC];
     [self dismissPop];
+    BDF42NewsViewController *vc = [[BDF42NewsViewController alloc] initWithBaseUrl:BDFHOMECATEGORYSCOFF];
+    [self addChildVc:vc];
 }
 /** 图片 */
 - (void)bdfHomeSubjectsDidSelect_pic {
+    [self setCustomTitleView:@"图片"];
     [self dismissPop];
 }
 /** 挨踢1024 */
 - (void)bdfHomeSubjectsDidSelect_tec {
+    [self setCustomTitleView:@"挨踢1024"];
     [self dismissPop];
 }
 /** 你问我答 */
 - (void)bdfHomeSubjectsDidSelect_ask {
+    [self setCustomTitleView:@"你问我答"];
     [self dismissPop];
 }
 /** 视频 */
 - (void)bdfHomeSubjectsDidSelect_video {
+    [self setCustomTitleView:@"视频"];
     [self dismissPop];
 }
 
 /** 最热榜 */
 - (void)bdfHomeSubjectsDidSelectMostHot {
-    
+    [self setCustomTitleView:@"最热榜"];
+    [self handChageViewWithClass:[BDFMostHotNewsViewController class]];
 }
 /** 话题 */
 - (void)bdfHomeSubjectsDidSelectTopic {
-    
+    [self setCustomTitleView:@"话题"];
+    [self handChageViewWithClass:[BDFHomeTopicViewController class]];
 }
 /** 关注人动态 */
 - (void)bdfHomeSubjectsDidSelectAttention {
-    
+    [self setCustomTitleView:@"关注人动态"];
+    [self dismissPop];
 }
 /** 人类发布 */
 - (void)bdfHomeSubjectsDidSelectPeople {
-    
+    [self setCustomTitleView:@"人类发布"];
+    [self dismissPop];
 }
 /** 私藏 */
 - (void)bdfHomeSubjectsDidSelectCollection {
-    
+    [self setCustomTitleView:@"私藏"];
+    [self dismissPop];
+}
+
+- (void)handChageViewWithClass:(Class)class {
+    [self dismissPop];
+    [self removeAllChildVC];
+    if (!class) {
+        return;
+    }
+    [self addChildVc:[[class alloc] init]];
 }
 
 - (DXPopover *)popover {
@@ -172,6 +208,14 @@
         _newsView = newsView;
     }
     return _newsView;
+}
+
+- (BDFHomeTitleView *)titleView {
+    if (!_titleView) {
+        _titleView = [[BDFHomeTitleView alloc] initWithFrame:CGRectMake(0, 0, 150, 30)];
+        _titleView.delegate = self;
+    }
+    return _titleView;
 }
 
 @end

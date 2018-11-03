@@ -38,5 +38,15 @@ NSString *const BDFHOMESEARCHPUBLISH = @"https://api.chouti.com/search/show.json
 NSString *const BDFMEDATA = @"https://api.chouti.com/users/profile.json";
 /** 首页顶部的分类 */
 NSString *const BDFHOMENEWSCATEGORY = @"https://api.chouti.com/subjects.json";
+/** 最热榜 */
+NSString *const BDFHOMEMOSTHOTLIST = @"https://api.chouti.com/r/top.json";
+/** 42区 */
+NSString *const BDFHOMECATEGORY42 = @"https://api.chouti.com/v2/r/news.json";
+/** 段子 */
+NSString *const BDFHOMECATEGORYSCOFF = @"https://api.chouti.com/v2/r/scoff.json";
+/** 话题列表 */
+NSString *const BDFHOMECATEGORYTOPICLIST = @"https://api.chouti.com/api/topic/list.json";
+/** 话题列表详情 */
+NSString *const BDFHOMECATEGORYTOPICLISTDETAIL = @"https://api.chouti.com/api/topic/linkList.json";
 
 @end
