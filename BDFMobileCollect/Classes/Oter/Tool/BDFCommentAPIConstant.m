@@ -48,5 +48,19 @@ NSString *const BDFHOMECATEGORYSCOFF = @"https://api.chouti.com/v2/r/scoff.json"
 NSString *const BDFHOMECATEGORYTOPICLIST = @"https://api.chouti.com/api/topic/list.json";
 /** 话题列表详情 */
 NSString *const BDFHOMECATEGORYTOPICLISTDETAIL = @"https://api.chouti.com/api/topic/linkList.json";
+/** 图片最热 */
+NSString *const BDFHOMECATEGORYPICTUREHOTLIST = @"https://api.chouti.com/v2/r/pic.json";
+/** 图片最新 */
+NSString *const BDFHOMECATEGORYPICTURENEWLIST = @"https://api.chouti.com/v2/r/pic/new.json";
+/** 1024最热 */
+NSString *const BDFHOMECATEGORY1024HOTLIST = @"https://api.chouti.com/v2/r/tec.json";
+/** 1024最新 */
+NSString *const BDFHOMECATEGORY1024NEWLIST = @"https://api.chouti.com/v2/r/tec/new.json";
+
+/** 你问我答最热 */
+NSString *const BDFHOMECATEGORYQAHOTLIST = @"https://api.chouti.com/v2/r/ask.json";
+/** 你问我答最新 */
+NSString *const BDFHOMECATEGORYQANEWLIST = @"https://api.chouti.com/v2/r/ask/new.json";
+
 
 @end

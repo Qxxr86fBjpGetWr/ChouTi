@@ -16,10 +16,15 @@
 #import "BDFMostHotView.h"
 
 #import "BDFNewsHotViewController.h"
-#import "BDFMostHotNewsViewController.h"
+#import "BDFSubMostHotNewsViewController.h"
 #import "BDF42NewsViewController.h"
 #import "BDFHomeTopicViewController.h"
 #import "BDFHomeTopicViewController.h"
+
+#import "BDFJokesViewController.h"
+#import "BDFPictureViewController.h"
+#import "BDF1024ViewController.h"
+#import "BDFQAndAViewController.h"
 
 @interface BDFSubHomePageViewController ()<BDFHomeTitleDelegate, BDFAllTypeNewsViewDidSelectDelegate>
 
@@ -38,8 +43,36 @@
 
     /**
      
+     视频 最热
+     https://api.chouti.com/v2/r/video.json?access_token=c40fe2f61bcfd611177be71ec305196bB896036B802CBA1762D0D6C3A48792ED&deviceId=12ec7b9b922138b8a6bc55070a164669d050bb7a&source=c40fe2f61bcfd611177be71ec305196b&version=3.2.0.6
+     视频 最热 加载更多
+     https://api.chouti.com/v2/r/video.json?access_token=c40fe2f61bcfd611177be71ec305196bB896036B802CBA1762D0D6C3A48792ED&after_score=44007.221736895196955&deviceId=12ec7b9b922138b8a6bc55070a164669d050bb7a&source=c40fe2f61bcfd611177be71ec305196b&version=3.2.0.6
+     视频 最新
+     https://api.chouti.com/v2/r/video/new.json?access_token=c40fe2f61bcfd611177be71ec305196bB896036B802CBA1762D0D6C3A48792ED&deviceId=12ec7b9b922138b8a6bc55070a164669d050bb7a&source=c40fe2f61bcfd611177be71ec305196b&version=3.2.0.6
+     视频 最新 加载更多
+     https://api.chouti.com/v2/r/video/new.json?access_token=c40fe2f61bcfd611177be71ec305196bB896036B802CBA1762D0D6C3A48792ED&after_time=1541323330868000&deviceId=12ec7b9b922138b8a6bc55070a164669d050bb7a&source=c40fe2f61bcfd611177be71ec305196b&version=3.2.0.6
+     
+     关注人动态
+     https://api.chouti.com/attente/flow.json?access_token=c40fe2f61bcfd611177be71ec305196bB896036B802CBA1762D0D6C3A48792ED&count=25&deviceId=12ec7b9b922138b8a6bc55070a164669d050bb7a&source=c40fe2f61bcfd611177be71ec305196b&version=3.2.0.6
+     人类发布
+     https://api.chouti.com/man.json?access_token=c40fe2f61bcfd611177be71ec305196bB896036B802CBA1762D0D6C3A48792ED&deviceId=12ec7b9b922138b8a6bc55070a164669d050bb7a&source=c40fe2f61bcfd611177be71ec305196b&version=3.2.0.6
+     私藏 发布
+     https://api.chouti.com/users/save.json?access_token=c40fe2f61bcfd611177be71ec305196bB896036B802CBA1762D0D6C3A48792ED&deviceId=12ec7b9b922138b8a6bc55070a164669d050bb7a&source=c40fe2f61bcfd611177be71ec305196b&version=3.2.0.6
+     私藏 评论
+     https://api.chouti.com/api/comments/self/get.json?access_token=c40fe2f61bcfd611177be71ec305196bB896036B802CBA1762D0D6C3A48792ED&deviceId=12ec7b9b922138b8a6bc55070a164669d050bb7a&source=c40fe2f61bcfd611177be71ec305196b&version=3.2.0.6
+     
      //刷新消息提示
      //https://api.chouti.com/api/refreshHintsList.json?access_token=c40fe2f61bcfd611177be71ec305196bB896036B802CBA1762D0D6C3A48792ED&deviceId=12ec7b9b922138b8a6bc55070a164669d050bb7a&source=c40fe2f61bcfd611177be71ec305196b&version=3.2.0.6
+     
+     消息 通知
+     https://api.chouti.com/users/systemNotification.json?access_token=c40fe2f61bcfd611177be71ec305196bB896036B802CBA1762D0D6C3A48792ED&count=25&deviceId=12ec7b9b922138b8a6bc55070a164669d050bb7a&source=c40fe2f61bcfd611177be71ec305196b&version=3.2.0.6
+     消息 提醒
+     https://api.chouti.com/api/comments/advice/get.json？access_token=c40fe2f61bcfd611177be71ec305196bB896036B802CBA1762D0D6C3A48792ED&deviceId=12ec7b9b922138b8a6bc55070a164669d050bb7a&source=c40fe2f61bcfd611177be71ec305196b&version=3.2.0.6
+     消息 聊天 未读数
+     https://api.chouti.com/chat/getUnreadMessages.json？access_token=c40fe2f61bcfd611177be71ec305196bB896036B802CBA1762D0D6C3A48792ED&deviceId=12ec7b9b922138b8a6bc55070a164669d050bb7a&source=c40fe2f61bcfd611177be71ec305196b&version=3.2.0.6
+     消息 聊天
+     https://api.chouti.com/api/user/advice/unread/get.json?access_token=c40fe2f61bcfd611177be71ec305196bB896036B802CBA1762D0D6C3A48792ED&deviceId=12ec7b9b922138b8a6bc55070a164669d050bb7a&source=c40fe2f61bcfd611177be71ec305196b&type=0&version=3.2.0.6
+     
      */
     
     [self setNav];
@@ -117,33 +150,27 @@
 /** 42区 */
 - (void)bdfHomeSubjectsDidSelect_news {
     [self setCustomTitleView:@"42区"];
-    [self removeAllChildVC];
-    [self dismissPop];
-    BDF42NewsViewController *vc = [[BDF42NewsViewController alloc] initWithBaseUrl:BDFHOMECATEGORY42];
-    [self addChildVc:vc];
+    [self handChageViewWithClass:[BDF42NewsViewController class]];
 }
 /** 段子 */
 - (void)bdfHomeSubjectsDidSelect_scoff {
     [self setCustomTitleView:@"段子"];
-    [self removeAllChildVC];
-    [self dismissPop];
-    BDF42NewsViewController *vc = [[BDF42NewsViewController alloc] initWithBaseUrl:BDFHOMECATEGORYSCOFF];
-    [self addChildVc:vc];
+    [self handChageViewWithClass:[BDFJokesViewController class]];
 }
 /** 图片 */
 - (void)bdfHomeSubjectsDidSelect_pic {
     [self setCustomTitleView:@"图片"];
-    [self dismissPop];
+    [self handChageViewWithClass:[BDFPictureViewController class]];
 }
 /** 挨踢1024 */
 - (void)bdfHomeSubjectsDidSelect_tec {
     [self setCustomTitleView:@"挨踢1024"];
-    [self dismissPop];
+    [self handChageViewWithClass:[BDF1024ViewController class]];
 }
 /** 你问我答 */
 - (void)bdfHomeSubjectsDidSelect_ask {
     [self setCustomTitleView:@"你问我答"];
-    [self dismissPop];
+    [self handChageViewWithClass:[BDFQAndAViewController class]];
 }
 /** 视频 */
 - (void)bdfHomeSubjectsDidSelect_video {
@@ -154,7 +181,7 @@
 /** 最热榜 */
 - (void)bdfHomeSubjectsDidSelectMostHot {
     [self setCustomTitleView:@"最热榜"];
-    [self handChageViewWithClass:[BDFMostHotNewsViewController class]];
+    [self handChageViewWithClass:[BDFSubMostHotNewsViewController class]];
 }
 /** 话题 */
 - (void)bdfHomeSubjectsDidSelectTopic {

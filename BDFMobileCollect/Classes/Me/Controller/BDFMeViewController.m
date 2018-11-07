@@ -58,6 +58,23 @@ typedef NS_ENUM(NSInteger, BDFMeCellType) {
     [self.headerView stretchHeaderForTableView:self.tableView withView:self.headerView subViews:nil];
     [self loadData];
     [self creatMeData];
+    
+    /**
+     最近浏览
+     https://api.chouti.com/user/link/history/list.json？access_token=c40fe2f61bcfd611177be71ec305196bB896036B802CBA1762D0D6C3A48792ED&deviceId=12ec7b9b922138b8a6bc55070a164669d050bb7a&source=c40fe2f61bcfd611177be71ec305196b&version=3.2.0.6
+     私藏
+     
+     推荐
+     https://api.chouti.com/users/liked.json?access_token=c40fe2f61bcfd611177be71ec305196bB896036B802CBA1762D0D6C3A48792ED&deviceId=12ec7b9b922138b8a6bc55070a164669d050bb7a&source=c40fe2f61bcfd611177be71ec305196b&version=3.2.0.6
+     评论
+     https://api.chouti.com/users/comments.json?access_token=c40fe2f61bcfd611177be71ec305196bB896036B802CBA1762D0D6C3A48792ED&deviceId=12ec7b9b922138b8a6bc55070a164669d050bb7a&source=c40fe2f61bcfd611177be71ec305196b&version=3.2.0.6
+     发布
+     https://api.chouti.com/users/publish.json?access_token=c40fe2f61bcfd611177be71ec305196bB896036B802CBA1762D0D6C3A48792ED&deviceId=12ec7b9b922138b8a6bc55070a164669d050bb7a&source=c40fe2f61bcfd611177be71ec305196b&version=3.2.0.6
+     
+     黑名单
+     https://api.chouti.com/users/getBlackList.json?access_token=c40fe2f61bcfd611177be71ec305196bB896036B802CBA1762D0D6C3A48792ED&deviceId=12ec7b9b922138b8a6bc55070a164669d050bb7a&source=c40fe2f61bcfd611177be71ec305196b&version=3.2.0.6
+     */
+    
 }
 
 -(void)loadData {

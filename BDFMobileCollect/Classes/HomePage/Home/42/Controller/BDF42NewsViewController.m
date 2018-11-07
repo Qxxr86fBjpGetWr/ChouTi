@@ -35,7 +35,8 @@
 
 - (void)loadData {
     //42区：https://api.chouti.com/v2/r/news.json?deviceId=12ec7b9b922138b8a6bc55070a164669d050bb7a&source=c40fe2f61bcfd611177be71ec305196b&version=3.2.0.6
-    //段子：https://api.chouti.com/v2/r/scoff.json?deviceId=12ec7b9b922138b8a6bc55070a164669d050bb7a&source=c40fe2f61bcfd611177be71ec305196b&version=3.2.0.6
+    
+    //https://api.chouti.com/api/category_news/menu.json?access_token=c40fe2f61bcfd611177be71ec305196bB896036B802CBA1762D0D6C3A48792ED&deviceId=12ec7b9b922138b8a6bc55070a164669d050bb7a&source=c40fe2f61bcfd611177be71ec305196b&version=3.2.0.6
     [self.hotNewsFrameArray removeAllObjects];
     
     BDFBaseRequest *request = [BDFBaseRequest bdf_requestWithUrl:self.baseUrl];

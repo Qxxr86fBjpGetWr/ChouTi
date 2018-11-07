@@ -31,10 +31,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    self.hotTableView.hidden = NO;
-//    self.emptyView.hidden = NO;
-//    self.view.backgroundColor = [UIColor whiteColor];
-//    [self loadData];
 }
 
 - (void)loadData {

@@ -6,11 +6,11 @@
 //  Copyright © 2018 zhangshengyang. All rights reserved.
 //
 
-#import "BDFNewsHotViewController.h"
+#import "BDFBaseNewsHotViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface BDFHomeTopicDetailController : BDFNewsHotViewController
+@interface BDFHomeTopicDetailController : BDFBaseNewsHotViewController
 
 - (instancetype)initWithTopicId:(NSString *)topicId;
 
