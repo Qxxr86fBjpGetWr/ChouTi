@@ -16,8 +16,8 @@
 @implementation BDFSubMostHotNewsViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
     self.titles = @[@"24小时",@"三天",@"一周",];
+    [super viewDidLoad];
 }
 
 #pragma mark - BDFCustomSlideViewControllerDataSource

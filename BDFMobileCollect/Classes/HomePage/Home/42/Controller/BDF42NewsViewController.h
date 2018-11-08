@@ -7,12 +7,13 @@
 //
 
 #import "BDFNewsHotViewController.h"
+#import "BDF42NewsMenuModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface BDF42NewsViewController : BDFNewsHotViewController
 
-- (instancetype)initWithBaseUrl:(NSString *)baseUrl;
+- (instancetype)initWithBaseUrl:(NSString *)baseUrl withModel:(BDF42NewsMenuRespModel *)model;
 
 @end
 

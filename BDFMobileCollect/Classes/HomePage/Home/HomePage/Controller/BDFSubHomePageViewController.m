@@ -17,7 +17,7 @@
 
 #import "BDFNewsHotViewController.h"
 #import "BDFSubMostHotNewsViewController.h"
-#import "BDF42NewsViewController.h"
+#import "BDF42AllNewsViewController.h"
 #import "BDFHomeTopicViewController.h"
 #import "BDFHomeTopicViewController.h"
 
@@ -25,6 +25,10 @@
 #import "BDFPictureViewController.h"
 #import "BDF1024ViewController.h"
 #import "BDFQAndAViewController.h"
+#import "BDFFocusOnPeopleController.h"
+#import "BDFVideoViewController.h"
+#import "BDFHumanReleaseController.h"
+#import "BDFCollectionViewController.h"
 
 @interface BDFSubHomePageViewController ()<BDFHomeTitleDelegate, BDFAllTypeNewsViewDidSelectDelegate>
 
@@ -40,41 +44,10 @@
     [super viewDidLoad];
     
     [self bdfHomeSubjectsDidSelect_hotnews];
-
     /**
-     
-     视频 最热
-     https://api.chouti.com/v2/r/video.json?access_token=c40fe2f61bcfd611177be71ec305196bB896036B802CBA1762D0D6C3A48792ED&deviceId=12ec7b9b922138b8a6bc55070a164669d050bb7a&source=c40fe2f61bcfd611177be71ec305196b&version=3.2.0.6
-     视频 最热 加载更多
-     https://api.chouti.com/v2/r/video.json?access_token=c40fe2f61bcfd611177be71ec305196bB896036B802CBA1762D0D6C3A48792ED&after_score=44007.221736895196955&deviceId=12ec7b9b922138b8a6bc55070a164669d050bb7a&source=c40fe2f61bcfd611177be71ec305196b&version=3.2.0.6
-     视频 最新
-     https://api.chouti.com/v2/r/video/new.json?access_token=c40fe2f61bcfd611177be71ec305196bB896036B802CBA1762D0D6C3A48792ED&deviceId=12ec7b9b922138b8a6bc55070a164669d050bb7a&source=c40fe2f61bcfd611177be71ec305196b&version=3.2.0.6
-     视频 最新 加载更多
-     https://api.chouti.com/v2/r/video/new.json?access_token=c40fe2f61bcfd611177be71ec305196bB896036B802CBA1762D0D6C3A48792ED&after_time=1541323330868000&deviceId=12ec7b9b922138b8a6bc55070a164669d050bb7a&source=c40fe2f61bcfd611177be71ec305196b&version=3.2.0.6
-     
-     关注人动态
-     https://api.chouti.com/attente/flow.json?access_token=c40fe2f61bcfd611177be71ec305196bB896036B802CBA1762D0D6C3A48792ED&count=25&deviceId=12ec7b9b922138b8a6bc55070a164669d050bb7a&source=c40fe2f61bcfd611177be71ec305196b&version=3.2.0.6
-     人类发布
-     https://api.chouti.com/man.json?access_token=c40fe2f61bcfd611177be71ec305196bB896036B802CBA1762D0D6C3A48792ED&deviceId=12ec7b9b922138b8a6bc55070a164669d050bb7a&source=c40fe2f61bcfd611177be71ec305196b&version=3.2.0.6
-     私藏 发布
-     https://api.chouti.com/users/save.json?access_token=c40fe2f61bcfd611177be71ec305196bB896036B802CBA1762D0D6C3A48792ED&deviceId=12ec7b9b922138b8a6bc55070a164669d050bb7a&source=c40fe2f61bcfd611177be71ec305196b&version=3.2.0.6
-     私藏 评论
-     https://api.chouti.com/api/comments/self/get.json?access_token=c40fe2f61bcfd611177be71ec305196bB896036B802CBA1762D0D6C3A48792ED&deviceId=12ec7b9b922138b8a6bc55070a164669d050bb7a&source=c40fe2f61bcfd611177be71ec305196b&version=3.2.0.6
-     
-     //刷新消息提示
-     //https://api.chouti.com/api/refreshHintsList.json?access_token=c40fe2f61bcfd611177be71ec305196bB896036B802CBA1762D0D6C3A48792ED&deviceId=12ec7b9b922138b8a6bc55070a164669d050bb7a&source=c40fe2f61bcfd611177be71ec305196b&version=3.2.0.6
-     
-     消息 通知
-     https://api.chouti.com/users/systemNotification.json?access_token=c40fe2f61bcfd611177be71ec305196bB896036B802CBA1762D0D6C3A48792ED&count=25&deviceId=12ec7b9b922138b8a6bc55070a164669d050bb7a&source=c40fe2f61bcfd611177be71ec305196b&version=3.2.0.6
-     消息 提醒
-     https://api.chouti.com/api/comments/advice/get.json？access_token=c40fe2f61bcfd611177be71ec305196bB896036B802CBA1762D0D6C3A48792ED&deviceId=12ec7b9b922138b8a6bc55070a164669d050bb7a&source=c40fe2f61bcfd611177be71ec305196b&version=3.2.0.6
-     消息 聊天 未读数
-     https://api.chouti.com/chat/getUnreadMessages.json？access_token=c40fe2f61bcfd611177be71ec305196bB896036B802CBA1762D0D6C3A48792ED&deviceId=12ec7b9b922138b8a6bc55070a164669d050bb7a&source=c40fe2f61bcfd611177be71ec305196b&version=3.2.0.6
-     消息 聊天
-     https://api.chouti.com/api/user/advice/unread/get.json?access_token=c40fe2f61bcfd611177be71ec305196bB896036B802CBA1762D0D6C3A48792ED&deviceId=12ec7b9b922138b8a6bc55070a164669d050bb7a&source=c40fe2f61bcfd611177be71ec305196b&type=0&version=3.2.0.6
-     
+     刷新消息提示
+     https://api.chouti.com/api/refreshHintsList.json?access_token=c40fe2f61bcfd611177be71ec305196bB896036B802CBA1762D0D6C3A48792ED&deviceId=12ec7b9b922138b8a6bc55070a164669d050bb7a&source=c40fe2f61bcfd611177be71ec305196b&version=3.2.0.6
      */
-    
     [self setNav];
     [self loadData];
     [self setCustomTitleView:nil];
@@ -150,7 +123,7 @@
 /** 42区 */
 - (void)bdfHomeSubjectsDidSelect_news {
     [self setCustomTitleView:@"42区"];
-    [self handChageViewWithClass:[BDF42NewsViewController class]];
+    [self handChageViewWithClass:[BDF42AllNewsViewController class]];
 }
 /** 段子 */
 - (void)bdfHomeSubjectsDidSelect_scoff {
@@ -175,9 +148,8 @@
 /** 视频 */
 - (void)bdfHomeSubjectsDidSelect_video {
     [self setCustomTitleView:@"视频"];
-    [self dismissPop];
+    [self handChageViewWithClass:[BDFVideoViewController class]];
 }
-
 /** 最热榜 */
 - (void)bdfHomeSubjectsDidSelectMostHot {
     [self setCustomTitleView:@"最热榜"];
@@ -191,17 +163,17 @@
 /** 关注人动态 */
 - (void)bdfHomeSubjectsDidSelectAttention {
     [self setCustomTitleView:@"关注人动态"];
-    [self dismissPop];
+    [self handChageViewWithClass:[BDFFocusOnPeopleController class]];
 }
 /** 人类发布 */
 - (void)bdfHomeSubjectsDidSelectPeople {
     [self setCustomTitleView:@"人类发布"];
-    [self dismissPop];
+    [self handChageViewWithClass:[BDFHumanReleaseController class]];
 }
 /** 私藏 */
 - (void)bdfHomeSubjectsDidSelectCollection {
     [self setCustomTitleView:@"私藏"];
-    [self dismissPop];
+    [self handChageViewWithClass:[BDFCollectionViewController class]];
 }
 
 - (void)handChageViewWithClass:(Class)class {

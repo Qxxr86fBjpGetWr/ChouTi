@@ -13,6 +13,15 @@
 		AB03667A2192F75C008D91A5 /* BDFPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0366792192F75C008D91A5 /* BDFPictureViewController.m */; };
 		AB03667D2192F920008D91A5 /* BDF1024ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB03667C2192F920008D91A5 /* BDF1024ViewController.m */; };
 		AB0366832192FD0C008D91A5 /* BDFQAndAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0366822192FD0C008D91A5 /* BDFQAndAViewController.m */; };
+		AB03668621944839008D91A5 /* BDFVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB03668521944839008D91A5 /* BDFVideoViewController.m */; };
+		AB03669821944A27008D91A5 /* BDFFocusOnPeopleController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB03669721944A27008D91A5 /* BDFFocusOnPeopleController.m */; };
+		AB03669B21944BED008D91A5 /* BDFFocusOnPeopleRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AB03669A21944BED008D91A5 /* BDFFocusOnPeopleRequest.m */; };
+		AB03669E21944E0A008D91A5 /* BDFHumanReleaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB03669D21944E0A008D91A5 /* BDFHumanReleaseController.m */; };
+		AB0366A121944E22008D91A5 /* BDFHumanReleaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0366A021944E22008D91A5 /* BDFHumanReleaseRequest.m */; };
+		AB0366A4219450E4008D91A5 /* BDFCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0366A3219450E4008D91A5 /* BDFCollectionViewController.m */; };
+		AB0366A72194557B008D91A5 /* BDF42NewsMenuModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0366A62194557B008D91A5 /* BDF42NewsMenuModel.m */; };
+		AB0366AA21945821008D91A5 /* BDF42AllNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0366A921945821008D91A5 /* BDF42AllNewsViewController.m */; };
+		AB0366AD219463D7008D91A5 /* BDF42NewsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0366AC219463D7008D91A5 /* BDF42NewsRequest.m */; };
 		AB1E5DC1208854B0002E48B5 /* BDFLoginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AB1E5DC0208854B0002E48B5 /* BDFLoginRequest.m */; };
 		AB1E5DC720886507002E48B5 /* BDFLoginSucModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB1E5DC620886507002E48B5 /* BDFLoginSucModel.m */; };
 		AB1E5DCA20886632002E48B5 /* BDFUserInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AB1E5DC820886632002E48B5 /* BDFUserInfoManager.m */; };
@@ -163,6 +172,24 @@
 		AB03667C2192F920008D91A5 /* BDF1024ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDF1024ViewController.m; sourceTree = "<group>"; };
 		AB0366812192FD0C008D91A5 /* BDFQAndAViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFQAndAViewController.h; sourceTree = "<group>"; };
 		AB0366822192FD0C008D91A5 /* BDFQAndAViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFQAndAViewController.m; sourceTree = "<group>"; };
+		AB03668421944839008D91A5 /* BDFVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFVideoViewController.h; sourceTree = "<group>"; };
+		AB03668521944839008D91A5 /* BDFVideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFVideoViewController.m; sourceTree = "<group>"; };
+		AB03669621944A27008D91A5 /* BDFFocusOnPeopleController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFFocusOnPeopleController.h; sourceTree = "<group>"; };
+		AB03669721944A27008D91A5 /* BDFFocusOnPeopleController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFFocusOnPeopleController.m; sourceTree = "<group>"; };
+		AB03669921944BED008D91A5 /* BDFFocusOnPeopleRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFFocusOnPeopleRequest.h; sourceTree = "<group>"; };
+		AB03669A21944BED008D91A5 /* BDFFocusOnPeopleRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFFocusOnPeopleRequest.m; sourceTree = "<group>"; };
+		AB03669C21944E0A008D91A5 /* BDFHumanReleaseController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFHumanReleaseController.h; sourceTree = "<group>"; };
+		AB03669D21944E0A008D91A5 /* BDFHumanReleaseController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFHumanReleaseController.m; sourceTree = "<group>"; };
+		AB03669F21944E22008D91A5 /* BDFHumanReleaseRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFHumanReleaseRequest.h; sourceTree = "<group>"; };
+		AB0366A021944E22008D91A5 /* BDFHumanReleaseRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFHumanReleaseRequest.m; sourceTree = "<group>"; };
+		AB0366A2219450E4008D91A5 /* BDFCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFCollectionViewController.h; sourceTree = "<group>"; };
+		AB0366A3219450E4008D91A5 /* BDFCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFCollectionViewController.m; sourceTree = "<group>"; };
+		AB0366A52194557B008D91A5 /* BDF42NewsMenuModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDF42NewsMenuModel.h; sourceTree = "<group>"; };
+		AB0366A62194557B008D91A5 /* BDF42NewsMenuModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDF42NewsMenuModel.m; sourceTree = "<group>"; };
+		AB0366A821945821008D91A5 /* BDF42AllNewsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDF42AllNewsViewController.h; sourceTree = "<group>"; };
+		AB0366A921945821008D91A5 /* BDF42AllNewsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDF42AllNewsViewController.m; sourceTree = "<group>"; };
+		AB0366AB219463D7008D91A5 /* BDF42NewsRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDF42NewsRequest.h; sourceTree = "<group>"; };
+		AB0366AC219463D7008D91A5 /* BDF42NewsRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDF42NewsRequest.m; sourceTree = "<group>"; };
 		AB1E5DBF208854B0002E48B5 /* BDFLoginRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFLoginRequest.h; sourceTree = "<group>"; };
 		AB1E5DC0208854B0002E48B5 /* BDFLoginRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFLoginRequest.m; sourceTree = "<group>"; };
 		AB1E5DC520886507002E48B5 /* BDFLoginSucModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFLoginSucModel.h; sourceTree = "<group>"; };
@@ -435,6 +462,133 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB036687219449DF008D91A5 /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				AB036688219449DF008D91A5 /* Controller */,
+				AB036689219449DF008D91A5 /* Model */,
+				AB03668A219449DF008D91A5 /* View */,
+				AB03668B219449DF008D91A5 /* Request */,
+			);
+			path = Collection;
+			sourceTree = "<group>";
+		};
+		AB036688219449DF008D91A5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AB0366A2219450E4008D91A5 /* BDFCollectionViewController.h */,
+				AB0366A3219450E4008D91A5 /* BDFCollectionViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AB036689219449DF008D91A5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AB03668A219449DF008D91A5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AB03668B219449DF008D91A5 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		AB03668C219449DF008D91A5 /* FocusOnPeople */ = {
+			isa = PBXGroup;
+			children = (
+				AB03668D219449DF008D91A5 /* Controller */,
+				AB03668E219449DF008D91A5 /* Model */,
+				AB03668F219449DF008D91A5 /* View */,
+				AB036690219449DF008D91A5 /* Request */,
+			);
+			path = FocusOnPeople;
+			sourceTree = "<group>";
+		};
+		AB03668D219449DF008D91A5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AB03669621944A27008D91A5 /* BDFFocusOnPeopleController.h */,
+				AB03669721944A27008D91A5 /* BDFFocusOnPeopleController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AB03668E219449DF008D91A5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AB03669921944BED008D91A5 /* BDFFocusOnPeopleRequest.h */,
+				AB03669A21944BED008D91A5 /* BDFFocusOnPeopleRequest.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AB03668F219449DF008D91A5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AB036690219449DF008D91A5 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		AB036691219449DF008D91A5 /* HumanRelease */ = {
+			isa = PBXGroup;
+			children = (
+				AB036692219449DF008D91A5 /* Controller */,
+				AB036693219449DF008D91A5 /* Model */,
+				AB036694219449DF008D91A5 /* View */,
+				AB036695219449DF008D91A5 /* Request */,
+			);
+			path = HumanRelease;
+			sourceTree = "<group>";
+		};
+		AB036692219449DF008D91A5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AB03669C21944E0A008D91A5 /* BDFHumanReleaseController.h */,
+				AB03669D21944E0A008D91A5 /* BDFHumanReleaseController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AB036693219449DF008D91A5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AB036694219449DF008D91A5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AB036695219449DF008D91A5 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				AB03669F21944E22008D91A5 /* BDFHumanReleaseRequest.h */,
+				AB0366A021944E22008D91A5 /* BDFHumanReleaseRequest.m */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
 		AB2802C61E1F81E00006A13E = {
 			isa = PBXGroup;
 			children = (
@@ -738,6 +892,8 @@
 		AB2B02AF218D575300A4AA74 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AB0366A52194557B008D91A5 /* BDF42NewsMenuModel.h */,
+				AB0366A62194557B008D91A5 /* BDF42NewsMenuModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -745,6 +901,8 @@
 		AB2B02B0218D575300A4AA74 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				AB0366A821945821008D91A5 /* BDF42AllNewsViewController.h */,
+				AB0366A921945821008D91A5 /* BDF42AllNewsViewController.m */,
 				AB2B02B2218D583A00A4AA74 /* BDF42NewsViewController.h */,
 				AB2B02B3218D583A00A4AA74 /* BDF42NewsViewController.m */,
 			);
@@ -754,6 +912,8 @@
 		AB2B02B1218D575300A4AA74 /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				AB0366AB219463D7008D91A5 /* BDF42NewsRequest.h */,
+				AB0366AC219463D7008D91A5 /* BDF42NewsRequest.m */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -761,6 +921,9 @@
 		AB6D62EF218C5AEA009B1AD4 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				AB036687219449DF008D91A5 /* Collection */,
+				AB03668C219449DF008D91A5 /* FocusOnPeople */,
+				AB036691219449DF008D91A5 /* HumanRelease */,
 				AB7E8E142192CA06007B4E1D /* 1024 */,
 				AB7E8E0F2192CA06007B4E1D /* Jokes */,
 				AB7E8E052192CA06007B4E1D /* Picture */,
@@ -978,6 +1141,8 @@
 		AB7E8E012192CA06007B4E1D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				AB03668421944839008D91A5 /* BDFVideoViewController.h */,
+				AB03668521944839008D91A5 /* BDFVideoViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1755,11 +1920,13 @@
 				AB6D634A218C5AEA009B1AD4 /* BDFHomeTitleView.m in Sources */,
 				AB6D6352218C5AEA009B1AD4 /* BDFAllTypeNewsView.m in Sources */,
 				AB778F632116E88E00A81791 /* BDFAvatarBrowser.m in Sources */,
+				AB03669E21944E0A008D91A5 /* BDFHumanReleaseController.m in Sources */,
 				ABB18825218D9F58006A9295 /* BDFHomeTopicViewController.m in Sources */,
 				AB791329211C48DE007AA283 /* NSString+Html.m in Sources */,
 				AB6D633E218C5AEA009B1AD4 /* BDFSubHomePageViewController.m in Sources */,
 				ABCD18451ED6D0CF005AA34E /* BDFCommonConstant.m in Sources */,
 				AB2803261E1F87C10006A13E /* BDFLogAndRegViewController.m in Sources */,
+				AB0366AD219463D7008D91A5 /* BDF42NewsRequest.m in Sources */,
 				AB6D6357218C5AEA009B1AD4 /* BDFHomeNewsMoreRequest.m in Sources */,
 				AB6D634D218C5AEA009B1AD4 /* BDFKeyBoardToolView.m in Sources */,
 				AB25D2491E237C620093BE75 /* BDFTableViewHeaderFooterView.m in Sources */,
@@ -1769,6 +1936,7 @@
 				AB6D6348218C5AEA009B1AD4 /* BDFCommentFrameModel.m in Sources */,
 				AB6FFE381E247CE000837AB6 /* BDFRequestManager.m in Sources */,
 				AB791323211BE145007AA283 /* BDFSearchPublishListModel.m in Sources */,
+				AB0366A72194557B008D91A5 /* BDF42NewsMenuModel.m in Sources */,
 				AB6D635A218C5AEA009B1AD4 /* BDFHomePageHotNewsRequest.m in Sources */,
 				AB7C1A6721538C59005D63FA /* BDFHomeHeaderOptionItemView.m in Sources */,
 				AB25D2421E2361F10093BE75 /* BDFBaseTableViewCell.m in Sources */,
@@ -1798,6 +1966,7 @@
 				AB1E5DC720886507002E48B5 /* BDFLoginSucModel.m in Sources */,
 				AB6D634F218C5AEA009B1AD4 /* BDFHomeHotNewsCell.m in Sources */,
 				ABA52FEE21181FEF0043B398 /* BDFSearchSuggestRequest.m in Sources */,
+				AB03669821944A27008D91A5 /* BDFFocusOnPeopleController.m in Sources */,
 				AB42A25021196A2C00916087 /* BDFSearchSuggestCell.m in Sources */,
 				ABCD18411ED6D0CF005AA34E /* UIButton+Addition.m in Sources */,
 				AB2802D41E1F81E00006A13E /* main.m in Sources */,
@@ -1828,11 +1997,14 @@
 				AB6D6342218C5AEA009B1AD4 /* BDFCommentTreeManager.m in Sources */,
 				ABCD18431ED6D0CF005AA34E /* UIView+Tap.m in Sources */,
 				AB6D6364218D31E0009B1AD4 /* BDFNewsHotViewController.m in Sources */,
+				AB0366A4219450E4008D91A5 /* BDFCollectionViewController.m in Sources */,
 				AB778F6F2116F63A00A81791 /* NSAttributedString+Size.m in Sources */,
 				ABA5300021185DA30043B398 /* BDFSearchUsersViewController.m in Sources */,
 				ABCD18401ED6D0CF005AA34E /* NSNotificationCenter+Addition.m in Sources */,
 				ABCD18461ED6D0CF005AA34E /* BDFFileCacheManager.m in Sources */,
 				AB6D6341218C5AEA009B1AD4 /* BDFHomeHotNewsModel.m in Sources */,
+				AB0366AA21945821008D91A5 /* BDF42AllNewsViewController.m in Sources */,
+				AB0366A121944E22008D91A5 /* BDFHumanReleaseRequest.m in Sources */,
 				AB6D6340218C5AEA009B1AD4 /* BDFHomeCommentController.m in Sources */,
 				ABA52FE821181FC90043B398 /* BDFHomeSearchController.m in Sources */,
 				AB6D636A218D3C97009B1AD4 /* BDFMostHotNewsSubController.m in Sources */,
@@ -1852,6 +2024,8 @@
 				ABE40AD8214B86DB00977F08 /* BDFMeViewController.m in Sources */,
 				ABA52FEB21181FE20043B398 /* BDFSearchSuggestModel.m in Sources */,
 				ABB18837218DB7E1006A9295 /* BDFHomeTopicListDetailModel.m in Sources */,
+				AB03668621944839008D91A5 /* BDFVideoViewController.m in Sources */,
+				AB03669B21944BED008D91A5 /* BDFFocusOnPeopleRequest.m in Sources */,
 				ABA52FFD21185D880043B398 /* BDFSearchPublishViewController.m in Sources */,
 				AB6D634C218C5AEA009B1AD4 /* BDFHomeCommentsCell.m in Sources */,
 				AB6D6354218C5AEA009B1AD4 /* BDFNewsHotView.m in Sources */,

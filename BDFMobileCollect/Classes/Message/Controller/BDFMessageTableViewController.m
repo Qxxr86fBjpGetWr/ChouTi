@@ -31,6 +31,18 @@
 
 @implementation BDFMessageTableViewController
 
+/**
+
+ 消息 通知
+ https://api.chouti.com/users/systemNotification.json?access_token=c40fe2f61bcfd611177be71ec305196bB896036B802CBA1762D0D6C3A48792ED&count=25&deviceId=12ec7b9b922138b8a6bc55070a164669d050bb7a&source=c40fe2f61bcfd611177be71ec305196b&version=3.2.0.6
+ 消息 提醒
+ https://api.chouti.com/api/comments/advice/get.json？access_token=c40fe2f61bcfd611177be71ec305196bB896036B802CBA1762D0D6C3A48792ED&deviceId=12ec7b9b922138b8a6bc55070a164669d050bb7a&source=c40fe2f61bcfd611177be71ec305196b&version=3.2.0.6
+ 消息 聊天 未读数
+ https://api.chouti.com/chat/getUnreadMessages.json？access_token=c40fe2f61bcfd611177be71ec305196bB896036B802CBA1762D0D6C3A48792ED&deviceId=12ec7b9b922138b8a6bc55070a164669d050bb7a&source=c40fe2f61bcfd611177be71ec305196b&version=3.2.0.6
+ 消息 聊天
+ https://api.chouti.com/api/user/advice/unread/get.json?access_token=c40fe2f61bcfd611177be71ec305196bB896036B802CBA1762D0D6C3A48792ED&deviceId=12ec7b9b922138b8a6bc55070a164669d050bb7a&source=c40fe2f61bcfd611177be71ec305196b&type=0&version=3.2.0.6
+ */
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     

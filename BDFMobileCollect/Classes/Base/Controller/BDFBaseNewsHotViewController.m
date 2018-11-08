@@ -39,7 +39,10 @@
     self.hotTableView.hidden = NO;
     self.view.backgroundColor = [UIColor whiteColor];
     self.emptyView.hidden = NO;
-    [self loadData];
+    dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
+    dispatch_async(queue, ^{
+        [self loadData];
+    });
 }
 
 - (void)loadData {

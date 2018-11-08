@@ -40,8 +40,14 @@ NSString *const BDFMEDATA = @"https://api.chouti.com/users/profile.json";
 NSString *const BDFHOMENEWSCATEGORY = @"https://api.chouti.com/subjects.json";
 /** 最热榜 */
 NSString *const BDFHOMEMOSTHOTLIST = @"https://api.chouti.com/r/top.json";
-/** 42区 */
+/** 42区上面的菜单 */
+NSString *const BDFHOMECATEGORY42MENU = @"https://api.chouti.com/api/category_news/menu.json";
+/** 42区最热 */
 NSString *const BDFHOMECATEGORY42 = @"https://api.chouti.com/v2/r/news.json";
+/** 42区最新 */
+NSString *const BDFHOMECATEGORY42HOT = @"https://api.chouti.com/v2/r/news/new.json";
+/** 42区分类数据 */
+NSString *const BDFHOMECATEGORY42CATEGORY = @"https://api.chouti.com/api/category_news/list.json";
 /** 段子 */
 NSString *const BDFHOMECATEGORYSCOFF = @"https://api.chouti.com/v2/r/scoff.json";
 /** 话题列表 */
@@ -61,6 +67,17 @@ NSString *const BDFHOMECATEGORY1024NEWLIST = @"https://api.chouti.com/v2/r/tec/n
 NSString *const BDFHOMECATEGORYQAHOTLIST = @"https://api.chouti.com/v2/r/ask.json";
 /** 你问我答最新 */
 NSString *const BDFHOMECATEGORYQANEWLIST = @"https://api.chouti.com/v2/r/ask/new.json";
-
+/** 视频最热 */
+NSString *const BDFHOMECATEGORYVIDEOHOTLIST = @"https://api.chouti.com/v2/r/video.json";
+/** 视频最新 */
+NSString *const BDFHOMECATEGORYVIDEONEWLIST = @"https://api.chouti.com/v2/r/video/new.json";
+/** 关注人动态 */
+NSString *const BDFHOMECATEGORYFLOWLIST = @"https://api.chouti.com/attente/flow.json";
+/** 人类发布 */
+NSString *const BDFHOMECATEGORYMANLIST = @"https://api.chouti.com/man.json";
+/** 私藏的发布 */
+NSString *const BDFHOMECATEGORYPUBLISHLIST = @"https://api.chouti.com/users/save.json";
+/** 私藏的评论 */
+NSString *const BDFHOMECATEGORYCOMMENTLIST = @"https://api.chouti.com/api/comments/self/get.json";
 
 @end
