@@ -56,7 +56,7 @@
     if (![[NSFileManager defaultManager] fileExistsAtPath:fileName isDirectory:nil]) {
         [[NSFileManager defaultManager] createDirectoryAtPath:filePath withIntermediateDirectories:NO attributes:nil error:nil];
     }
-    return cachePath;
+    return filePath;
 }
 
 @end

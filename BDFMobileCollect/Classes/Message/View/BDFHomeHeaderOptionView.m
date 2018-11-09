@@ -42,13 +42,13 @@
     CGFloat progress = rightPageLeftDelta / SCREEN_WIDTH;
     
     if ([leftItem isKindOfClass:[BDFHomeHeaderOptionItemView class]]) {
-        leftItem.textColor = kOrangeColor;
+        leftItem.textColor = kBlackColor;
         leftItem.fillColor = kCommonBlackColor;
         leftItem.progress = progress;
     }
     if ([rightItem isKindOfClass:[BDFHomeHeaderOptionItemView class]]) {
         rightItem.textColor = kCommonBlackColor;
-        rightItem.fillColor = kLightGrayColor;
+        rightItem.fillColor = kBlackColor;
         rightItem.progress = progress;
     }
     
@@ -100,7 +100,7 @@
     if (self.titles.count) {
         self.scrollView.frame = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height - kLineHeight);
         if (self.titles.count > 6) {
-            optionItemW = 90;
+            optionItemW = 60;
         }else {
             optionItemW = SCREEN_WIDTH / self.titles.count;
         }
@@ -159,7 +159,7 @@
 - (UIView *)scrollLineView {
     if (!_scrollLineView) {
         UIView *lineView = [[UIView alloc] init];
-        lineView.backgroundColor = kLightGrayColor;
+        lineView.backgroundColor = kBlackColor;
         [self.scrollView addSubview:lineView];
         _scrollLineView = lineView;
     }

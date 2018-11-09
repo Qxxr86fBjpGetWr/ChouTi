@@ -288,6 +288,7 @@
         ADTickerLabel *label = [[ADTickerLabel alloc] initWithFrame:CGRectMake(_newsFrame.upsButtonF.size.width - 30, (_newsFrame.upsButtonF.size.height - 16)/2., 30, 16)];
         label.font = [UIFont boldSystemFontOfSize:14.];
         label.textColor = kGrayColor;
+        label.changeTextAnimationDuration = 0.;
         [self.upsButton addSubview:label];
         [self.upsButton bringSubviewToFront:label];
         _upsTickerLabel = label;
@@ -300,6 +301,7 @@
         ADTickerLabel *label = [[ADTickerLabel alloc] initWithFrame:CGRectMake(_newsFrame.commentButtonF.size.width - 30, (_newsFrame.commentButtonF.size.height - 16)/2., 30, 16)];
         label.font = [UIFont boldSystemFontOfSize:14.];
         label.textColor = kGrayColor;
+        label.changeTextAnimationDuration = 0;
         [self.commentButton addSubview:label];
         [self.commentButton bringSubviewToFront:label];
         _commentTickerLabel = label;
