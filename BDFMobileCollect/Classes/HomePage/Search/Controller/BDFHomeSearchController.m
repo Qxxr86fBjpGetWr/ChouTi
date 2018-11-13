@@ -57,9 +57,10 @@
 }
 
 - (void)suggestLoadDataWithKeyWord:(NSString *)word {
-    BDFSearchSuggestRequest *request = [BDFSearchSuggestRequest bdf_requestWithUrl:BDFHOMESEARCHSUGGEST isPost:YES];
+    BDFSearchSuggestRequest *request = [BDFSearchSuggestRequest bdf_requestWithUrl:BDFHOMESEARCHSUGGEST isPost:NO];
     request.keywords = word;
     [request bdf_sendRequestWithComple:^(id response, BOOL success, NSString *message) {
+        BDFLog(@"%@",response);
         if (!NULLDic(response)) {
             self.model = [BDFSearchSuggestModel modelWithDictionary:response];
         }else {
@@ -88,6 +89,8 @@
         return NO;
     }
     self.searchWord = textField.text;
+    [self.searchTextField endEditing:YES];
+    [self creatSearchDataViews];
     
     return YES;
 }

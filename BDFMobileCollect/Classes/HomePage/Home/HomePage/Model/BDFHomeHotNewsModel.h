@@ -116,6 +116,10 @@
 
 @property (nonatomic, assign) BOOL isBanUser;
 
+@property (nonatomic, assign) NSInteger topicId;
+
+@property (nonatomic, strong) NSString *topicName;
+
 @end
 
 @interface BDFHomeHotNewsModelLinkUser : BDFBaseModel

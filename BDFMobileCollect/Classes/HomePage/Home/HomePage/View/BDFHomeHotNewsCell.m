@@ -53,21 +53,10 @@
     }
     _newsFrame = newsFrame;
     self.hotNewsModel = newsFrame.hotNewsModel;
-    
     self.titleLabel.frame = newsFrame.contentF;
-//    NSMutableAttributedString *attTitle = [NSString attributeStringByHtmlString:self.hotNewsModel.title].mutableCopy;
-//    [attTitle addAttribute:NSFontAttributeName value:kFont(16)
-//                     range:NSMakeRange(0, attTitle.length)];
-//    [attTitle addAttribute:NSKernAttributeName value:@1
-//                     range:NSMakeRange(0, attTitle.length)];
-//    NSMutableParagraphStyle *paragraph = [[NSMutableParagraphStyle alloc] init];
-//    paragraph.lineSpacing = 5;
-//    [attTitle addAttribute:NSParagraphStyleAttributeName value:paragraph
-//                     range:NSMakeRange(0, attTitle.length)];
-    self.titleLabel.text = self.hotNewsModel.title;
+    self.titleLabel.attributedText = [self handAttributeWithText:self.hotNewsModel.title];
     
     self.mainImageView.frame = newsFrame.mainImageF;
-    //self.mainImageView.shadowColor = kGrayColor;
     [self.mainImageView setImageWithString:self.hotNewsModel.img_url placeHolder:[UIImage imageNamed:@"chou_chou"]];
     
     self.upsButton.frame = newsFrame.upsButtonF;
@@ -107,6 +96,19 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+}
+
+- (NSAttributedString *)handAttributeWithText:(NSString *)text {
+    NSMutableAttributedString *attTitle = [NSString attributeStringByHtmlString:self.hotNewsModel.title].mutableCopy;
+    [attTitle addAttribute:NSFontAttributeName value:kFont(16)
+                     range:NSMakeRange(0, attTitle.length)];
+    [attTitle addAttribute:NSKernAttributeName value:@1
+                     range:NSMakeRange(0, attTitle.length)];
+    NSMutableParagraphStyle *paragraph = [[NSMutableParagraphStyle alloc] init];
+    paragraph.lineSpacing = 5;
+    [attTitle addAttribute:NSParagraphStyleAttributeName value:paragraph
+                     range:NSMakeRange(0, attTitle.length)];
+    return attTitle;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

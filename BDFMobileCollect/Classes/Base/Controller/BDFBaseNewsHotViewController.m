@@ -102,6 +102,9 @@
 - (BDFNewsHotTableView *)hotTableView {
     if(!_hotTableView){
         _hotTableView = [[BDFNewsHotTableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) withDelegateVc:self];
+        if (SCREEN_iPhoneX) {
+            _hotTableView.height = SCREEN_HEIGHT - SCREEN_StatusBarAndNavBarHeight - SCREEN_TabbarHeight;
+        }
         _hotTableView.backgroundColor = [UIColor colorWithRed:0.94f green:0.94f blue:0.94f alpha:1.00f];
         _hotTableView.separatorColor = [UIColor blackColor];
         [BDFUntil addLoadMoreForScrollView:_hotTableView loadMoreCallBack:^{

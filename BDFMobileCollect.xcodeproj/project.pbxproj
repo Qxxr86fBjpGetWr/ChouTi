@@ -22,6 +22,9 @@
 		AB0366A72194557B008D91A5 /* BDF42NewsMenuModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0366A62194557B008D91A5 /* BDF42NewsMenuModel.m */; };
 		AB0366AA21945821008D91A5 /* BDF42AllNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0366A921945821008D91A5 /* BDF42AllNewsViewController.m */; };
 		AB0366AD219463D7008D91A5 /* BDF42NewsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0366AC219463D7008D91A5 /* BDF42NewsRequest.m */; };
+		AB192252219AB8DE0083B22D /* BDFMeHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB192251219AB8DE0083B22D /* BDFMeHistoryViewController.m */; };
+		AB192255219ABA510083B22D /* BDFMeHistoryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AB192254219ABA510083B22D /* BDFMeHistoryRequest.m */; };
+		AB19225B219AC2D00083B22D /* BDFRecommendCommendPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB19225A219AC2D00083B22D /* BDFRecommendCommendPublishViewController.m */; };
 		AB1E5DC1208854B0002E48B5 /* BDFLoginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AB1E5DC0208854B0002E48B5 /* BDFLoginRequest.m */; };
 		AB1E5DC720886507002E48B5 /* BDFLoginSucModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AB1E5DC620886507002E48B5 /* BDFLoginSucModel.m */; };
 		AB1E5DCA20886632002E48B5 /* BDFUserInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AB1E5DC820886632002E48B5 /* BDFUserInfoManager.m */; };
@@ -190,6 +193,12 @@
 		AB0366A921945821008D91A5 /* BDF42AllNewsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDF42AllNewsViewController.m; sourceTree = "<group>"; };
 		AB0366AB219463D7008D91A5 /* BDF42NewsRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDF42NewsRequest.h; sourceTree = "<group>"; };
 		AB0366AC219463D7008D91A5 /* BDF42NewsRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDF42NewsRequest.m; sourceTree = "<group>"; };
+		AB192250219AB8DE0083B22D /* BDFMeHistoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFMeHistoryViewController.h; sourceTree = "<group>"; };
+		AB192251219AB8DE0083B22D /* BDFMeHistoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFMeHistoryViewController.m; sourceTree = "<group>"; };
+		AB192253219ABA510083B22D /* BDFMeHistoryRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFMeHistoryRequest.h; sourceTree = "<group>"; };
+		AB192254219ABA510083B22D /* BDFMeHistoryRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFMeHistoryRequest.m; sourceTree = "<group>"; };
+		AB192259219AC2D00083B22D /* BDFRecommendCommendPublishViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFRecommendCommendPublishViewController.h; sourceTree = "<group>"; };
+		AB19225A219AC2D00083B22D /* BDFRecommendCommendPublishViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFRecommendCommendPublishViewController.m; sourceTree = "<group>"; };
 		AB1E5DBF208854B0002E48B5 /* BDFLoginRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFLoginRequest.h; sourceTree = "<group>"; };
 		AB1E5DC0208854B0002E48B5 /* BDFLoginRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFLoginRequest.m; sourceTree = "<group>"; };
 		AB1E5DC520886507002E48B5 /* BDFLoginSucModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFLoginSucModel.h; sourceTree = "<group>"; };
@@ -1675,6 +1684,10 @@
 				ABE40AD7214B86DB00977F08 /* BDFMeViewController.m */,
 				AB200989217481F6002A9B7C /* BDFMeMoreSettingController.h */,
 				AB20098A217481F6002A9B7C /* BDFMeMoreSettingController.m */,
+				AB192250219AB8DE0083B22D /* BDFMeHistoryViewController.h */,
+				AB192251219AB8DE0083B22D /* BDFMeHistoryViewController.m */,
+				AB192259219AC2D00083B22D /* BDFRecommendCommendPublishViewController.h */,
+				AB19225A219AC2D00083B22D /* BDFRecommendCommendPublishViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1704,6 +1717,8 @@
 			children = (
 				ABE40AE2214D17FB00977F08 /* BDFMeRequest.h */,
 				ABE40AE3214D17FB00977F08 /* BDFMeRequest.m */,
+				AB192253219ABA510083B22D /* BDFMeHistoryRequest.h */,
+				AB192254219ABA510083B22D /* BDFMeHistoryRequest.m */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -1964,6 +1979,7 @@
 				ABB3FFE420F4B238000472D3 /* UIVisualEffectView+Addition.m in Sources */,
 				AB7C1A6121538B5C005D63FA /* BDFHomeSliderViewController.m in Sources */,
 				AB1E5DC720886507002E48B5 /* BDFLoginSucModel.m in Sources */,
+				AB192252219AB8DE0083B22D /* BDFMeHistoryViewController.m in Sources */,
 				AB6D634F218C5AEA009B1AD4 /* BDFHomeHotNewsCell.m in Sources */,
 				ABA52FEE21181FEF0043B398 /* BDFSearchSuggestRequest.m in Sources */,
 				AB03669821944A27008D91A5 /* BDFFocusOnPeopleController.m in Sources */,
@@ -1982,6 +1998,8 @@
 				AB6D6346218C5AEA009B1AD4 /* BDFHomeCommentIndexModel.m in Sources */,
 				ABCD181E1ED6C4F7005AA34E /* BDFBaseImageView.m in Sources */,
 				AB3F102E21241B5100D283CC /* BDFSearchPublishMenuView.m in Sources */,
+				AB192255219ABA510083B22D /* BDFMeHistoryRequest.m in Sources */,
+				AB19225B219AC2D00083B22D /* BDFRecommendCommendPublishViewController.m in Sources */,
 				AB0366712192F177008D91A5 /* BDFBaseHotNewsRequest.m in Sources */,
 				AB778F6C2116F5E800A81791 /* BDFCustomCommonEmptyView.m in Sources */,
 				ABE40AE4214D17FB00977F08 /* BDFMeRequest.m in Sources */,

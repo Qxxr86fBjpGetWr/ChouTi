@@ -79,5 +79,13 @@ NSString *const BDFHOMECATEGORYMANLIST = @"https://api.chouti.com/man.json";
 NSString *const BDFHOMECATEGORYPUBLISHLIST = @"https://api.chouti.com/users/save.json";
 /** 私藏的评论 */
 NSString *const BDFHOMECATEGORYCOMMENTLIST = @"https://api.chouti.com/api/comments/self/get.json";
+/** 最近浏览 */
+NSString *const BDFHOMEHISTORYLIST = @"https://api.chouti.com/user/link/history/list.json";
+/** 推荐 */
+NSString *const BDFHOMELIKELIST = @"https://api.chouti.com/users/liked.json";
+/** 评论 */
+NSString *const BDFHOMECOMMENTLIST = @"https://api.chouti.com/users/comments.json";
+/** 发布 */
+NSString *const BDFHOMEPUBLISHLIST = @"https://api.chouti.com/users/publish.json";
 
 @end

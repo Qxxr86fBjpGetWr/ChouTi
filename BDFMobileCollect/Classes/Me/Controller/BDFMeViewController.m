@@ -18,6 +18,9 @@
 #import "BDFLogAndRegViewDelegate.h"
 #import "BDFMainTabBarController.h"
 #import "AppDelegate.h"
+#import "BDFCollectionViewController.h"
+#import "BDFMeHistoryViewController.h"
+#import "BDFRecommendCommendPublishViewController.h"
 
 #define TITLE @"meCellTitle"
 #define ICON @"meCellIcon"
@@ -57,19 +60,8 @@ typedef NS_ENUM(NSInteger, BDFMeCellType) {
     
     [self.headerView stretchHeaderForTableView:self.tableView withView:self.headerView subViews:nil];
     [self loadData];
-    [self creatMeData];
     
     /**
-     最近浏览
-     https://api.chouti.com/user/link/history/list.json？access_token=c40fe2f61bcfd611177be71ec305196bB896036B802CBA1762D0D6C3A48792ED&deviceId=12ec7b9b922138b8a6bc55070a164669d050bb7a&source=c40fe2f61bcfd611177be71ec305196b&version=3.2.0.6
-     私藏
-     
-     推荐
-     https://api.chouti.com/users/liked.json?access_token=c40fe2f61bcfd611177be71ec305196bB896036B802CBA1762D0D6C3A48792ED&deviceId=12ec7b9b922138b8a6bc55070a164669d050bb7a&source=c40fe2f61bcfd611177be71ec305196b&version=3.2.0.6
-     评论
-     https://api.chouti.com/users/comments.json?access_token=c40fe2f61bcfd611177be71ec305196bB896036B802CBA1762D0D6C3A48792ED&deviceId=12ec7b9b922138b8a6bc55070a164669d050bb7a&source=c40fe2f61bcfd611177be71ec305196b&version=3.2.0.6
-     发布
-     https://api.chouti.com/users/publish.json?access_token=c40fe2f61bcfd611177be71ec305196bB896036B802CBA1762D0D6C3A48792ED&deviceId=12ec7b9b922138b8a6bc55070a164669d050bb7a&source=c40fe2f61bcfd611177be71ec305196b&version=3.2.0.6
      
      黑名单
      https://api.chouti.com/users/getBlackList.json?access_token=c40fe2f61bcfd611177be71ec305196bB896036B802CBA1762D0D6C3A48792ED&deviceId=12ec7b9b922138b8a6bc55070a164669d050bb7a&source=c40fe2f61bcfd611177be71ec305196b&version=3.2.0.6
@@ -81,6 +73,8 @@ typedef NS_ENUM(NSInteger, BDFMeCellType) {
     BDFMeRequest *request = [BDFMeRequest bdf_requestWithUrl:BDFMEDATA];
     [request bdf_sendRequestWithComple:^(id response, BOOL success, NSString *message) {
         self.sucModel = [BDFLoginSucModel modelWithDictionary:response];
+        [self creatMeData];
+        [self.tableView reloadData];
         [[BDFUserInfoManager sharedManager] resetUserInfoWithUserInfo:_sucModel];
     }];
 }
@@ -171,6 +165,21 @@ typedef NS_ENUM(NSInteger, BDFMeCellType) {
     [self bdf_reloadData];
 }
 
+- (void)historyCellAction {
+    BDFMeHistoryViewController *history = [[BDFMeHistoryViewController alloc] init];
+    [self pushVc:history];
+}
+
+- (void)collectionCellAction {
+    BDFCollectionViewController *collection = [[BDFCollectionViewController alloc] init];
+    [self pushVc:collection];
+}
+
+- (void)recommendCommentPublishCellAction {
+    BDFRecommendCommendPublishViewController *vc = [[BDFRecommendCommendPublishViewController alloc] init];
+    [self pushVc:vc];
+}
+
 - (void)creatMeData {
     
     NSString *likeCount = [NSString stringWithFormat:@"%ld",self.sucModel.liked_count];
@@ -186,35 +195,35 @@ typedef NS_ENUM(NSInteger, BDFMeCellType) {
                                     TITLE : @"最近浏览",
                                     ICON : @"time",
                                     TYPE : @0,
-                                    ACTION : @"",
+                                    ACTION : @"historyCellAction",
                                     },
                                 @{
                                     TITLE : @"私藏",
                                     ICON : @"my_collection",
                                     TYPE : @1,
                                     DATA : likeCount,
-                                    ACTION : @"",
+                                    ACTION : @"collectionCellAction",
                                     },
                                 @{
                                     TITLE : @"推荐",
                                     ICON : @"my_good",
                                     TYPE : @1,
                                     DATA : followCount,
-                                    ACTION : @"",
+                                    ACTION : @"recommendCommentPublishCellAction",
                                     },
                                 @{
                                     TITLE : @"评论",
                                     ICON : @"my_comment",
                                     TYPE : @1,
                                     DATA : commentCount,
-                                    ACTION : @"",
+                                    ACTION : @"recommendCommentPublishCellAction",
                                     },
                                 @{
                                     TITLE : @"发布",
                                     ICON : @"my_pub",
                                     TYPE : @1,
                                     DATA : pulishCount,
-                                    ACTION : @"",
+                                    ACTION : @"recommendCommentPublishCellAction",
                                     },
                                 @{
                                     TITLE : @"钱包",

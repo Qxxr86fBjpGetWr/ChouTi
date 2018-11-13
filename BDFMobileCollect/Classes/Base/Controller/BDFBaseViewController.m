@@ -25,7 +25,7 @@
     
     [UIView setAnimationsEnabled:YES];
     self.automaticallyAdjustsScrollViewInsets = NO;
-    self.edgesForExtendedLayout = UIRectEdgeAll;
+    self.edgesForExtendedLayout =UIRectEdgeNone;
     self.view.backgroundColor = [UIColor colorWithRed:0.94f green:0.94f blue:0.94f alpha:1.00f];
     
     [NSNotificationCenter addObserver:self action:@selector(requestSuccessNotification) name:BDFRequestSuccessNotification];

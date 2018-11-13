@@ -35,7 +35,7 @@
 
 #pragma mark - BDFCustomSlideViewControllerDataSource
 - (UIViewController *)slideViewController:(BDFHomeSliderViewController *)slideViewController viewControllerAtIndex:(NSInteger)index {
-    UIViewController *viewController = nil;
+    UIViewController *viewController = [[UIViewController alloc] init];
     return viewController;
 }
 

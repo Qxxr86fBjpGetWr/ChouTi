@@ -19,29 +19,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BDFMobileCollect/Classes/Oter/Tool/BDFUserInfoManager.m"
-            timestampString = "563447371.786304"
+            filePath = "BDFMobileCollect/Classes/Base/Controller/BDFBaseNewsHotViewController.m"
+            timestampString = "563795533.878696"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "-currentUserInfo"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BDFMobileCollect/Classes/Oter/Tool/BDFFileCacheManager.m"
-            timestampString = "563447595.324746"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "+getObjectByFileName:"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "-bdf_loadMore"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

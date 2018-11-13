@@ -41,7 +41,7 @@
 }
 
 - (void)setSubViews {
-    UIView *progress = [[UIView alloc]initWithFrame:CGRectMake(0, SCREEN_StatusBarAndNavBarHeight, CGRectGetWidth(self.view.frame), 3)];
+    UIView *progress = [[UIView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 3)];
     [self.webView addSubview:progress];
     [self.webView bringSubviewToFront:progress];
     CALayer *layer = [CALayer layer];
