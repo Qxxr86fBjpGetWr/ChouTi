@@ -10,6 +10,7 @@
 #import "BDFRefreshFooter.h"
 #import <MJRefresh.h>
 #import "BDFRefreshNormalHeader.h"
+#import "NSString+Html.h"
 
 @interface BDFUntil ()<BDFRefreshNormalHeaderDelegate>
 
@@ -161,6 +162,19 @@
 
 -(void)refreshCompleWithOffset:(UIScrollView *)scrollView {
     scrollView.mj_offsetY = 100;
+}
+
++ (NSAttributedString *)handAttributeWithText:(NSString *)text {
+    NSMutableAttributedString *attTitle = [NSString attributeStringByHtmlString:text].mutableCopy;
+    [attTitle addAttribute:NSFontAttributeName value:kFont(16)
+                     range:NSMakeRange(0, attTitle.length)];
+    [attTitle addAttribute:NSKernAttributeName value:@1
+                     range:NSMakeRange(0, attTitle.length)];
+    NSMutableParagraphStyle *paragraph = [[NSMutableParagraphStyle alloc] init];
+    paragraph.lineSpacing = 5;
+    [attTitle addAttribute:NSParagraphStyleAttributeName value:paragraph
+                     range:NSMakeRange(0, attTitle.length)];
+    return attTitle;
 }
 
 @end

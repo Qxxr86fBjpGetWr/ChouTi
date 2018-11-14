@@ -51,4 +51,9 @@ typedef void(^XRRefreshAndLoadMoreHandle)(void);
  */
 + (NSString *)registerYearsWithTime:(NSInteger)time;
 
+/**
+把文本转化为需要显示的富文本
+ */
++ (NSAttributedString *)handAttributeWithText:(NSString *)text;
+
 @end

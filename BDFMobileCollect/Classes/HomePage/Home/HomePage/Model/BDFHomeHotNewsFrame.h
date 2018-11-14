@@ -31,4 +31,10 @@
 
 @property (nonatomic, assign) CGRect shareButtomF;
 
+@property (nonatomic, assign) CGRect topicButtonF;
+
+@property (nonatomic, assign) CGRect linkButtonF;
+
+@property (nonatomic, assign) CGRect picturesViewF;
+
 @end

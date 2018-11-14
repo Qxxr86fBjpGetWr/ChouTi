@@ -8,6 +8,8 @@
 
 #import "BDFHomeHotNewsFrame.h"
 #import "NSString+Size.h"
+#import "NSAttributedString+Size.h"
+#import "BDFUntil.h"
 
 @implementation BDFHomeHotNewsFrame
 
@@ -24,13 +26,52 @@
     CGFloat mainImageX = SCREEN_WIDTH - 10 - mainImageW;
     self.mainImageF = CGRectMake(mainImageX, mainImageY, mainImageW, mainImageH);
     
+    CGFloat topicX = 10;
+    CGFloat topicY = 5;
+    CGFloat topicH = 0;
+    CGFloat topicW = 0;
+    if (!NULLString(hotNewsModel.topicName)) {
+        NSString *topicName = [NSString stringWithFormat:@"  #%@#  ", hotNewsModel.topicName];
+        hotNewsModel.topicName = topicName;
+        topicW = [topicName sizeWithFont:[UIFont systemFontOfSize:BDFHomeNewsCommentFont] constrainedToHeight:topicH].width;
+        topicH = 20;
+    }
+    self.topicButtonF = CGRectMake(topicX, topicY, topicW, topicH);
+    
+    NSAttributedString *attributeTitle = [BDFUntil handAttributeWithText:hotNewsModel.title];
     CGFloat contentX = 10;
-    CGFloat contentY = 5;
+    CGFloat contentY = CGRectGetMaxY(self.topicButtonF) + 10;
     CGFloat contentW = mainImageX - 20;
-    CGFloat contentH = [hotNewsModel.title sizeWithFont:[UIFont systemFontOfSize:BDFHomeNewsTextFont] constrainedToWidth:contentW].height;
+    CGFloat contentH = [attributeTitle heightWithConstrainedWidth:contentW];
     self.contentF = CGRectMake(contentX, contentY, contentW, contentH);
     
-    self.userImageF = CGRectMake(contentX, CGRectGetMaxY(self.contentF) + 30, 30, 30);
+    CGFloat linkY = 0;
+    CGFloat linkW = 0;
+    CGFloat linkH = 0;
+    if (!NULLString(hotNewsModel.url) && ![hotNewsModel.url containsString:@"dig.chouti.com"]) {
+        linkY += CGRectGetMaxY(self.contentF) + 10;
+        linkW = contentW / 2.;
+        linkH = 20;
+    }
+    self.linkButtonF = CGRectMake(contentX, linkY, linkW, linkH);
+    
+    /** 图片滚动视图 */
+    CGFloat picturesViewY = linkY > 0 ? CGRectGetMaxY(self.linkButtonF) : CGRectGetMaxY(self.contentF);
+    CGFloat picturesViewH = 0;
+    CGFloat picturesViewW = 0;
+    if (!NULLArray(hotNewsModel.multigraphList)) {
+        if (hotNewsModel.multigraphList.count <=2) {
+            picturesViewH = 160;
+        } else {
+            picturesViewH = 100;
+        }
+        picturesViewW = SCREEN_WIDTH;
+        self.mainImageF = CGRectZero;
+    }
+    self.picturesViewF = CGRectMake(10, picturesViewY + 20, picturesViewW, picturesViewH);
+    
+    CGFloat userImageY = CGRectGetMaxY(self.picturesViewF);
+    self.userImageF = CGRectMake(contentX, userImageY + 20, 30, 30);
     
     self.userNameF = CGRectMake(CGRectGetMaxX(self.userImageF) + 10, CGRectGetMinY(self.userImageF), 150, 20);
     

@@ -120,6 +120,18 @@
 
 @property (nonatomic, strong) NSString *topicName;
 
+@property (nonatomic, strong) NSArray *multigraphList;
+
+@property (nonatomic, strong) NSString *videoUrl;
+
+@property (nonatomic, assign) NSInteger videoSize;
+
+@property (nonatomic, assign) NSInteger videoDuration;
+
+@property (nonatomic, strong) NSString *videoSourceType;
+
+@property (nonatomic, assign) BOOL commentHavePicture;
+
 @end
 
 @interface BDFHomeHotNewsModelLinkUser : BDFBaseModel

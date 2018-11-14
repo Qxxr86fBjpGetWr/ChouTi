@@ -30,6 +30,8 @@
 
 @property (nonatomic, strong) BDFHomeHotNewsModelLink *hotNewsModel;
 
+@property (nonatomic, strong) UIScrollView *imageScrollView;
+
 /** 顶 */
 @property (nonatomic, weak) UIButton *upsButton;
 /** 评论 */
@@ -43,6 +45,10 @@
 
 @property (nonatomic, weak) ADTickerLabel *commentTickerLabel;
 
+@property (nonatomic, weak) UIButton *topicButton;;
+
+@property (nonatomic, weak) UIButton *linkButton;
+
 @end
 
 @implementation BDFHomeHotNewsCell
@@ -54,7 +60,7 @@
     _newsFrame = newsFrame;
     self.hotNewsModel = newsFrame.hotNewsModel;
     self.titleLabel.frame = newsFrame.contentF;
-    self.titleLabel.attributedText = [self handAttributeWithText:self.hotNewsModel.title];
+    self.titleLabel.attributedText = [BDFUntil handAttributeWithText:self.hotNewsModel.title];
     
     self.mainImageView.frame = newsFrame.mainImageF;
     [self.mainImageView setImageWithString:self.hotNewsModel.img_url placeHolder:[UIImage imageNamed:@"chou_chou"]];
@@ -72,18 +78,28 @@
     self.likeButton.selected = self.hotNewsModel.has_saved;
     
     self.shareButton.frame = newsFrame.shareButtomF;
-    
+
+    /** 用户头像 */
     self.userImageView.frame = newsFrame.userImageF;
     self.userImageView.layerCornerRadius = newsFrame.userImageF.size.width / 2.;
-    
     [self.userImageView setImageWithString:_hotNewsModel.submitted_user.img_url];
-    
+    /** 用户名 */
     self.userNameLabel.frame = newsFrame.userNameF;
     self.userNameLabel.text = _hotNewsModel.submitted_user.nick;
-    
+    /** 时间 */
     self.timeLabel.frame = newsFrame.timeAndModuleF;
     NSString *stringTime = [BDFUntil cStringFromTimestamp:[NSString stringWithFormat:@"%ld",_hotNewsModel.created_time / 1000000]];
     self.timeLabel.text = [BDFUntil compareCurrentTime:stringTime];
+    /** 话题 */
+    self.topicButton.frame = newsFrame.topicButtonF;
+    self.topicButton.layerCornerRadius = newsFrame.topicButtonF.size.height / 2.;
+    [self.topicButton setTitle:_hotNewsModel.topicName forState:UIControlStateNormal];
+    /** 域名显示 */
+    self.linkButton.frame = newsFrame.linkButtonF;
+    NSURL *url = [NSURL URLWithString:_hotNewsModel.url];
+    [self.linkButton setTitle:url.host forState:UIControlStateNormal];
+    /** 组图显示区域 */
+    self.imageScrollView.frame = newsFrame.picturesViewF;
 }
 
 - (void)setFrame:(CGRect)frame{
@@ -96,19 +112,6 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-}
-
-- (NSAttributedString *)handAttributeWithText:(NSString *)text {
-    NSMutableAttributedString *attTitle = [NSString attributeStringByHtmlString:self.hotNewsModel.title].mutableCopy;
-    [attTitle addAttribute:NSFontAttributeName value:kFont(16)
-                     range:NSMakeRange(0, attTitle.length)];
-    [attTitle addAttribute:NSKernAttributeName value:@1
-                     range:NSMakeRange(0, attTitle.length)];
-    NSMutableParagraphStyle *paragraph = [[NSMutableParagraphStyle alloc] init];
-    paragraph.lineSpacing = 5;
-    [attTitle addAttribute:NSParagraphStyleAttributeName value:paragraph
-                     range:NSMakeRange(0, attTitle.length)];
-    return attTitle;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -140,6 +143,11 @@
     if (!_mainImageView) {
         BDFBaseImageView *imageView = [[BDFBaseImageView alloc] init];
         WeakSelf(weakSelf);
+        imageView.layer.shadowColor = [UIColor grayColor].CGColor;
+        imageView.layer.shadowOffset = CGSizeMake(0, 0);
+        imageView.layer.shadowOpacity = 0.5;
+        imageView.layer.shadowRadius = 10.0;
+        
         [imageView setTapActionWithBlock:^{
             if ([weakSelf.buttonDelegate respondsToSelector:@selector(homeTableViewCell:didClickImageView:currentIndex:urls:)]) {
                 [weakSelf.buttonDelegate homeTableViewCell:weakSelf didClickImageView:_mainImageView currentIndex:0 urls:@[_hotNewsModel.img_url]];
@@ -181,15 +189,6 @@
     }
     return _timeLabel;
 }
-//- (BDFCommentToolView *)toolView {
-//    if (!_toolView) {
-//        BDFCommentToolView *view = [[BDFCommentToolView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 44)];
-//        view.buttonDelegate = self;
-//        _toolView = view;
-//        [self addSubview:view];
-//    }
-//    return _toolView;
-//}
 
 -(void)ups {
     self.upsButton.selected = !self.upsButton.selected;
@@ -309,6 +308,52 @@
         _commentTickerLabel = label;
     }
     return _commentTickerLabel;
+}
+
+- (UIButton *)topicButton {
+    if (!_topicButton) {
+        UIButton *button = [[UIButton alloc] init];
+        button.titleLabel.font = [UIFont systemFontOfSize:BDFHomeNewsCommentFont];
+        button.backgroundColor = kColorFromRGB(0xFFEFD5);
+        [button setTitleColor:kColorFromRGB(0xFFC125) forState:UIControlStateNormal];
+        [self addSubview:button];
+        _topicButton = button;
+    }
+    return _topicButton;
+}
+
+- (UIButton *)linkButton {
+    if (!_linkButton) {
+        UIButton *button = [[UIButton alloc] init];
+        button.titleLabel.font = [UIFont systemFontOfSize:BDFHomeNewsCommentFont];
+        [button setTitleColor:kBlackColor forState:UIControlStateNormal];
+        button.titleLabel.textAlignment = NSTextAlignmentLeft;
+        [button setImage:[UIImage imageNamed:@"link"] forState:UIControlStateNormal];
+        [button setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];
+        [self addSubview:button];
+        _linkButton = button;
+    }
+    return _linkButton;
+}
+
+- (UIScrollView *)imageScrollView {
+    if (!_imageScrollView) {
+        CGFloat imageViewH = _newsFrame.picturesViewF.size.height;
+        UIScrollView *view = [[UIScrollView alloc] init];
+        for (int i = 0; i < _hotNewsModel.multigraphList.count; i++) {
+            BDFBaseImageView *imageView = [[BDFBaseImageView alloc] initWithFrame:CGRectMake((imageViewH + 15) * i, 0, imageViewH, imageViewH)];
+            imageView.layer.shadowColor = [UIColor grayColor].CGColor;
+            imageView.layer.shadowOffset = CGSizeMake(0, 0);
+            imageView.layer.shadowOpacity = 0.5;
+            imageView.layer.shadowRadius = 10.0;
+            [imageView setImageWithString:_hotNewsModel.multigraphList[i]];
+            [view addSubview:imageView];
+            view.contentSize = CGSizeMake(imageView.right, 0);
+        }
+        [self.contentView addSubview:view];
+        _imageScrollView = view;
+    }
+    return _imageScrollView;
 }
 
 @end

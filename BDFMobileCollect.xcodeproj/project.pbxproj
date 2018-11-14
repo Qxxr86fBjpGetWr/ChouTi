@@ -1810,8 +1810,8 @@
 				TargetAttributes = {
 					AB2802CE1E1F81E00006A13E = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = JWD48Y236P;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = 47Q4T9X63T;
+						ProvisioningStyle = Automatic;
 					};
 					AB2802E71E1F81E10006A13E = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -2196,18 +2196,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = JWD48Y236P;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 47Q4T9X63T;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = BDFMobileCollect/BDFMobileCollect.pch;
 				INFOPLIST_FILE = BDFMobileCollect/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.chouti.www;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zhangzhangshengyang.www.choutiiii;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "378af6ef-2c2c-4da8-b9ee-99a3e35fa6bd";
-				PROVISIONING_PROFILE_SPECIFIER = 20181031;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -2218,18 +2218,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = ML9BS8L9GR;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 47Q4T9X63T;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = BDFMobileCollect/BDFMobileCollect.pch;
 				INFOPLIST_FILE = BDFMobileCollect/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.chouti.www;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zhangzhangshengyang.www.choutiiii;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "be72de79-3820-4a0c-a184-8a5f049d16f0";
-				PROVISIONING_PROFILE_SPECIFIER = MobileCollectDistributePP;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
