@@ -70,6 +70,7 @@
     BOOL isLogin = [BDFUserInfoManager sharedManager].isLogin;
     self.loginView.hidden = isLogin;
     self.tableView.hidden = !isLogin;
+    self.optionalView.hidden = !isLogin;
     if (isLogin) {
         [self.loginView removeFromSuperview];
         self.loginView = nil;
@@ -128,8 +129,13 @@
         WeakSelf(weakSelf);
         _loginView = [[BDFMessageWithOutLoginView alloc] initWithFrame:self.view.bounds];
         _loginView.origin = CGPointZero;
+        
+        BDFLogAndRegViewController *vc = [[BDFLogAndRegViewController alloc]init];
+        vc.loginComplete = ^{
+            [weakSelf configUI];
+        };
         _loginView.loginBlock = ^{
-            [weakSelf presentVc:[[BDFLogAndRegViewController alloc]init]];
+            [weakSelf presentVc:vc];
         };
         [self.view addSubview:_loginView];
     }

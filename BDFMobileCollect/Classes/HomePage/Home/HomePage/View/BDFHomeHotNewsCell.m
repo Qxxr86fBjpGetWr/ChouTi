@@ -98,8 +98,24 @@
     self.linkButton.frame = newsFrame.linkButtonF;
     NSURL *url = [NSURL URLWithString:_hotNewsModel.url];
     [self.linkButton setTitle:url.host forState:UIControlStateNormal];
-    /** 组图显示区域 */
-    self.imageScrollView.frame = newsFrame.picturesViewF;
+    if (_hotNewsModel.multigraphList.count > 0) {
+        /** 组图显示区域 */
+        self.imageScrollView.frame = newsFrame.picturesViewF;
+        CGFloat imageViewH = _newsFrame.picturesViewF.size.height;
+        for (int i = 0; i < _hotNewsModel.multigraphList.count; i++) {
+            BDFBaseImageView *imageView = [[BDFBaseImageView alloc] initWithFrame:CGRectMake((imageViewH + 15) * i, 0, imageViewH, imageViewH)];
+            imageView.layer.shadowColor = [UIColor grayColor].CGColor;
+            imageView.layer.shadowOffset = CGSizeMake(0, 0);
+            imageView.layer.shadowOpacity = 0.5;
+            imageView.layer.shadowRadius = 10.0;
+            [imageView setImageWithString:_hotNewsModel.multigraphList[i]];
+            [self.imageScrollView addSubview:imageView];
+            self.imageScrollView.contentSize = CGSizeMake(imageView.right, 0);
+        }
+    } else {
+        [self.imageScrollView removeFromSuperview];
+        self.imageScrollView = nil;
+    }
 }
 
 - (void)setFrame:(CGRect)frame{
@@ -338,20 +354,9 @@
 
 - (UIScrollView *)imageScrollView {
     if (!_imageScrollView) {
-        CGFloat imageViewH = _newsFrame.picturesViewF.size.height;
         UIScrollView *view = [[UIScrollView alloc] init];
-        for (int i = 0; i < _hotNewsModel.multigraphList.count; i++) {
-            BDFBaseImageView *imageView = [[BDFBaseImageView alloc] initWithFrame:CGRectMake((imageViewH + 15) * i, 0, imageViewH, imageViewH)];
-            imageView.layer.shadowColor = [UIColor grayColor].CGColor;
-            imageView.layer.shadowOffset = CGSizeMake(0, 0);
-            imageView.layer.shadowOpacity = 0.5;
-            imageView.layer.shadowRadius = 10.0;
-            [imageView setImageWithString:_hotNewsModel.multigraphList[i]];
-            [view addSubview:imageView];
-            view.contentSize = CGSizeMake(imageView.right, 0);
-        }
-        [self.contentView addSubview:view];
         _imageScrollView = view;
+        [self.contentView addSubview:view];
     }
     return _imageScrollView;
 }

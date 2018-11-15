@@ -42,8 +42,8 @@
         model = [BDFUserInfoManager sharedManager].currentUserInfo;
     }
    
-    self.headerImageView.x = (_view.width - 100) / 2.;
-    self.headerImageView.y = (_view.height - 100) / 2.;
+    self.headerImageView.x = (_view.width - 80) / 2.;
+    self.headerImageView.y = (_view.height - 80) / 2.;
     
     self.nameLabel.y = self.headerImageView.y - self.nameLabel.height;
     self.nameLabel.x = (_view.width - self.nameLabel.width) / 2.;;
@@ -166,8 +166,8 @@
 
 - (BDFBaseImageView *)headerImageView {
     if (!_headerImageView) {
-        _headerImageView = [[BDFBaseImageView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-        _headerImageView.layerCornerRadius = 50.f;
+        _headerImageView = [[BDFBaseImageView alloc] initWithFrame:CGRectMake(0, 0, 80, 80)];
+        _headerImageView.layerCornerRadius = 40;
         _headerImageView.layerBorderWidth = 1;
         _headerImageView.layerBorderColor = kWhiteColor;
     }
@@ -176,7 +176,7 @@
 
 - (UIButton *)loginButton {
     if (!_loginButton) {
-        _loginButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, (SCREEN_WIDTH - self.headerImageView.width - 30)/2., 30)];
+        _loginButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, (SCREEN_WIDTH - self.headerImageView.width - 60)/2., 30)];
         _loginButton.layerCornerRadius = 15.f;
         _loginButton.layerBorderWidth = 1.0;
         _loginButton.layerBorderColor = kWhiteColor;
@@ -188,7 +188,7 @@
 
 - (UIButton *)registerButton {
     if (!_registerButton) {
-        _registerButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, (SCREEN_WIDTH - self.headerImageView.width - 30)/2., 30)];
+        _registerButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, (SCREEN_WIDTH - self.headerImageView.width - 60)/2., 30)];
         _registerButton.layerCornerRadius = 15.f;
         _registerButton.layerBorderWidth = 1.f;
         _registerButton.layerBorderColor = kWhiteColor;
@@ -255,7 +255,7 @@
     if (!_nameLabel) {
         _nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
         _nameLabel.textAlignment = NSTextAlignmentCenter;
-        _nameLabel.font = kFont(22);
+        _nameLabel.font = kFont(18);
         _nameLabel.textColor = kWhiteColor;
     }
     return _nameLabel;

@@ -87,7 +87,7 @@
 
 - (UILabel *)detailLabel {
     if (!_detailLabel) {
-        _detailLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.arrowImageView.x - 80, 0, 80, 30)];
+        _detailLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.arrowImageView.x - 30, 0, 80, 30)];
         [self.contentView addSubview:_detailLabel];
     }
     return _detailLabel;

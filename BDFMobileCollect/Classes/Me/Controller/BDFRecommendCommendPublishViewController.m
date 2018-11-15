@@ -8,6 +8,7 @@
 
 #import "BDFRecommendCommendPublishViewController.h"
 #import "BDFBaseNewsHotViewController.h"
+#import "BDFMeCommentViewController.h"
 
 @interface BDFRecommendCommendPublishViewController ()
 
@@ -35,7 +36,7 @@
     if (index == 0) {
         viewController = [[BDFBaseNewsHotViewController alloc] initWithType:1 baseUrl:BDFHOMELIKELIST];
     }else if (index == 1) {
-        viewController = [[BDFBaseNewsHotViewController alloc] initWithType:1 baseUrl:BDFHOMECOMMENTLIST];
+        viewController = [[BDFMeCommentViewController alloc] init];
     } else {
         viewController = [[BDFBaseNewsHotViewController alloc] initWithType:1 baseUrl:BDFHOMEPUBLISHLIST];
     }

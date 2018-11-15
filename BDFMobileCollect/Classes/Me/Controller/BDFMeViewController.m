@@ -122,7 +122,7 @@ typedef NS_ENUM(NSInteger, BDFMeCellType) {
 
 - (BDFMeHeaderView *)headerView {
     if (!_headerView) {
-        _headerView = [[BDFMeHeaderView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 250)];
+        _headerView = [[BDFMeHeaderView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 200)];
         _headerView.delegete = self;
         _headerView.loginDelegate = self;
     }
@@ -171,11 +171,22 @@ typedef NS_ENUM(NSInteger, BDFMeCellType) {
 }
 
 - (void)collectionCellAction {
+    BOOL isLogin = [BDFUserInfoManager sharedManager].isLogin;
+    if (!isLogin) {
+        [self clickLoginButtonComplete];
+        return;
+    }
     BDFCollectionViewController *collection = [[BDFCollectionViewController alloc] init];
     [self pushVc:collection];
 }
 
 - (void)recommendCommentPublishCellAction {
+    BOOL isLogin = [BDFUserInfoManager sharedManager].isLogin;
+    if (!isLogin) {
+        [self clickLoginButtonComplete];
+        return;
+    }
+    
     BDFRecommendCommendPublishViewController *vc = [[BDFRecommendCommendPublishViewController alloc] init];
     [self pushVc:vc];
 }

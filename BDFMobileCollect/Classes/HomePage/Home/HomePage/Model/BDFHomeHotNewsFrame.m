@@ -67,6 +67,9 @@
         }
         picturesViewW = SCREEN_WIDTH;
         self.mainImageF = CGRectZero;
+        CGRect updataContentF = self.contentF;
+        updataContentF.size.width = SCREEN_WIDTH - 20;
+        self.contentF = updataContentF;
     }
     self.picturesViewF = CGRectMake(10, picturesViewY + 20, picturesViewW, picturesViewH);
     
