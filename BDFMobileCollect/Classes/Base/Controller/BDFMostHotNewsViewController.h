@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface BDFMostHotNewsViewController : BDFBaseViewController
 
 @property (nonatomic, strong) NSArray *titles;
+@property (nonatomic, strong) BDFHomeHeaderOptionView *optionalView;
+@property (nonatomic, strong) BDFHomeSliderViewController *slideViewController;
 
 @end
 

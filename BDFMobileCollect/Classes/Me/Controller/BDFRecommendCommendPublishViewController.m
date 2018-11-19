@@ -11,14 +11,23 @@
 #import "BDFMeCommentViewController.h"
 
 @interface BDFRecommendCommendPublishViewController ()
-
+@property (nonatomic, assign) NSInteger index;
 @end
 
 @implementation BDFRecommendCommendPublishViewController
 
+-(instancetype)initWithIndex:(NSInteger)index {
+    self = [super init];
+    if (self) {
+        self.index = index;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     self.titles = @[@"推荐",@"评论",@"发布",];
     [super viewDidLoad];
+    self.slideViewController.seletedIndex = self.index;
     /**
      推荐
      https://api.chouti.com/users/liked.json?access_token=c40fe2f61bcfd611177be71ec305196bB896036B802CBA1762D0D6C3A48792ED&deviceId=12ec7b9b922138b8a6bc55070a164669d050bb7a&source=c40fe2f61bcfd611177be71ec305196b&version=3.2.0.6

@@ -10,8 +10,6 @@
 #import "BDFCustomCommonEmptyView.h"
 
 @interface BDFMostHotNewsViewController ()<BDFCustomSlideViewControllerDelegate, BDFCustomSlideViewControllerDataSource>
-@property (nonatomic, strong) BDFHomeHeaderOptionView *optionalView;
-@property (nonatomic, strong) BDFHomeSliderViewController *slideViewController;
 @end
 
 @implementation BDFMostHotNewsViewController

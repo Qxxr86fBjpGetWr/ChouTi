@@ -99,6 +99,9 @@ typedef NS_ENUM(NSInteger, BDFMeCellType) {
 
 - (void)bdf_didSelectCellAtIndexPath:(NSIndexPath *)indexPath cell:(BDFBaseTableViewCell *)cell {
     BDFMeDataModel *dataModel = [self getMeDataModeWithIndexPath:indexPath];
+    if ([dataModel.action isEqualToString:@"recommendCommentPublishCellAction"]) {
+        [self recommendCommentPublishCellAction:indexPath.row];
+    }
     SEL cellAction = NSSelectorFromString(dataModel.action);
     if ([self respondsToSelector:cellAction]) {
         [self performSelector:cellAction];
@@ -180,14 +183,26 @@ typedef NS_ENUM(NSInteger, BDFMeCellType) {
     [self pushVc:collection];
 }
 
-- (void)recommendCommentPublishCellAction {
+- (void)recommendCommentPublishCellAction:(NSInteger)selectIndex {
     BOOL isLogin = [BDFUserInfoManager sharedManager].isLogin;
     if (!isLogin) {
         [self clickLoginButtonComplete];
         return;
     }
-    
-    BDFRecommendCommendPublishViewController *vc = [[BDFRecommendCommendPublishViewController alloc] init];
+    NSInteger index = 0;
+    switch (selectIndex) {
+        case 2:
+            break;
+        case 3:
+            index = 1;
+            break;
+        case 4:
+            index = 2;
+            break;
+        default:
+            break;
+    }
+    BDFRecommendCommendPublishViewController *vc = [[BDFRecommendCommendPublishViewController alloc] initWithIndex:index];
     [self pushVc:vc];
 }
 

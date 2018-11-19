@@ -7,10 +7,11 @@
 //
 
 #import "BDFMeCommentCell.h"
+#import "BDFUntil.h"
 
 @interface BDFMeCommentCell ()
 
-@property (nonatomic, weak) UILabel *timeLabel;
+@property (nonatomic, weak) UIButton *timeButton;
 
 @property (nonatomic, weak) UILabel *contentLabel;
 
@@ -25,29 +26,36 @@
         return;
     }
     _model = model;
-    self.timeLabel.frame = model.timeLabelF;
+    self.timeButton.frame = model.timeLabelF;
     self.contentLabel.frame = model.commentLabelF;
     self.originalTextLabel.frame = model.textLabelF;
     
-    self.timeLabel.text = [NSString stringWithFormat:@"%ld",model.model.created_time];
+    NSString *stringTime = [BDFUntil cStringFromTimestamp:[NSString stringWithFormat:@"%ld",model.model.created_time / 1000000]];
+    NSString *timeStr = [BDFUntil compareCurrentTime:stringTime];
+    [self.timeButton setTitle:timeStr forState:UIControlStateNormal];
+    
     self.contentLabel.text = [NSString stringWithFormat:@"%@",model.model.content];
     self.originalTextLabel.text = model.model.link.title;
 }
 
-- (UILabel *)timeLabel {
-    if (!_timeLabel) {
-        UILabel *label = [[UILabel alloc] init];
-        label.font = kFont(13);
+- (UIButton *)timeButton {
+    if (!_timeButton) {
+        UIButton *label = [[UIButton alloc] init];
+        label.titleLabel.font = kFont(12);
+        [label setImage:[UIImage imageNamed:@"time"] forState:UIControlStateNormal];
+        [label setTitleColor:kLightGrayColor forState:UIControlStateNormal];
         [self.contentView addSubview:label];
-        _timeLabel = label;
+        _timeButton = label;
     }
-    return _timeLabel;
+    return _timeButton;
 }
 
 - (UILabel *)contentLabel {
     if (!_contentLabel) {
         UILabel *label = [[UILabel alloc] init];
         label.font = kFont(13);
+        label.numberOfLines = 0;
+        label.lineBreakMode = NSLineBreakByTruncatingTail;
         [self.contentView addSubview:label];
         _contentLabel = label;
     }
@@ -58,6 +66,8 @@
     if (!_originalTextLabel) {
         UILabel *label = [[UILabel alloc] init];
         label.font = kFont(13);
+        label.backgroundColor = kColorFromRGB(0xEDEDED);
+        label.textColor = kLightGrayColor;
         [self.contentView addSubview:label];
         _originalTextLabel = label;
     }
