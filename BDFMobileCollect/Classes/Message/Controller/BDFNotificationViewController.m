@@ -8,10 +8,15 @@
 
 #import "BDFNotificationViewController.h"
 #import "BDFCustomCommonEmptyView.h"
+#import "BDFBaseRequest.h"
+#import "BDFSystemMessageModel.h"
+#import "BDFMessageSystemCell.h"
 
 @interface BDFNotificationViewController ()
 
 @property (nonatomic, strong) BDFCustomCommonEmptyView *emptyView;
+
+@property (nonatomic, strong) BDFSystemMessageModel *messageModel;
 
 @end
 
@@ -19,8 +24,34 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tableView.hidden = YES;
-    self.emptyView.hidden = !self.tableView.hidden;
+    [self loadData];
+}
+
+- (void)loadData {
+    BDFBaseRequest *request = [BDFBaseRequest bdf_requestWithUrl:BDFHOMEMESSAGEINFORMLIST];
+    [request bdf_sendRequestWithComple:^(id response, BOOL success, NSString *message) {
+        self.messageModel = [BDFSystemMessageModel modelWithDictionary:response];
+        self.emptyView.hidden = self.messageModel.notice;
+        [self bdf_reloadData];
+    }];
+}
+
+- (NSInteger)bdf_numberOfSections {
+    return 1;
+}
+
+- (NSInteger)bdf_numberOfRowsInSection:(NSInteger)section {
+    return self.messageModel.notice.count;
+}
+
+- (BDFBaseTableViewCell *)bdf_cellAtIndexPath:(NSIndexPath *)indexPath {
+    BDFMessageSystemCell *cell = [BDFMessageSystemCell cellWithTableView:self.tableView];
+    cell.systemMessage = self.messageModel.notice[indexPath.row];
+    return cell;
+}
+
+- (CGFloat)bdf_cellheightAtIndexPath:(NSIndexPath *)indexPath {
+    return 80;
 }
 
 - (BDFCustomCommonEmptyView *)emptyView {

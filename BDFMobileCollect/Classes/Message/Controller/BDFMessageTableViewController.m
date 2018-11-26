@@ -18,6 +18,7 @@
 #import "BDFHomeHeaderOptionView.h"
 #import "BDFHomePageViewController.h"
 #import "BDFNotificationViewController.h"
+#import "BDFMessageWarnController.h"
 
 @interface BDFMessageTableViewController ()<BDFCustomSlideViewControllerDelegate, BDFCustomSlideViewControllerDataSource>
 
@@ -77,23 +78,23 @@
     }
 }
 
--(NSInteger)bdf_numberOfSections {
-    return 1;
-}
-
--(NSInteger)bdf_numberOfRowsInSection:(NSInteger)section {
-    return self.dataArray.count;
-}
-
--(CGFloat)bdf_cellheightAtIndexPath:(NSIndexPath *)indexPath {
-    return 300;
-}
-
--(BDFBaseTableViewCell *)bdf_cellAtIndexPath:(NSIndexPath *)indexPath {
-    BDFMessageTableViewCell *cell = [BDFMessageTableViewCell cellWithTableView:self.tableView];
-    cell.dataModel = self.dataArray[indexPath.row];
-    return cell;
-}
+//-(NSInteger)bdf_numberOfSections {
+//    return 1;
+//}
+//
+//-(NSInteger)bdf_numberOfRowsInSection:(NSInteger)section {
+//    return self.dataArray.count;
+//}
+//
+//-(CGFloat)bdf_cellheightAtIndexPath:(NSIndexPath *)indexPath {
+//    return 300;
+//}
+//
+//-(BDFBaseTableViewCell *)bdf_cellAtIndexPath:(NSIndexPath *)indexPath {
+//    BDFMessageTableViewCell *cell = [BDFMessageTableViewCell cellWithTableView:self.tableView];
+//    cell.dataModel = self.dataArray[indexPath.row];
+//    return cell;
+//}
 
 #pragma mark - BDFCustomSlideViewControllerDelegate
 - (void)customSlideViewController:(BDFHomeSliderViewController *)slideViewController slideIndex:(NSInteger)slideIndex {}
@@ -109,7 +110,7 @@
     if (index == 0) {
         viewController = [[BDFNotificationViewController alloc] init];
     }else if (index == 1) {
-        viewController = [[BDFNotificationViewController alloc] init];
+        viewController = [[BDFMessageWarnController alloc] init];
     } else {
         viewController = [[BDFNotificationViewController alloc] init];
     }

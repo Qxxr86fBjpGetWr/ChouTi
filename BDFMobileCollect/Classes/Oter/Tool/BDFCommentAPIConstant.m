@@ -87,5 +87,9 @@ NSString *const BDFHOMELIKELIST = @"https://api.chouti.com/users/liked.json";
 NSString *const BDFHOMECOMMENTLIST = @"https://api.chouti.com/users/comments.json";
 /** 发布 */
 NSString *const BDFHOMEPUBLISHLIST = @"https://api.chouti.com/users/publish.json";
+/** 消息通知 */
+NSString *const BDFHOMEMESSAGEINFORMLIST = @"https://api.chouti.com/users/systemNotification.json";
+/** 消息提醒 */
+NSString *const BDFHOMEMESSAGEWARNLIST = @"https://api.chouti.com/api/comments/advice/get.json";
 
 @end

@@ -148,6 +148,12 @@
 		ABE40ADE214B938B00977F08 /* BDFMeDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE40ADD214B938B00977F08 /* BDFMeDataModel.m */; };
 		ABE40AE1214B98EB00977F08 /* BDFMeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE40AE0214B98EB00977F08 /* BDFMeHeaderView.m */; };
 		ABE40AE4214D17FB00977F08 /* BDFMeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE40AE3214D17FB00977F08 /* BDFMeRequest.m */; };
+		ABF2ADDA21AB9729009BFCB5 /* BDFSystemMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF2ADD921AB9729009BFCB5 /* BDFSystemMessageModel.m */; };
+		ABF2ADDD21AB9973009BFCB5 /* BDFMessageSystemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF2ADDC21AB9973009BFCB5 /* BDFMessageSystemCell.m */; };
+		ABF2ADE021ABCA08009BFCB5 /* BDFMessageWarnController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF2ADDF21ABCA08009BFCB5 /* BDFMessageWarnController.m */; };
+		ABF2ADE321ABCE89009BFCB5 /* BDFMessageWarnModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF2ADE221ABCE89009BFCB5 /* BDFMessageWarnModel.m */; };
+		ABF2ADE621ABD062009BFCB5 /* BDFMessaageWarnFrameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF2ADE521ABD062009BFCB5 /* BDFMessaageWarnFrameModel.m */; };
+		ABF2ADE921ABD694009BFCB5 /* BDFMessageWarnCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF2ADE821ABD694009BFCB5 /* BDFMessageWarnCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -453,6 +459,18 @@
 		ABE40AE0214B98EB00977F08 /* BDFMeHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFMeHeaderView.m; sourceTree = "<group>"; };
 		ABE40AE2214D17FB00977F08 /* BDFMeRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFMeRequest.h; sourceTree = "<group>"; };
 		ABE40AE3214D17FB00977F08 /* BDFMeRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFMeRequest.m; sourceTree = "<group>"; };
+		ABF2ADD821AB9729009BFCB5 /* BDFSystemMessageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFSystemMessageModel.h; sourceTree = "<group>"; };
+		ABF2ADD921AB9729009BFCB5 /* BDFSystemMessageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFSystemMessageModel.m; sourceTree = "<group>"; };
+		ABF2ADDB21AB9973009BFCB5 /* BDFMessageSystemCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFMessageSystemCell.h; sourceTree = "<group>"; };
+		ABF2ADDC21AB9973009BFCB5 /* BDFMessageSystemCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFMessageSystemCell.m; sourceTree = "<group>"; };
+		ABF2ADDE21ABCA08009BFCB5 /* BDFMessageWarnController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFMessageWarnController.h; sourceTree = "<group>"; };
+		ABF2ADDF21ABCA08009BFCB5 /* BDFMessageWarnController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFMessageWarnController.m; sourceTree = "<group>"; };
+		ABF2ADE121ABCE89009BFCB5 /* BDFMessageWarnModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFMessageWarnModel.h; sourceTree = "<group>"; };
+		ABF2ADE221ABCE89009BFCB5 /* BDFMessageWarnModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFMessageWarnModel.m; sourceTree = "<group>"; };
+		ABF2ADE421ABD062009BFCB5 /* BDFMessaageWarnFrameModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFMessaageWarnFrameModel.h; sourceTree = "<group>"; };
+		ABF2ADE521ABD062009BFCB5 /* BDFMessaageWarnFrameModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFMessaageWarnFrameModel.m; sourceTree = "<group>"; };
+		ABF2ADE721ABD694009BFCB5 /* BDFMessageWarnCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFMessageWarnCell.h; sourceTree = "<group>"; };
+		ABF2ADE821ABD694009BFCB5 /* BDFMessageWarnCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFMessageWarnCell.m; sourceTree = "<group>"; };
 		DC14892B4664F90CCBCB7B63 /* libPods-BDFMobileCollect.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BDFMobileCollect.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FACCC4627B427A4C6348F8D6 /* Pods-BDFMobileCollect.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BDFMobileCollect.release.xcconfig"; path = "Pods/Target Support Files/Pods-BDFMobileCollect/Pods-BDFMobileCollect.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1629,6 +1647,8 @@
 			children = (
 				ABCD18521ED6D22B005AA34E /* BDFMessageTableViewController.h */,
 				ABCD18531ED6D22B005AA34E /* BDFMessageTableViewController.m */,
+				ABF2ADDE21ABCA08009BFCB5 /* BDFMessageWarnController.h */,
+				ABF2ADDF21ABCA08009BFCB5 /* BDFMessageWarnController.m */,
 				AB7C1A68215392C8005D63FA /* BDFNotificationViewController.h */,
 				AB7C1A69215392C8005D63FA /* BDFNotificationViewController.m */,
 				AB7C1A6021538B5C005D63FA /* BDFHomeSliderViewController.h */,
@@ -1642,6 +1662,12 @@
 			children = (
 				ABCD186A1ED7D61B005AA34E /* BDFMessageModel.h */,
 				ABCD186B1ED7D61B005AA34E /* BDFMessageModel.m */,
+				ABF2ADD821AB9729009BFCB5 /* BDFSystemMessageModel.h */,
+				ABF2ADD921AB9729009BFCB5 /* BDFSystemMessageModel.m */,
+				ABF2ADE421ABD062009BFCB5 /* BDFMessaageWarnFrameModel.h */,
+				ABF2ADE521ABD062009BFCB5 /* BDFMessaageWarnFrameModel.m */,
+				ABF2ADE121ABCE89009BFCB5 /* BDFMessageWarnModel.h */,
+				ABF2ADE221ABCE89009BFCB5 /* BDFMessageWarnModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1666,6 +1692,10 @@
 				ABCD18591ED6E0B8005AA34E /* BDFMessageTableViewCell.m */,
 				ABE40A8A2148FF2600977F08 /* BDFMessageWithOutLoginView.h */,
 				ABE40A8B2148FF2600977F08 /* BDFMessageWithOutLoginView.m */,
+				ABF2ADDB21AB9973009BFCB5 /* BDFMessageSystemCell.h */,
+				ABF2ADDC21AB9973009BFCB5 /* BDFMessageSystemCell.m */,
+				ABF2ADE721ABD694009BFCB5 /* BDFMessageWarnCell.h */,
+				ABF2ADE821ABD694009BFCB5 /* BDFMessageWarnCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1987,6 +2017,7 @@
 				ABA52FF721183FFE0043B398 /* BDFCustomSliderHeaderView.m in Sources */,
 				AB8DFB1E2094436C00B30A63 /* UIView+Frame.m in Sources */,
 				AB03667D2192F920008D91A5 /* BDF1024ViewController.m in Sources */,
+				ABF2ADE921ABD694009BFCB5 /* BDFMessageWarnCell.m in Sources */,
 				ABCD18421ED6D0CF005AA34E /* UIView+Layer.m in Sources */,
 				AB6D636D218D4E3B009B1AD4 /* BDFMostHotListRequest.m in Sources */,
 				AB6D6351218C5AEA009B1AD4 /* BDFHomeDetailWebView.m in Sources */,
@@ -2012,8 +2043,10 @@
 				AB6D6355218C5AEA009B1AD4 /* BDFHomeHotNewsAddRequest.m in Sources */,
 				ABA52FF42118262D0043B398 /* BDFCustomSliderViewController.m in Sources */,
 				AB6D6343218C5AEA009B1AD4 /* BDFHomeCommPoint.m in Sources */,
+				ABF2ADE621ABD062009BFCB5 /* BDFMessaageWarnFrameModel.m in Sources */,
 				AB6D634B218C5AEA009B1AD4 /* BDFAllTypeCollectionCell.m in Sources */,
 				AB7E8E2C2192E2E9007B4E1D /* BDFBaseNewsHotViewController.m in Sources */,
+				ABF2ADDA21AB9729009BFCB5 /* BDFSystemMessageModel.m in Sources */,
 				AB2803161E1F84930006A13E /* BDFMainTabBarController.m in Sources */,
 				AB1922AB219D77230083B22D /* BDFMeCommentFrameModel.m in Sources */,
 				AB0366772192F581008D91A5 /* BDFBaseMostNewsRequest.m in Sources */,
@@ -2036,6 +2069,7 @@
 				AB2F360B2119AFA4008DA8F1 /* BDFSearchPublishRequest.m in Sources */,
 				AB20098B217481F6002A9B7C /* BDFMeMoreSettingController.m in Sources */,
 				AB6D6342218C5AEA009B1AD4 /* BDFCommentTreeManager.m in Sources */,
+				ABF2ADE321ABCE89009BFCB5 /* BDFMessageWarnModel.m in Sources */,
 				ABCD18431ED6D0CF005AA34E /* UIView+Tap.m in Sources */,
 				AB6D6364218D31E0009B1AD4 /* BDFNewsHotViewController.m in Sources */,
 				AB0366A4219450E4008D91A5 /* BDFCollectionViewController.m in Sources */,
@@ -2049,6 +2083,8 @@
 				AB6D6340218C5AEA009B1AD4 /* BDFHomeCommentController.m in Sources */,
 				ABA52FE821181FC90043B398 /* BDFHomeSearchController.m in Sources */,
 				AB6D636A218D3C97009B1AD4 /* BDFMostHotNewsSubController.m in Sources */,
+				ABF2ADDD21AB9973009BFCB5 /* BDFMessageSystemCell.m in Sources */,
+				ABF2ADE021ABCA08009BFCB5 /* BDFMessageWarnController.m in Sources */,
 				ABCD18631ED7C323005AA34E /* NSDictionary+Property.m in Sources */,
 				AB6D6358218C5AEA009B1AD4 /* BDFTestRequest.m in Sources */,
 				ABCD185A1ED6E0B8005AA34E /* BDFMessageTableViewCell.m in Sources */,
