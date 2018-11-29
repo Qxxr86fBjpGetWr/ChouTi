@@ -11,8 +11,9 @@
 #import <MJRefresh.h>
 #import "BDFRefreshNormalHeader.h"
 #import "NSString+Html.h"
+#import "BDFHomeRefreshModel.h"
 
-@interface BDFUntil ()<BDFRefreshNormalHeaderDelegate>
+@interface BDFUntil ()
 
 @end
 
@@ -158,10 +159,6 @@
     NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     NSDateComponents *comp = [calendar components:NSCalendarUnitYear fromDate:detailDate toDate:currentDate options:NSCalendarWrapComponents];
     return [NSString stringWithFormat:@"%ld年", comp.year];
-}
-
--(void)refreshCompleWithOffset:(UIScrollView *)scrollView {
-    scrollView.mj_offsetY = 100;
 }
 
 + (NSAttributedString *)handAttributeWithText:(NSString *)text {

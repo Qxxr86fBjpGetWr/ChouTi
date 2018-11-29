@@ -20,12 +20,6 @@
     }
     _hotNewsModel = hotNewsModel;
     
-    CGFloat mainImageY = 5;
-    CGFloat mainImageW = 80;
-    CGFloat mainImageH = 80;
-    CGFloat mainImageX = SCREEN_WIDTH - 10 - mainImageW;
-    self.mainImageF = CGRectMake(mainImageX, mainImageY, mainImageW, mainImageH);
-    
     CGFloat topicX = 10;
     CGFloat topicY = 5;
     CGFloat topicH = 0;
@@ -38,11 +32,18 @@
     }
     self.topicButtonF = CGRectMake(topicX, topicY, topicW, topicH);
     
-    NSAttributedString *attributeTitle = [BDFUntil handAttributeWithText:hotNewsModel.title];
+    CGFloat mainImageY = CGRectGetMaxY(self.topicButtonF) + 10;
+    CGFloat mainImageW = 80;
+    CGFloat mainImageH = 80;
+    CGFloat mainImageX = SCREEN_WIDTH - 10 - mainImageW;
+    self.mainImageF = CGRectMake(mainImageX, mainImageY, mainImageW, mainImageH);
+    
+//    NSAttributedString *attributeTitle = [BDFUntil handAttributeWithText:hotNewsModel.title];
     CGFloat contentX = 10;
     CGFloat contentY = CGRectGetMaxY(self.topicButtonF) + 10;
     CGFloat contentW = mainImageX - 20;
-    CGFloat contentH = [attributeTitle heightWithConstrainedWidth:contentW];
+//    CGFloat contentH = [attributeTitle heightWithConstrainedWidth:contentW];
+    CGFloat contentH = [hotNewsModel.title heightWithFont:kFont(20) constrainedToWidth:contentW];
     self.contentF = CGRectMake(contentX, contentY, contentW, contentH);
     
     CGFloat linkY = 0;

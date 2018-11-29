@@ -29,6 +29,8 @@
 #import "BDFVideoViewController.h"
 #import "BDFHumanReleaseController.h"
 #import "BDFCollectionViewController.h"
+#import "BDFHomeRefreshModel.h"
+#import "BDFRefreshNormalHeader.h"
 
 @interface BDFSubHomePageViewController ()<BDFHomeTitleDelegate, BDFAllTypeNewsViewDidSelectDelegate>
 
@@ -68,6 +70,17 @@
         BDFHomeSubjectsModel *model = [BDFHomeSubjectsModel modelWithDictionary:response];
         self.newsView.subjectsModel = model;
     }];
+    
+    BDFBaseRequest *request = [BDFBaseRequest bdf_requestWithUrl:BDFHOMEREFRESHTEXT];
+    [request bdf_sendRequestWithComple:^(id response, BOOL success, NSString *message) {
+        BDFHomeRefreshModel *model = [BDFHomeRefreshModel modelWithDictionary:response];
+        [model archive];
+//        BDFHomeRefreshRespModel *respModel = model.resp.firstObject;
+//        [(BDFRefreshNormalHeader *)self.refreshHeader setTitle:respModel.content forState:MJRefreshStateIdle];
+//        [(BDFRefreshNormalHeader *)self.refreshHeader setTitle:respModel.content forState:MJRefreshStateRefreshing];
+//        [(BDFRefreshNormalHeader *)self.refreshHeader setTitle:respModel.content forState:MJRefreshStateIdle];
+    }];
+    
 }
 
 - (void)setNav {

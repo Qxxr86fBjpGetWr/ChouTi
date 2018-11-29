@@ -154,6 +154,7 @@
 		ABF2ADE321ABCE89009BFCB5 /* BDFMessageWarnModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF2ADE221ABCE89009BFCB5 /* BDFMessageWarnModel.m */; };
 		ABF2ADE621ABD062009BFCB5 /* BDFMessaageWarnFrameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF2ADE521ABD062009BFCB5 /* BDFMessaageWarnFrameModel.m */; };
 		ABF2ADE921ABD694009BFCB5 /* BDFMessageWarnCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF2ADE821ABD694009BFCB5 /* BDFMessageWarnCell.m */; };
+		ABF2ADEF21AE37E4009BFCB5 /* BDFHomeRefreshModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF2ADEE21AE37E4009BFCB5 /* BDFHomeRefreshModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -471,6 +472,8 @@
 		ABF2ADE521ABD062009BFCB5 /* BDFMessaageWarnFrameModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFMessaageWarnFrameModel.m; sourceTree = "<group>"; };
 		ABF2ADE721ABD694009BFCB5 /* BDFMessageWarnCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFMessageWarnCell.h; sourceTree = "<group>"; };
 		ABF2ADE821ABD694009BFCB5 /* BDFMessageWarnCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFMessageWarnCell.m; sourceTree = "<group>"; };
+		ABF2ADED21AE37E4009BFCB5 /* BDFHomeRefreshModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDFHomeRefreshModel.h; sourceTree = "<group>"; };
+		ABF2ADEE21AE37E4009BFCB5 /* BDFHomeRefreshModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDFHomeRefreshModel.m; sourceTree = "<group>"; };
 		DC14892B4664F90CCBCB7B63 /* libPods-BDFMobileCollect.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BDFMobileCollect.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FACCC4627B427A4C6348F8D6 /* Pods-BDFMobileCollect.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BDFMobileCollect.release.xcconfig"; path = "Pods/Target Support Files/Pods-BDFMobileCollect/Pods-BDFMobileCollect.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1024,6 +1027,8 @@
 				AB6D62FB218C5AEA009B1AD4 /* BDFHomeHotNewsModel.m */,
 				AB6D6301218C5AEA009B1AD4 /* BDFHomeSubjectsModel.h */,
 				AB6D630C218C5AEA009B1AD4 /* BDFHomeSubjectsModel.m */,
+				ABF2ADED21AE37E4009BFCB5 /* BDFHomeRefreshModel.h */,
+				ABF2ADEE21AE37E4009BFCB5 /* BDFHomeRefreshModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2060,6 +2065,7 @@
 				AB778F6C2116F5E800A81791 /* BDFCustomCommonEmptyView.m in Sources */,
 				ABE40AE4214D17FB00977F08 /* BDFMeRequest.m in Sources */,
 				AB3F0FE4211F2A7A00D283CC /* BDFSearchPublishToolButton.m in Sources */,
+				ABF2ADEF21AE37E4009BFCB5 /* BDFHomeRefreshModel.m in Sources */,
 				AB6D634E218C5AEA009B1AD4 /* BDFMostHotView.m in Sources */,
 				AB7E8E1E2192D4CD007B4E1D /* BDFJokesViewController.m in Sources */,
 				AB6D6350218C5AEA009B1AD4 /* BDFComBottomToolView.m in Sources */,

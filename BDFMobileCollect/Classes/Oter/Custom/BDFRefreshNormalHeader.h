@@ -8,14 +8,6 @@
 
 #import "MJRefreshNormalHeader.h"
 
-@protocol BDFRefreshNormalHeaderDelegate <NSObject>
-
-- (void)refreshCompleWithOffset:(UIScrollView *)scrollView;
-
-@end
-
-@interface BDFRefreshNormalHeader : MJRefreshNormalHeader
-
-@property (nonatomic, weak) id <BDFRefreshNormalHeaderDelegate> refreshDelegate;
+@interface BDFRefreshNormalHeader : MJRefreshStateHeader
 
 @end

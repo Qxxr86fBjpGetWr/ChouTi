@@ -91,5 +91,7 @@ NSString *const BDFHOMEPUBLISHLIST = @"https://api.chouti.com/users/publish.json
 NSString *const BDFHOMEMESSAGEINFORMLIST = @"https://api.chouti.com/users/systemNotification.json";
 /** 消息提醒 */
 NSString *const BDFHOMEMESSAGEWARNLIST = @"https://api.chouti.com/api/comments/advice/get.json";
+/** 首页刷新文案 */
+NSString *const BDFHOMEREFRESHTEXT = @"https://api.chouti.com/api/refreshHintsList.json";
 
 @end
